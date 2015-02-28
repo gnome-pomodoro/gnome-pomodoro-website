@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>A Pomodoro Timer for GNOME</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="gnome, gnome-shell, pomodoro, pomodoro timer, break timer, extension"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.gnome-pomodoro.org/" />
+    <meta property="og:title" content="Pomodoro Timer for GNOME" />
+    <meta property="og:image" content="images/icons/256x256.png" />
+
+    <link rel="stylesheet" href="libs/owl/owl-carousel.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <!-- <link rel="icon" href="images/icons/gnome-pomodoro.ico" sizes="16x16 32x32 48x48 64x64 128x128 192x192 256x256" type="image/vnd.microsoft.icon"> -->
+
+    <script src="libs/jquery/jquery.min.js" defer></script>
+    <script src="libs/jsrender/jsrender.min.js" defer></script>
+    <script src="libs/owl/owl-carousel.js" defer></script>
+
+    <script src="js/signals.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+<!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<main role="main">
+    <article>
+        <div id="header">
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#contribute">Contribute</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <header>
+                <h1>A Pomodoro timer<br/>for<br/><abbr>GNOME</abbr></h1>
+                <p>Get things done by taking short breaks</p>
+            </header>
+        </div>
+
+        <div id="page">
+
+            <section id="about">
+                <header>
+                    <h2>About</h2>
+<!--                    <p>What’s Pomodoro?</p>-->
+                </header>
+
+                <p>This <a href="http://www.gnome.org/" rel="nofollow">GNOME</a> app helps to manage time according to <a href="http://en.wikipedia.org/wiki/Pomodoro_technique" rel="nofollow">Pomodoro Technique</a>. It intends to improve productivity and quality of work by reminding you to take short breaks.</p>
+
+                <dl>
+                    <dt>Pomodoro Technique is based on two principles:</dt>
+                    <dd>
+                        <ul>
+                            <li>focusing on work for limited time, about half an hour</li>
+                            <li>and clearing your mind during breaks</li>
+                        </ul>
+                    </dd>
+                </dl>
+
+                <p>This workflow can improve focus, physical health and mental agility depending on how you spend your breaks and how strictly you follow the routine. Otherwise, the app can still be used as a regular break timer.</p>
+
+                <p>If you’re curious about the name —&nbsp;<em>Pomodoro</em> comes from a kitchen timer, which can be used to keep track of time.</p>
+
+                <p>You can read more about Pomodoro Technique <a href="http://www.pomodorotechnique.com/book/" rel="nofollow">here</a>.</p>
+
+            </section>
+
+            <section id="features">
+                <header>
+                    <h2>Features</h2>
+                </header>
+
+                <div id="screenshots" class="owl-carousel" style="border-radius: 4px;">
+                    <div style="width: 700px; height: 500px; background: #eee url(images/screenshot-preferences.png) 100% 0%;"><!-- data-src-retina="" --></div>
+                    <div style="width: 700px; height: 500px; background: #eee url(images/screenshot-preferences.png) 50% 45%"><!-- data-src-retina="" --></div>
+                </div>
+
+                <div class="row">
+                    <div class="column">
+                        <h3>Pomodoro Timer</h3>
+                        <ul class="features-list">
+                            <li>Customizability</li>
+                            <!-- <li>Shorten/lenghten break</li> -->
+                            <li>Postpone pomodoro until active</li>
+                            <li>Break reminders</li>
+                            <li>Hotkey</li>
+                        </ul>
+                    </div>
+
+                    <div class="column">
+                        <h3>Desktop Integration</h3>
+                        <ul class="features-list">
+                            <li>Indicator</li>
+                            <li>Fullscreen notifications</li>
+                            <li>Lock screen notifications</li>
+                            <li>Hiding notifications during pomodoro</li>
+                            <li>IM status control</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="download">
+                <header>
+                    <h2>Download</h2>
+<!--                    <p>Choose version right for you</p>-->
+                </header>
+
+                <div id="download-widget" class="steps-widget">
+                    <div id="download-steps" class="steps steps-wrapper">
+                    </div>
+                </div>
+            </section>
+
+            <section id="contribute">
+                <header>
+                    <h2>Contribute</h2>
+<!--                    <p>It’s open-source</p>-->
+                </header>
+
+                <div class="row">
+
+<!--                    <div class="column">-->
+<!--                        <h3>Report Issue</h3>-->
+<!--                        <ul>-->
+<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/issues">Report issue</a></li>-->
+<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/issues?q=is%3Aopen+is%3Aissue">Lookup open issues</a></li>-->
+<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/ReportIssue">Tips for reporting a Pomodoro bug</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    -->
+<!--                    <div class="column">-->
+<!--                        <h3>Join</h3>-->
+<!--                        <ul>-->
+<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/Translating">Translate</a></li>-->
+<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/Hacking">Write code</a></li>-->
+<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/Debugging">QA</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+                </div>
+
+
+                <footer>
+                    <address class="button-box">
+                        <a href="https://github.com/codito/gnome-shell-pomodoro" class="button button-default"><span>View on Github</span></a>
+                    </address>
+                </footer>
+            </section>
+
+            <footer>
+                <p class="disclaimer">This project is not affiliated with, authorized by, sponsored by, or otherwise approved by GNOME&nbsp;Foundation and/or the Pomodoro&nbsp;Technique®. The&nbsp;GNOME logo and GNOME name are registered trademarks or trademarks of GNOME&nbsp;Foundation in the United&nbsp;States or other countries. The&nbsp;Pomodoro Technique® and Pomodoro™ are registered trademarks of Francesco&nbsp;Cirillo.</p>
+
+                <p class="copyright">Made with all the love in the world by&nbsp;<a href="http://kamilprusko.org">Kamil&nbsp;Prusko</a></p>
+            </footer>
+
+        </div>
+
+    </article>
+</main>
+
+<script id="download-template" type="text/x-jsrender">
+    {{if linux }}
+        <!-- Install from package -->
+        <!--
+        <h3>From package</h3>
+
+        <p>For Ubuntu, Fedora and openSUSE you can download packages from <a href="http://software.opensuse.org/download.html?project=home%3Akamilprusko&package=gnome-pomodoro">here</a>. These are updated more frequently.</p>
+
+        <p>Then follow instructions from above, as if installing package from repos.</p>
+
+        <h3>From source</h3>
+        <ol>
+            <li>
+                <p>Download source code</p>
+            </li>
+            <li>
+                <p>Close gnome-pomodoro</p>
+                <p>If you’re updating, you need to close running background service by opening Preferences and clicking Quit it the AppMenu or by <code>killall gnome-pomodoro</code> in terminal.</p>
+            </li>
+            <li>
+                <p>Launch it</p>
+                <pre><code>
+                    gnome-pomodoro
+                </code></pre>
+               <p>It will enable GNOME Shell extension. A new indicator should show up in the top panel. If it doesn’t, restart GNOME Shell by hitting <strong>Alt + F2</strong> and typing <code>r</code> in command.</p>
+            </li>
+        </ol>
+        -->
+
+
+        <!-- Install from distro repos -->
+
+        {{if arch }}
+            <section>
+                <header>
+                    <h4>From AUR</h4>
+                </header>
+
+                <div class="button-box">
+                    <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro/gnome-shell-pomodoro.tar.gz" class="button button-default download-icon"><span>Download package</span></a>
+                    <p class="tip">For development package look <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro-git/">here</a>.</p>
+                </div>
+
+                <p>Then, install it by running in terminal:</p>
+                <ol class="bash">
+                    <li>tar -xvf gnome-shell-pomodoro.tar.gz && cd gnome-shell-pomodoro</li>
+                    <li>makepkg -s</li>
+                    <li>makepkg -i</li>
+                </ol>
+
+                <p>If you like it consider upvoting the package <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro/">here</a>. If you are new to AUR you may want to read more about <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">installing packages</a>.</p>
+
+                <footer>
+                    <p class="contributors">AUR packages are provided by <a href="https://github.com/haaja" title="Janne Haapsaari">haaja</a>.</p>
+                </footer>
+            </section>
+        {{/if}}
+
+        {{if debian && gte(debian, "7") }}
+            <section>
+                <header>
+                    <h4>From package repositories</h4>
+                </header>
+
+                <!--
+                <div class="button-box">
+                    <a href="https://packages.debian.org/sid/gnome-shell-pomodoro" class="button button-default download-icon"><span>Download package</span></a>
+                </div>
+                -->
+
+                <p>Install it by running in terminal:</p>
+                <ol class="bash">
+                    <li>sudo apt-get install gnome-shell-pomodoro</li>
+                </ol>
+                <!-- https://packages.debian.org/sid/gnome-shell-pomodoro -->
+                
+                <footer>
+                    <p class="contributors">Debian packages are provided by <a href="https://github.com/aerostitch">Joseph Herlant</a>.</p>
+                </footer>
+            </section>
+        {{/if}}
+
+        {{if fedora && gte(fedora, "20") }}
+            <section>
+                <header>
+                    <h4>From package repositories</h4>
+                </header>
+
+                <p>Install it by running in terminal:</p>
+                <ol class="bash">
+                    <li>sudo dnf install gnome-shell-extension-pomodoro</li>
+                </ol>                    
+                <!-- https://apps.fedoraproject.org/packages/gnome-shell-extension-pomodoro -->
+
+                <footer>
+                    <p class="contributors">Fedora packages are provided by <a href="https://fedoraproject.org/wiki/User:fab">Fabian Affolter</a> and <a href="http://fedoraproject.org/wiki/User:Mbooth">Mat Booth</a>.</p>
+                </footer>
+            </section>
+        {{/if}}
+
+        <!-- First run note -->
+        {{if gte(gnome, "3.8") && lt(version, "0.10.1") }}
+            <section>
+                <header>
+                    <h4>Running for first time</h4>
+                </header>
+
+                <p>If you’re updating, you’ll also need to close running instance.</p>
+                <ol class="bash">
+                    <li>killall gnome-pomodoro</li>
+                    <li>gnome-pomodoro</li>
+                </ol>
+
+                <p>This will enable GNOME Shell extension. A new indicator should show up in the top panel. If it doesn’t, restart GNOME Shell by hitting <code>Alt + F2</code> and typing <code>r</code>.</p>
+            </section>
+        {{/if}}
+
+        <!-- Install from source -->
+
+        {{if gte(gnome, "3.8") }}
+            <section>
+                <header>
+                    <h4>Build from source code</h4>
+                </header>
+
+                <p>Download source code from <a href="https://github.com/codito/gnome-shell-pomodoro/tarball/gnome-{{: gnome }}">here</a> or by using git</p>
+                <ol class="bash">
+                    <li>git clone -b gnome-{{: gnome }} https://github.com/codito/gnome-shell-pomodoro.git</li>
+                    <li>cd gnome-shell-pomodoro</li>
+                </ol>
+
+                {{if debian || ubuntu }}
+                    <p>Install dependencies</p>
+                    <ol class="bash">
+                        <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libgnome-desktop-3-dev libcanberra-dev libdbus-glib-1-dev libgstreamer1.0-dev fonts-droid libsqlite3-dev libgom-dev</li>
+                    </ol>
+                {{/if}}
+
+                {{if fedora }}
+                    <p>Install dependencies</p>
+                    <ol class="bash">
+                        <li>sudo dnf install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel google-droid-sans-fonts sqlite-devel gom-devel</li>
+                    </ol>
+                {{/if}}
+
+                {{if gentoo }}
+                    <p>Install dependencies</p>
+                    <ol class="bash">
+                        <li>sudo emerge gnome-common intltool vala-common vala gobject-introspection-common gobject-introspection dev-libs/glib dbus-glib dev-libs/gom media-fonts/droid</li>
+                    </ol>
+                {{/if}}
+
+                <p>Then, build it and install</p>
+                <ol class="bash">
+                    {{if gentoo }}
+                        <li>export VALAC=/usr/bin/valac-0.26</li>
+                        <li>export VAPIGEN=/usr/bin/vapigen-0.26</li>                    
+                    {{/if}}
+                    <li>./autogen.sh --prefix=/usr --datadir=/usr/share</li>
+                    <li>make</li>
+                    <li>sudo make install</li>
+                </ol>
+            </section>
+        {{/if}}   
+
+
+        <!-- Install from extensions.gnome.org -->
+
+        {{if gte(gnome, "3.2") && lte(gnome, "3.10") }}
+            <section>
+                <header>
+                    <h4>From extensions.gnome.org</h4>
+                </header>
+
+                <p>You can grab an older version <a href="https://extensions.gnome.org/extension/53/pomodoro/">here</a>. Just note that it’s no longer maintained.</p>
+            </section>
+        {{/if}}
+
+    {{/if}}
+</script>
+
+</body>
+</html>

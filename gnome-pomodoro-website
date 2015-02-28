@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+import argparse
+import os
+import http.server
+
+
+def run_http_server(self, host, port):
+    server = http.server.HTTPServer((host, port),
+                                     http.server.SimpleHTTPRequestHandler)
+
+    print('Development server is running at http://{host}:{port}/'
+                                     .format(host=host, port=port))
+    print('Quit the server with CONTROL-C.')
+
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print('\nKeyboard interrupt received, exiting.')
+
+    server.server_close()
+
+
+def main(args):
+    directory = os.path.abspath(args.directory)
+    os.chdir(directory)
+
+    run_http_server(args.host, args.port)
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--host', default='localhost')
+    parser.add_argument('--port', default=8000, type=int)
+    parser.add_argument('directory', default=os.getcwd(), nargs='?')
+
+    args = parser.parse_args()
+
+    main(args)
