@@ -55,7 +55,6 @@
             <section id="about">
                 <header>
                     <h2>About</h2>
-<!--                    <p>What’s Pomodoro?</p>-->
                 </header>
 
                 <p>This <a href="http://www.gnome.org/" rel="nofollow">GNOME</a> app helps to manage time according to <a href="http://en.wikipedia.org/wiki/Pomodoro_technique" rel="nofollow">Pomodoro Technique</a>. It intends to improve productivity and quality of work by reminding you to take short breaks.</p>
@@ -83,7 +82,7 @@
                     <h2>Features</h2>
                 </header>
 
-                <div id="screenshots" class="owl-carousel" style="border-radius: 4px;">
+                <div id="screenshots" class="owl-carousel">
                     <div style="width: 700px; height: 500px; background: #eee url(images/screenshot-preferences.png) 100% 0%;"><!-- data-src-retina="" --></div>
                     <div style="width: 700px; height: 500px; background: #eee url(images/screenshot-preferences.png) 50% 45%"><!-- data-src-retina="" --></div>
                 </div>
@@ -117,7 +116,6 @@
             <section id="download">
                 <header>
                     <h2>Download</h2>
-<!--                    <p>Choose version right for you</p>-->
                 </header>
 
                 <div id="download-widget" class="steps-widget">
@@ -129,30 +127,7 @@
             <section id="contribute">
                 <header>
                     <h2>Contribute</h2>
-<!--                    <p>It’s open-source</p>-->
                 </header>
-
-                <div class="row">
-
-<!--                    <div class="column">-->
-<!--                        <h3>Report Issue</h3>-->
-<!--                        <ul>-->
-<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/issues">Report issue</a></li>-->
-<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/issues?q=is%3Aopen+is%3Aissue">Lookup open issues</a></li>-->
-<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/ReportIssue">Tips for reporting a Pomodoro bug</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    -->
-<!--                    <div class="column">-->
-<!--                        <h3>Join</h3>-->
-<!--                        <ul>-->
-<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/Translating">Translate</a></li>-->
-<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/Hacking">Write code</a></li>-->
-<!--                            <li><a href="https://github.com/codito/gnome-shell-pomodoro/wiki/Debugging">QA</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-                </div>
-
 
                 <footer>
                     <address class="button-box">
@@ -174,34 +149,6 @@
 
 <script id="download-template" type="text/x-jsrender">
     {{if linux }}
-        <!-- Install from package -->
-        <!--
-        <h3>From package</h3>
-
-        <p>For Ubuntu, Fedora and openSUSE you can download packages from <a href="http://software.opensuse.org/download.html?project=home%3Akamilprusko&package=gnome-pomodoro">here</a>. These are updated more frequently.</p>
-
-        <p>Then follow instructions from above, as if installing package from repos.</p>
-
-        <h3>From source</h3>
-        <ol>
-            <li>
-                <p>Download source code</p>
-            </li>
-            <li>
-                <p>Close gnome-pomodoro</p>
-                <p>If you’re updating, you need to close running background service by opening Preferences and clicking Quit it the AppMenu or by <code>killall gnome-pomodoro</code> in terminal.</p>
-            </li>
-            <li>
-                <p>Launch it</p>
-                <pre><code>
-                    gnome-pomodoro
-                </code></pre>
-               <p>It will enable GNOME Shell extension. A new indicator should show up in the top panel. If it doesn’t, restart GNOME Shell by hitting <strong>Alt + F2</strong> and typing <code>r</code> in command.</p>
-            </li>
-        </ol>
-        -->
-
-
         <!-- Install from distro repos -->
 
         {{if arch }}
@@ -272,22 +219,6 @@
             </section>
         {{/if}}
 
-        <!-- First run note -->
-        {{if gte(gnome, "3.8") && lt(version, "0.10.1") }}
-            <section>
-                <header>
-                    <h4>Running for first time</h4>
-                </header>
-
-                <p>If you’re updating, you’ll also need to close running instance.</p>
-                <ol class="bash">
-                    <li>killall gnome-pomodoro</li>
-                    <li>gnome-pomodoro</li>
-                </ol>
-
-                <p>This will enable GNOME Shell extension. A new indicator should show up in the top panel. If it doesn’t, restart GNOME Shell by hitting <code>Alt + F2</code> and typing <code>r</code>.</p>
-            </section>
-        {{/if}}
 
         <!-- Install from source -->
 
@@ -336,6 +267,24 @@
                 </ol>
             </section>
         {{/if}}   
+
+
+        <!-- First run note -->
+        {{if gte(gnome, "3.8") && lt(version, "0.10.1") }}
+            <section>
+                <header>
+                    <h4>Running for first time</h4>
+                </header>
+
+                <p>If you’re updating, you’ll also need to close running instance.</p>
+                <ol class="bash">
+                    <li>killall gnome-pomodoro</li>
+                    <li>gnome-pomodoro</li>
+                </ol>
+
+                <p>This will enable GNOME Shell extension. A new indicator should show up in the top panel. If it doesn’t, restart GNOME Shell by hitting <code>Alt + F2</code> and typing <code>r</code>.</p>
+            </section>
+        {{/if}}
 
 
         <!-- Install from extensions.gnome.org -->
