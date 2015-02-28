@@ -740,6 +740,20 @@ footer {
     padding: 0 1rem;
 }
 
+@media (max-width: 639px)
+{
+    #contribute .row,
+    #features .row {
+        -webkit-flex-direction: column;
+                flex-direction: column;
+    }
+
+    #contribute .column:not(:first-child),
+    #features .column:not(:first-child) {
+        margin-top: 3rem;
+    }
+}
+
 .list-group-header {
     font-size: 1.1rem;
     font-weight: bold;
