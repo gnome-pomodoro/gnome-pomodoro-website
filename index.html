@@ -237,14 +237,36 @@
                 {{if debian || ubuntu }}
                     <p>Install dependencies</p>
                     <ol class="bash">
+                        {{if lte(gnome, "3.8") }}
+                            <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libclutter-gtk-1.0-dev libgnome-desktop-3-dev libcanberra-dev libgdata-dev libgstreamer0.10-dev libupower-glib-dev fonts-droid</li>
+                        {{/if}}
+                        {{if gte(gnome, "3.10") && lte(gnome, "3.12") }}
+                            <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libgnome-desktop-3-dev libcanberra-dev libdbus-glib-1-dev libgstreamer1.0-dev libupower-glib-dev fonts-droid</li>
+                        {{/if}}
+                        {{if gte(gnome, "3.14") }}
+                            <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libgnome-desktop-3-dev libcanberra-dev libdbus-glib-1-dev libgstreamer1.0-dev fonts-droid</li>
+                        {{/if}}
+                        <!--
                         <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libgnome-desktop-3-dev libcanberra-dev libdbus-glib-1-dev libgstreamer1.0-dev fonts-droid libsqlite3-dev libgom-dev</li>
+                        -->
                     </ol>
                 {{/if}}
 
                 {{if fedora }}
                     <p>Install dependencies</p>
                     <ol class="bash">
+                        {{if lte(gnome, "3.8") }}
+                            <li>sudo yum install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel clutter-gtk-devel gnome-desktop3-devel libcanberra-devel libgdata-devel gstreamer-devel upower-devel google-droid-sans-fonts</li>
+                        {{/if}}
+                        {{if gte(gnome, "3.10") && lte(gnome, "3.12") }}
+                            <li>sudo yum install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel upower-devel google-droid-sans-fonts</li>
+                        {{/if}}
+                        {{if gte(gnome, "3.14") }}
+                            <li>sudo dnf install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel upower-devel google-droid-sans-fonts</li>
+                        {{/if}}
+                        <!--
                         <li>sudo dnf install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel google-droid-sans-fonts sqlite-devel gom-devel</li>
+                        -->
                     </ol>
                 {{/if}}
 
@@ -270,7 +292,7 @@
 
 
         <!-- First run note -->
-        {{if gte(gnome, "3.8") && lt(version, "0.10.1") }}
+        {{if gte(gnome, "3.8") && lte(gnome, "3.12") }}
             <section>
                 <header>
                     <h4>Running for first time</h4>
