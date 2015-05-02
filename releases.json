@@ -33,6 +33,11 @@
           "label": "Fedora",
           "childrenLabel": "Release",
           "children": {
+            "22": {
+              "context": {
+                "gnome": "3.16"
+              }
+            },
             "21": {
               "context": {
                 "gnome": "3.14"
