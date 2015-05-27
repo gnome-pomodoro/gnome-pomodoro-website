@@ -58,7 +58,7 @@
         "gentoo": {
           "label": "Gentoo",
           "context": {
-            "gnome": "3.14"
+            "gnome": "3.16"
           }
         },
         "opensuse": {
