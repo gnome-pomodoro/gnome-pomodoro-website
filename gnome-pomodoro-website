@@ -5,7 +5,7 @@ import os
 import http.server
 
 
-def run_http_server(self, host, port):
+def run_http_server(host, port):
     server = http.server.HTTPServer((host, port),
                                      http.server.SimpleHTTPRequestHandler)
 
