@@ -690,8 +690,8 @@ footer {
 .tip,
 .contributors {
     font-size: 11pt;
-    color: #777;    
     text-align: center;
+    margin: 1em 0;
 }
 
 
