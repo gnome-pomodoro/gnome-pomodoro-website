@@ -15,7 +15,7 @@
 
             {{if (debain || ubuntu) && repository}}
                 <div class="space"></div>
-                <p>If you wish to recieve updates, add the repository</p>
+                <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
                     <li>sudo sh -c "echo 'deb {{: repository }} /' >> /etc/apt/sources.list.d/gnome-pomodoro.list"</li>
                     <li>sudo apt-get update</li>
@@ -25,7 +25,7 @@
 
             {{if opensuse && repository}}
                 <div class="space"></div>
-                <p>If you wish to recieve updates, add the repository</p>
+                <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
                     <li>zypper addrepo {{: repository }}</li>
                     <li>zypper refresh</li>
@@ -35,7 +35,7 @@
 
             {{if fedora && repository}}
                 <div class="space"></div>
-                <p>If you wish to recieve updates, add the repository</p>
+                <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
                     <li>cd /etc/yum.repos.d/</li>
                     <li>wget {{: repository }}</li>
@@ -44,7 +44,7 @@
             {{/if}}
 
             <footer>
-                <p class="contributors">Packages are build with <a href="https://build.opensuse.org" rel="nofollow">openSUSE Build Service</a>.</p>
+                <p class="contributors">Packages are build with <a href="https://build.opensuse.org/package/show/home:kamilprusko/gnome-pomodoro" rel="nofollow">openSUSE Build Service</a>.</p>
             </footer>
         </section>
     {{/if}}
