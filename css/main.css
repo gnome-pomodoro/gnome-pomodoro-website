@@ -41,7 +41,7 @@ body {
     font-family: Cantarell, "Open Sans", Asap, Helvetica;
     font-size: 1rem;
     line-height: 1.4em;
-    color: rgb(30, 30, 30);
+    color: rgb(110, 110, 110);
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
 
@@ -50,13 +50,14 @@ body {
 }
 
 a {
-    color: #0066bb;
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
 a:hover,
 a:focus {
-    text-decoration: underline;
+    color: rgb(18, 156, 244);
+    text-decoration: none;
 }
 
 
@@ -305,8 +306,14 @@ p + ol.bash {
 
 #page > section {
     padding-top: 3.0em;
-    padding-bottom: 4.0em;
     margin-top: 1px;  /* skip section separators for eg. /#features */
+}
+
+#page > section:after {
+    content: "";
+    display: block;
+    margin: 3.0em auto;
+    width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
