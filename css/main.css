@@ -505,7 +505,12 @@ footer {
 
 .button:hover {
     box-shadow: 0 1.0px 6px rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.button:hover span {
     color: black;
+    opacity: 0.8;
 }
 
 .button:active {
@@ -528,6 +533,11 @@ footer {
 
 .button.button-default:hover {
     background: linear-gradient(to bottom, #2caaf6 0, #009bf2 100%);
+}
+
+.button.button-default:hover span {
+    color: inherit;
+    opacity: inherit;
 }
 
 .button.button-default:active {
