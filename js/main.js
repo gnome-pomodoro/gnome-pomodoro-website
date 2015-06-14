@@ -28,6 +28,24 @@ var Utils = Utils || {};
     Utils.loadJSON = loadJSON;
 
     /**
+     * Utils.loadTemplate function
+     *
+     * Convenience method for loading a template file.
+     */
+    var loadTemplate = function(url, callback) {
+        var request = new XMLHttpRequest();
+        request.overrideMimeType('text/x-jsrender');
+        request.open('GET', url, true);
+        request.onreadystatechange = function() {
+            if (request.readyState == 4 && request.status == '200') {
+                callback(request.responseText);
+            }
+        };
+        request.send(null);
+    };
+    Utils.loadTemplate = loadTemplate;
+
+    /**
      * Utils.Version class
      *
      * A class for holding version strings.
@@ -671,7 +689,8 @@ var Utils = Utils || {};
 /* Main function */
 (function(global) {
     var downloadWidget = null;
-    var downloadTemplate = null;
+    var downloadWidgetData = null;
+    var downloadWidgetTemplate = null;
 
     $('#screenshots').owlCarousel({
         items: 1,
@@ -682,40 +701,51 @@ var Utils = Utils || {};
         responsiveBaseElement: $('#screenshots')
     });
 
+    var createDownloadWidget = function() {
+        var element = document.getElementById('download-widget');
+
+        downloadWidget = new Site.StepChooser(element, downloadWidgetData);
+        downloadWidget.step.connect('update',
+            function(object, step) {
+                var context = step.getContext();
+                context.update({
+                    eq: function(a, b) {
+                        return Utils.Version.compare(a, b) == 0;
+                    },
+                    lt: function(a, b) {
+                        return Utils.Version.compare(a, b) < 0;
+                    },
+                    lte: function(a, b) {
+                        return Utils.Version.compare(a, b) <= 0;
+                    },
+                    gt: function(a, b) {
+                        return Utils.Version.compare(a, b) > 0;
+                    },
+                    gte: function(a, b) {
+                        return Utils.Version.compare(a, b) >= 0;
+                    }
+                });
+
+                step.element.innerHTML = downloadWidgetTemplate.render(context.data);
+            });
+    };
+
+    Utils.loadTemplate('download-widget-template.html',
+        function(data) {
+            downloadWidgetTemplate = $.templates(data);
+            // downloadWidgetTemplate = global.jsviews.templates(data);
+
+            if (downloadWidgetData && downloadWidgetTemplate) {
+                createDownloadWidget();
+            }
+        });
+
     Utils.loadJSON('releases.json',
         function(data) {
-            var element = document.getElementById('download-widget');
-            var template = document.getElementById('download-template');
+            downloadWidgetData = data;
 
-            downloadWidget = new Site.StepChooser(element, data);
-            downloadWidget.step.connect('update',
-                function(object, step) {
-                    if (!downloadTemplate) {
-                        downloadTemplate = $.templates(template);
-//                        downloadTemplate = global.jsviews.templates(
-//                                template.innerHTML);
-                    }
-
-                    var context = step.getContext();
-                    context.update({
-                        eq: function(a, b) {
-                            return Utils.Version.compare(a, b) == 0;
-                        },
-                        lt: function(a, b) {
-                            return Utils.Version.compare(a, b) < 0;
-                        },
-                        lte: function(a, b) {
-                            return Utils.Version.compare(a, b) <= 0;
-                        },
-                        gt: function(a, b) {
-                            return Utils.Version.compare(a, b) > 0;
-                        },
-                        gte: function(a, b) {
-                            return Utils.Version.compare(a, b) >= 0;
-                        }
-                    });
-
-                    step.element.innerHTML = downloadTemplate.render(context.data);
-                });
+            if (downloadWidgetData && downloadWidgetTemplate) {
+                createDownloadWidget();
+            }
         });
 })(this);
