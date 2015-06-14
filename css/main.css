@@ -792,9 +792,22 @@ footer {
 }
 
 #download .steps-widget .steps-back-button {
-    width: 3.1em;
+    min-width: 3.1em;
+    white-space: nowrap;
     top: -0.9em;
     margin: 0;
+}
+
+#download .steps-widget .steps-back-button:before {
+    content: "❮";
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+
+#download .steps-widget .steps-back-button em {
+    display: none;
 }
 
 #download .list-group-item {
@@ -809,13 +822,9 @@ footer {
     margin: 0;
 }
 
-#download .step .button-box {
-    padding-right: 50px;
-}
-
 #download .step-last {
     text-align: left;
-    padding: 0 30px 0 70px;
+    padding-top: 80px;
 }
 
 

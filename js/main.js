@@ -169,6 +169,7 @@ var Utils = Utils || {};
      */
     var StepChoice = function(step, name, data) {
         this.name = name;
+        this.label = data.label || name;
         this.element = null;
         this.parent = step;
         this.child = null;  /* a child Step instance */
@@ -184,12 +185,12 @@ var Utils = Utils || {};
 
         this.child = child;
 
-        return child;            
+        return child;
     };
 
     StepChoice.prototype.createElement = function() {
         var element = document.createElement('li');
-        element.innerHTML = this._data.label || this.name;
+        element.innerHTML = this.label;
         element.setAttribute('data-name', this.name);
         element.classList.add('list-group-item');
 
@@ -206,7 +207,7 @@ var Utils = Utils || {};
     StepChoice.prototype.select = function() {
         if (!this.selected) {
             this.selected = true;
-            this.element.classList.add('selected');    
+            this.element.classList.add('selected');
 
             this.emit('select');
         }
@@ -233,6 +234,7 @@ var Utils = Utils || {};
         this._childrenContainer = null;
 
         this.name = name;
+        this.label = data.childrenLabel;
         this.level = 0;
         this.selection = null;
         this.element = null;
@@ -351,7 +353,7 @@ var Utils = Utils || {};
                     if (a.isNumeric && b.isNumeric)
                         return b.gt(a) ? 1 : -1;
                     else
-                        return b.gt(a) ? -1 : 1;	
+                        return b.gt(a) ? -1 : 1;
                 });
 
             if (childrenNames.length) {
@@ -541,7 +543,7 @@ var Utils = Utils || {};
      */
     StepChooser.prototype._createBackButton = function() {
         var element = document.createElement('a');
-        element.textContent = '❮';  /* TODO: can it be moved to css? */
+        element.textContent = '';
         element.classList.add('button', 'steps-back-button', 'hidden');
 
         element.addEventListener('click',
@@ -607,9 +609,9 @@ var Utils = Utils || {};
     };
 
     StepChooser.prototype.scroll = function(offset) {
-        this.wrapper.style.webkitTransform = 'translate(' + (-offset) + 'px, 0)';        
-        this.wrapper.style.mozTransform = 'translate(' + (-offset) + 'px, 0)';        
-        this.wrapper.style.transform = 'translate(' + (-offset) + 'px, 0)';        
+        this.wrapper.style.webkitTransform = 'translate(' + (-offset) + 'px, 0)';
+        this.wrapper.style.mozTransform = 'translate(' + (-offset) + 'px, 0)';
+        this.wrapper.style.transform = 'translate(' + (-offset) + 'px, 0)';
     };
 
     StepChooser.prototype._onResized = function() {
@@ -623,7 +625,7 @@ var Utils = Utils || {};
             function(step) {
                 step.allocate(step.getPreferedWidth(this), null);
 
-                wrapperHeight = Math.max(wrapperHeight, step.getHeight());                    
+                wrapperHeight = Math.max(wrapperHeight, step.getHeight());
             }.bind(this));
 
         var lastStep = steps[steps.length - 1];
@@ -657,10 +659,23 @@ var Utils = Utils || {};
 
         this.scroll(offset);
 
-        if (!visible)
+        if (!visible) {
+            var labels = [];
+            for (var i=1; i < steps.length - 1; i++) {
+                if (steps[i].selection.name.toString() != 'other') {
+                    labels.unshift(steps[i].selection.label);
+                }
+                else {
+                    labels.unshift(steps[i-1].label);
+                }
+            }
+
+            this.backButton.innerHTML = labels.join(' ');
             this.backButton.classList.remove('hidden');
-        else
+        }
+        else {
             this.backButton.classList.add('hidden');
+        }
     },
 
     StepChooser.prototype._onWindowResized = function() {
