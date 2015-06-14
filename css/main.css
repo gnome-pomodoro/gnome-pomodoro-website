@@ -64,9 +64,9 @@ a:focus {
 /* Hedings */
 h1, h2, h3, h4, h5, h6,
 header p {
-    color: rgb(50, 50, 50);
+    color: rgb(0, 0, 0);
     font-family: Asap, Cantarel, Helvetica;
-    font-weight: 400;
+    font-weight: lighter;
     text-align: inherit;
     text-rendering: optimizeLegibility;
     margin: 0;
@@ -74,22 +74,19 @@ header p {
 }
 
 h1, h2 {
-    font-family: Pacifico, Asap;
-    letter-spacing: 0;
     text-align: center;
-    text-rendering: optimizeSpeed;
     margin: 0;
     line-height: 125%;
 }
 
 h1 {
-/*    font-family: Pacifico, Asap;*/
+    font-family: Pacifico, Asap;
+    text-rendering: optimizeSpeed;
     font-size: 4.0rem;
 }
 
 h2 {
-/*    color: rgb(40, 40, 40);*/
-    font-size: 2.0rem;
+    font-size: 1.8rem;
     margin: 1em 0 0.5em 0;
 }
 
@@ -124,7 +121,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-top: 3rem;
     margin-bottom: 1.5rem;
@@ -142,7 +139,7 @@ section:first-child h4 {
 @media (min-width: 640px)
 {
     h2 {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     header h2 + p {
@@ -168,7 +165,7 @@ p + footer {
 }
 
 strong {
-    color: #303030;
+/*    color: #303030;*/
 }
 
 ::-moz-selection,
