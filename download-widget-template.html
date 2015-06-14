@@ -4,7 +4,7 @@
     {{if packages }}
         <section>
             <header>
-                <h4>From package</h4>
+                <h4>Packages</h4>
             </header>
 
             <div class="button-box">
@@ -31,7 +31,7 @@
     {{if arch }}
         <section>
             <header>
-                <h4>From AUR</h4>
+                <h4>Install from AUR</h4>
             </header>
 
             <div class="button-box">
@@ -57,7 +57,7 @@
     {{if debian && gte(debian, "7") }}
         <section>
             <header>
-                <h4>From package repositories</h4>
+                <h4>Install from repositories</h4>
             </header>
 
             <!--
@@ -81,7 +81,7 @@
     {{if fedora && gte(fedora, "20") }}
         <section>
             <header>
-                <h4>From package repositories</h4>
+                <h4>Install from repositories</h4>
             </header>
 
             <p>Install it by running in terminal:</p>
@@ -179,7 +179,7 @@
                 <h4>Running for first time</h4>
             </header>
 
-            <p>If you’re updating, you’ll also need to close running instance.</p>
+            <p>If you’re updating, you’ll need to close running instance.</p>
             <ol class="bash">
                 <li>killall gnome-pomodoro</li>
                 <li>gnome-pomodoro</li>
@@ -195,7 +195,7 @@
     {{if gte(gnome, "3.2") && lte(gnome, "3.10") }}
         <section>
             <header>
-                <h4>From extensions.gnome.org</h4>
+                <h4>Install from extensions.gnome.org</h4>
             </header>
 
             <p>You can grab an older version <a href="https://extensions.gnome.org/extension/53/pomodoro/">here</a>. Just note that it’s no longer maintained.</p>
