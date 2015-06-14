@@ -309,7 +309,7 @@ p + ol.bash {
 #page > section:after {
     content: "";
     display: block;
-    margin: 3.0em auto;
+    margin-top: 3.0em;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
