@@ -229,8 +229,8 @@ code,
 pre {
     font-family: "Monospace Regular", "Courier New", monospace;
     font-size: 0.85em;
-    background-color: rgb(238, 238, 238);
-    color: #333;
+    background-color: rgb(245, 245, 245);
+    color: #555;
     border-radius: 4px;
 }
 
@@ -267,8 +267,8 @@ ol.bash {
     font-family: "Monospace Regular", "Courier New", monospace;
     font-size: 0.85rem;
     word-wrap: normal;
-    color: #333;
-    background-color: rgb(238, 238, 238);
+    color: #555;
+    background-color: rgb(245, 245, 245);
     border-radius: 4px;
 }
 
