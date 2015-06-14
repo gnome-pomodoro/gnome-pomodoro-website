@@ -22,7 +22,7 @@
             <p>If you like it consider upvoting the package <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro/">here</a>. If you are new to AUR you may want to read more about <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">installing packages</a>.</p>
 
             <footer>
-                <p class="contributors">AUR packages are provided by <a href="https://github.com/haaja" title="Janne Haapsaari">haaja</a>.</p>
+                <p class="contributors">AUR packages are provided by <a href="https://github.com/haaja" title="Janne Haapsaari" rel="nofollow">haaja</a>.</p>
             </footer>
         </section>
     {{/if}}
@@ -46,7 +46,7 @@
             <!-- https://packages.debian.org/sid/gnome-shell-pomodoro -->
 
             <footer>
-                <p class="contributors">Debian packages are provided by <a href="https://github.com/aerostitch">Joseph Herlant</a>.</p>
+                <p class="contributors">Debian packages are provided by <a href="https://github.com/aerostitch"  rel="nofollow">Joseph Herlant</a>.</p>
             </footer>
         </section>
     {{/if}}
@@ -64,7 +64,7 @@
             <!-- https://apps.fedoraproject.org/packages/gnome-shell-extension-pomodoro -->
 
             <footer>
-                <p class="contributors">Fedora packages are provided by <a href="https://fedoraproject.org/wiki/User:fab">Fabian Affolter</a> and <a href="http://fedoraproject.org/wiki/User:Mbooth">Mat Booth</a>.</p>
+                <p class="contributors">Fedora packages are provided by <a href="https://fedoraproject.org/wiki/User:fab" rel="nofollow">Fabian Affolter</a> and <a href="http://fedoraproject.org/wiki/User:Mbooth">Mat Booth</a>.</p>
             </footer>
         </section>
     {{/if}}
@@ -78,7 +78,11 @@
                 <h4>Build from source code</h4>
             </header>
 
-            <p>Download source code from <a href="https://github.com/codito/gnome-pomodoro/tarball/gnome-{{: gnome }}">here</a> or by using git</p>
+            <div class="button-box">
+                <a href="https://github.com/codito/gnome-pomodoro/tarball/gnome-{{: gnome }}" rel="nofollow" class="button button-default download-icon"><span>Get source code</span></a>
+            </div>
+
+            <p>or if you wish to get it with git</p>
             <ol class="bash">
                 <li>git clone -b gnome-{{: gnome }} https://github.com/codito/gnome-pomodoro.git</li>
                 <li>cd gnome-pomodoro</li>
@@ -127,7 +131,7 @@
                 </ol>
             {{/if}}
 
-            <p>Then, build it and install</p>
+            <p>Inside unpacked directory run</p>
             <ol class="bash">
                 {{if gentoo }}
                     <li>export VALAC=/usr/bin/valac-0.26</li>

@@ -712,6 +712,9 @@ footer {
     background: url(../images/document-save-symbolic.png) no-repeat 0% 50%;
 }
 
+.button-default.download-icon span {
+    background-image: url(../images/document-save-symbolic-white.png) !important;
+}
 
 
 /*

@@ -727,6 +727,8 @@ var Utils = Utils || {};
                 });
 
                 step.element.innerHTML = downloadWidgetTemplate.render(context.data);
+
+                $(step.element).find('section:not(:first) .button-box .button-default').removeClass('button-default');
             });
     };
 
