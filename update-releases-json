@@ -1,0 +1,176 @@
+#!/usr/bin/env python3
+
+import re
+import json
+import requests
+
+BUILD_SERVICE_JSON_URL = 'http://software.opensuse.org/download.json?project=home:kamilprusko&package=gnome-pomodoro'
+
+DISTRIBUTION_MAP = {
+    'xUbuntu': 'ubuntu',
+    'openSUSE': 'opensuse',
+    'Fedora': 'fedora',
+    'Debian': 'debian',
+}
+
+RELEASES_FILE = 'releases.json'
+
+
+# TODO: Add support for oneclick packages for openSUSE
+# https://en.opensuse.org/openSUSE:One_Click_Install
+
+
+def read_json(url):
+    if url.startswith('http://') or url.startswith('https://'):
+        response = requests.get(url)
+        return response.json()
+    else:
+        with open(url, 'r') as json_file:
+            obs_data = json.load(json_file)
+            return obs_data
+
+
+class ReleasesFile:
+
+    def __init__(self, url):
+        self.data = read_json(url)
+
+    def save(self, filename):
+        with open(filename, 'w') as json_file:
+            json.dump(self.data, json_file, sort_keys=True, indent=2, separators=(',', ': '))
+
+    def _remove_packages_data(self, data):
+        """
+        Recurse dictionary and strip "packages" data from "context".
+        """
+        if isinstance(data, dict):
+            if 'context' in data:
+                context_data = data['context']
+
+                if 'packages' in context_data:
+                    del context_data['packages']
+
+                if 'repository' in context_data:
+                    del context_data['repository']
+
+            for key, value in data.items():
+                self._remove_packages_data(value)
+
+    def _format_package_label(self, url):
+        re_32bit = re.compile(r'\b(i\d86)\b')
+        re_64bit = re.compile(r'\b(x86_64|amd64)\b')
+
+        parts = []
+        if re_32bit.search(url):
+            parts.append('32 bit')
+
+        if re_64bit.search(url):
+            parts.append('64 bit')
+
+        if url.endswith('.rpm'):
+            parts.append('.rpm') 
+
+        if url.endswith('.deb'):
+            parts.append('.deb') 
+
+        return ' '.join(parts)
+
+    def update(self, obs_file):
+        self._remove_packages_data(self.data)
+
+        errors = []
+        warnings = []
+
+        tmp_distributions = self.data['children']['linux']['children']
+
+        for distribution_name in obs_file.get_distro_names():
+            name = DISTRIBUTION_MAP[distribution_name]
+
+
+            for distribution_release in obs_file.get_distro_releases(distribution_name):
+                release = distribution_release.lower()
+
+                if not release in tmp_distributions[name]['children']:
+                    message = 'In "%s" missing release "%s"' % (name, release)
+                    warnings.append(message)
+                    print ('Warning: ' + message)
+                    continue
+
+                release_data = tmp_distributions[name]['children'][release]
+
+                context_data = release_data.get('context', {})
+                context_data['packages'] = []
+
+                for package_url in obs_file.get_packages(distribution_name,
+                                                         distribution_release):
+                    if package_url.endswith('.src.rpm'):
+                        continue
+
+                    context_data['packages'].append({
+                        'label': self._format_package_label(package_url),
+                        'url': package_url,
+                    })
+                context_data['packages'].sort(key=lambda package: package['label'] + package['url'])
+
+                context_data['repository'] = obs_file.get_repository(distribution_name,
+                                                                     distribution_release)
+
+                if context_data:
+                    release_data['context'] = context_data
+
+
+class BuildServiceFile:
+
+    def __init__(self, url):
+        self.data = read_json(url)
+
+    def get_distro_names(self):
+        distro_names = set()
+        for repo_name, repo_data in self.data.items():
+            distro_name, distro_release = repo_name.split('_')
+            distro_names.add(distro_name)
+
+        return distro_names
+
+    def get_distro_releases(self, distro_name):
+        distro_releases = set()
+        for repo_name, repo_data in self.data.items():
+            tmp_distro_name, distro_release = repo_name.split('_')
+            if tmp_distro_name == distro_name:
+                distro_releases.add(distro_release)
+
+        return distro_releases
+
+    def _get_repo_data(self, distro_name, distro_release):
+        repo_name = distro_name + '_' + distro_release
+
+        return self.data[repo_name]
+
+    def get_packages(self, distro_name, distro_release):
+        data = self._get_repo_data(distro_name, distro_release)
+
+        return list(data['package'].values())
+
+    def get_repository(self, distro_name, distro_release):
+        data = self._get_repo_data(distro_name, distro_release)
+
+        return data['repo']
+
+    def get_oneclick_package(self, distro_name, distro_release):
+        data = self._get_repo_data(distro_name, distro_release)
+
+        return data['ymp']
+
+
+if __name__ == '__main__':
+    obs_file = BuildServiceFile(BUILD_SERVICE_JSON_URL)
+    #print (obs_file.get_distro_names())
+    #print (obs_file.get_distro_releases('Fedora'))
+    #print (obs_file.get_packages('Fedora', '20'))
+    #print (obs_file.get_repository('Fedora', '20'))
+
+    releases_file = ReleasesFile(RELEASES_FILE)
+    releases_file.update(obs_file)
+
+    releases_file.save(RELEASES_FILE)
+

@@ -13,14 +13,38 @@
                 {{/for}}
             </div>
 
-            <!--
-            <div class="button-box">
-                <a href="https://packages.debian.org/sid/gnome-shell-pomodoro" class="button button-default download-icon"><span>Download package</span></a>
-            </div>
-            -->
+            {{if (debain || ubuntu) && repository}}
+                <div class="space"></div>
+                <p>If you wish to recieve updates, add the repository</p>
+                <ol class="bash">
+                    <li>sudo sh -c "echo 'deb {{: repository }} /' >> /etc/apt/sources.list.d/gnome-pomodoro.list"</li>
+                    <li>sudo apt-get update</li>
+                    <li>sudo apt-get install gnome-pomodoro</li>
+                </ol>
+            {{/if}}
+
+            {{if opensuse && repository}}
+                <div class="space"></div>
+                <p>If you wish to recieve updates, add the repository</p>
+                <ol class="bash">
+                    <li>zypper addrepo {{: repository }}</li>
+                    <li>zypper refresh</li>
+                    <li>zypper install gnome-pomodoro</li>
+                </ol>
+            {{/if}}
+
+            {{if fedora && repository}}
+                <div class="space"></div>
+                <p>If you wish to recieve updates, add the repository</p>
+                <ol class="bash">
+                    <li>cd /etc/yum.repos.d/</li>
+                    <li>wget {{: repository }}</li>
+                    <li>{{if gte(fedora, "22") }}dnf{{else}}yum{{/if}} install gnome-pomodoro</li>
+                </ol>
+            {{/if}}
 
             <footer>
-                <p class="contributors">Packages are build with <a href="https://build.opensuse.org" rel="nofollow">openSUSE Build Service</a>, hosted by <a href="https://bintray.com" rel="nofollow">bintray.com</a>.</p>
+                <p class="contributors">Packages are build with <a href="https://build.opensuse.org" rel="nofollow">openSUSE Build Service</a>.</p>
             </footer>
         </section>
     {{/if}}
