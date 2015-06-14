@@ -84,7 +84,14 @@
             "15.04": {
               "label": "15.04 <em>(Vivid Vervet)</em>",
               "context": {
-                "gnome": "3.14"
+                "gnome": "3.14",
+                "packages": [{
+                      "label": "32 bit .deb",
+                      "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Fedora_20/i686/gnome-pomodoro-0.10.3-8.1.i686.rpm"
+                    }, {
+                      "label": "64 bit .deb",
+                      "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Fedora_20/i686/gnome-pomodoro-0.10.3-8.1.i686.rpm"
+                    }]
               }
             },
             "14.10": {
