@@ -495,24 +495,24 @@ footer {
     padding: 10pt 12pt;
     margin: 5pt;
 
-    color: #333;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
     text-align: center;
 
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 5px;
 
     cursor: pointer;
 }
 
 .button:hover {
-    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1.0px 6px rgba(0, 0, 0, 0.2);
+    color: black;
 }
 
 .button:active {
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1.0px 6px rgba(0, 0, 0, 0.15) inset;
 }
 
 .button:focus,
@@ -526,22 +526,15 @@ footer {
     color: white;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
     background: linear-gradient(to bottom, #129cf4 0, #0191e1 100%);
-    border: 1px solid rgba(0, 0, 0, 0.07);
-
-    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.15);
+    border-color: transparent;
 }
 
 .button.button-default:hover {
     background: linear-gradient(to bottom, #2caaf6 0, #009bf2 100%);
-
-    box-shadow: inset 0.5px 1px 4px -1px #5EC5FF,
-                0 1.5px 4px rgba(0, 0, 0, 0.15);
 }
 
 .button.button-default:active {
     background: linear-gradient(to bottom, #0d93d9 0, #0b92e5 100%); 
-    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05) inset;
-    border-color: transparent;
 }
 
 .button-box {
