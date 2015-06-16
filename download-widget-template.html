@@ -1,4 +1,69 @@
 {{if linux }}
+    <!-- Install from distro repos -->
+
+    {{if arch }}
+        <section>
+            <header>
+                <h4>Install from AUR</h4>
+            </header>
+
+            <div class="button-box">
+                <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro/gnome-shell-pomodoro.tar.gz" class="button button-default download-icon"><span>Download package</span></a>
+                <p class="tip">For development package look <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro-git/">here</a>.</p>
+            </div>
+
+            <p>Then, install it by running in terminal:</p>
+            <ol class="bash">
+                <li>tar -xvf gnome-shell-pomodoro.tar.gz && cd gnome-shell-pomodoro</li>
+                <li>makepkg -s</li>
+                <li>makepkg -i</li>
+            </ol>
+
+            <p>If you like it, consider upvoting the package <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro/">here</a>. If you are new to AUR you may want to read more about <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">installing packages</a>.</p>
+
+            <footer>
+                <p class="contributors">AUR packages are provided by <a href="https://github.com/haaja" title="Janne Haapsaari" rel="nofollow">haaja</a>.</p>
+            </footer>
+        </section>
+    {{/if}}
+
+    {{if debian && gte(debian, "7") }}
+        <section>
+            <header>
+                <h4>Install from repositories</h4>
+            </header>
+
+            <p>Find Pomodoro in Software Center or run</p>
+            <ol class="bash">
+                <li>sudo apt-get install gnome-shell-pomodoro</li>
+            </ol>
+
+            <!-- https://packages.debian.org/sid/gnome-shell-pomodoro -->
+            <footer>
+                <p class="contributors">Debian packages are provided by <a href="https://github.com/aerostitch" rel="nofollow">Joseph Herlant</a>.</p>
+            </footer>
+        </section>
+    {{/if}}
+
+    {{if ubuntu && gte(ubuntu, "14.10") }}
+        <section>
+            <header>
+                <h4>Install from repositories</h4>
+            </header>
+
+            <p>Find Pomodoro in Software Center or run</p>
+            <ol class="bash">
+                <li>sudo apt-get install gnome-shell-pomodoro</li>
+            </ol>
+
+            <!-- https://launchpad.net/ubuntu/+source/gnome-shell-pomodoro -->
+            <footer>
+                <p class="contributors">Ubuntu packages are provided by <a href="https://github.com/aerostitch" rel="nofollow">Joseph Herlant</a>.</p>
+            </footer>
+        </section>
+    {{/if}}
+
+
     <!-- Install from a package -->
 
     {{if packages }}
@@ -13,7 +78,7 @@
                 {{/for}}
             </div>
 
-            {{if (debain || ubuntu) && repository}}
+            {{if (debian || ubuntu) && repository}}
                 <div class="space"></div>
                 <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
@@ -50,57 +115,7 @@
     {{/if}}
 
 
-    <!-- Install from distro repos -->
-
-    {{if arch }}
-        <section>
-            <header>
-                <h4>Install from AUR</h4>
-            </header>
-
-            <div class="button-box">
-                <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro/gnome-shell-pomodoro.tar.gz" class="button button-default download-icon"><span>Download package</span></a>
-                <p class="tip">For development package look <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro-git/">here</a>.</p>
-            </div>
-
-            <p>Then, install it by running in terminal:</p>
-            <ol class="bash">
-                <li>tar -xvf gnome-shell-pomodoro.tar.gz && cd gnome-shell-pomodoro</li>
-                <li>makepkg -s</li>
-                <li>makepkg -i</li>
-            </ol>
-
-            <p>If you like it consider upvoting the package <a href="https://aur.archlinux.org/packages/gn/gnome-shell-pomodoro/">here</a>. If you are new to AUR you may want to read more about <a href="https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages">installing packages</a>.</p>
-
-            <footer>
-                <p class="contributors">AUR packages are provided by <a href="https://github.com/haaja" title="Janne Haapsaari" rel="nofollow">haaja</a>.</p>
-            </footer>
-        </section>
-    {{/if}}
-
-    {{if debian && gte(debian, "7") }}
-        <section>
-            <header>
-                <h4>Install from repositories</h4>
-            </header>
-
-            <!--
-            <div class="button-box">
-                <a href="https://packages.debian.org/sid/gnome-shell-pomodoro" class="button button-default download-icon"><span>Download package</span></a>
-            </div>
-            -->
-
-            <p>Install it by running in terminal:</p>
-            <ol class="bash">
-                <li>sudo apt-get install gnome-shell-pomodoro</li>
-            </ol>
-            <!-- https://packages.debian.org/sid/gnome-shell-pomodoro -->
-
-            <footer>
-                <p class="contributors">Debian packages are provided by <a href="https://github.com/aerostitch"  rel="nofollow">Joseph Herlant</a>.</p>
-            </footer>
-        </section>
-    {{/if}}
+    <!-- Install from repos, Fedora is more cutting edge so package in repos may not work best -->
 
     {{if fedora && gte(fedora, "20") }}
         <section>
@@ -112,8 +127,8 @@
             <ol class="bash">
                 <li>sudo dnf install gnome-shell-extension-pomodoro</li>
             </ol>
-            <!-- https://apps.fedoraproject.org/packages/gnome-shell-extension-pomodoro -->
 
+            <!-- https://apps.fedoraproject.org/packages/gnome-shell-extension-pomodoro -->
             <footer>
                 <p class="contributors">Fedora packages are provided by <a href="https://fedoraproject.org/wiki/User:fab" rel="nofollow">Fabian Affolter</a> and <a href="http://fedoraproject.org/wiki/User:Mbooth">Mat Booth</a>.</p>
             </footer>
