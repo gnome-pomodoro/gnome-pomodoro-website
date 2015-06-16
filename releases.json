@@ -10,15 +10,26 @@
         },
         "debian": {
           "children": {
-            "7": {
+            "7.0": {
               "context": {
                 "gnome": "3.4"
               },
               "label": "7 <em>(Wheezy)</em>"
             },
-            "8": {
+            "8.0": {
               "context": {
-                "gnome": "3.14"
+                "gnome": "3.14",
+                "packages": [
+                  {
+                    "label": "32 bit .deb",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Debian_8.0/i386/gnome-pomodoro_0.11.0-1_i386.deb"
+                  },
+                  {
+                    "label": "64 bit .deb",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Debian_8.0/amd64/gnome-pomodoro_0.11.0-1_amd64.deb"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/Debian_8.0/"
               },
               "label": "8 <em>(Jessie)</em>"
             }
@@ -51,12 +62,34 @@
             },
             "21": {
               "context": {
-                "gnome": "3.14"
+                "gnome": "3.14",
+                "packages": [
+                  {
+                    "label": "32 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Fedora_21/i686/gnome-pomodoro-0.11.0-65.1.i686.rpm"
+                  },
+                  {
+                    "label": "64 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Fedora_21/x86_64/gnome-pomodoro-0.11.0-65.1.x86_64.rpm"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/Fedora_21/"
               }
             },
             "22": {
               "context": {
-                "gnome": "3.16"
+                "gnome": "3.16",
+                "packages": [
+                  {
+                    "label": "32 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Fedora_22/i686/gnome-pomodoro-0.11.0-65.1.i686.rpm"
+                  },
+                  {
+                    "label": "64 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/Fedora_22/x86_64/gnome-pomodoro-0.11.0-65.1.x86_64.rpm"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/Fedora_22/"
               }
             }
           },
@@ -89,18 +122,51 @@
             },
             "13.2": {
               "context": {
-                "gnome": "3.14"
+                "gnome": "3.14",
+                "packages": [
+                  {
+                    "label": "32 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_13.2/i586/gnome-pomodoro-0.11.0-65.1.i586.rpm"
+                  },
+                  {
+                    "label": "64 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_13.2/x86_64/gnome-pomodoro-0.11.0-65.1.x86_64.rpm"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_13.2/"
               }
             },
             "factory": {
               "context": {
-                "gnome": "3.16"
+                "gnome": "3.16",
+                "packages": [
+                  {
+                    "label": "32 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/i586/gnome-pomodoro-0.11.0-65.1.i586.rpm"
+                  },
+                  {
+                    "label": "64 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/x86_64/gnome-pomodoro-0.11.0-65.1.x86_64.rpm"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Factory/"
               },
               "label": "Factory"
             },
             "tumbleweed": {
               "context": {
-                "gnome": "3.16"
+                "gnome": "3.16",
+                "packages": [
+                  {
+                    "label": "32 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/i586/gnome-pomodoro-0.11.0-65.1.i586.rpm"
+                  },
+                  {
+                    "label": "64 bit .rpm",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/x86_64/gnome-pomodoro-0.11.0-65.1.x86_64.rpm"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/"
               },
               "label": "Tumbleweed"
             }
@@ -198,7 +264,18 @@
             },
             "15.04": {
               "context": {
-                "gnome": "3.14"
+                "gnome": "3.14",
+                "packages": [
+                  {
+                    "label": "32 bit .deb",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/xUbuntu_15.04/i386/gnome-pomodoro_0.11.0-1_i386.deb"
+                  },
+                  {
+                    "label": "64 bit .deb",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/xUbuntu_15.04/amd64/gnome-pomodoro_0.11.0-1_amd64.deb"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/xUbuntu_15.04/"
               },
               "label": "15.04 <em>(Vivid Vervet)</em>"
             }

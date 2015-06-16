@@ -27,9 +27,9 @@
                 <div class="space"></div>
                 <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
-                    <li>zypper addrepo {{: repository }}</li>
-                    <li>zypper refresh</li>
-                    <li>zypper install gnome-pomodoro</li>
+                    <li>sudo zypper addrepo {{: repository }}</li>
+                    <li>sudo zypper refresh</li>
+                    <li>sudo zypper install gnome-pomodoro</li>
                 </ol>
             {{/if}}
 
@@ -38,8 +38,8 @@
                 <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
                     <li>cd /etc/yum.repos.d/</li>
-                    <li>wget {{: repository }}</li>
-                    <li>{{if gte(fedora, "22") }}dnf{{else}}yum{{/if}} install gnome-pomodoro</li>
+                    <li>sudo wget {{: repository }}</li>
+                    <li>sudo {{if gte(fedora, "22") }}dnf{{else}}yum{{/if}} install gnome-pomodoro</li>
                 </ol>
             {{/if}}
 
