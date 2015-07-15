@@ -82,7 +82,12 @@
                 <div class="space"></div>
                 <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
-                    <li>sudo sh -c "echo 'deb {{: repository }} /' >> /etc/apt/sources.list.d/gnome-pomodoro.list"</li>
+                    <li>curl -L {{: repository }}Release.key | sudo apt-key add -</li>
+                    {{if debian}}
+                        <li>sudo sh -c "echo 'deb {{: repository }} /' >> /etc/apt/sources.list.d/gnome-pomodoro.list"</li>
+                    {{else}}
+                        <li>sudo apt-add-repository {{: repository }}</li>
+                    {{/if}}
                     <li>sudo apt-get update</li>
                     <li>sudo apt-get install gnome-pomodoro</li>
                 </ol>
