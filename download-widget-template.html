@@ -97,7 +97,7 @@
                 <div class="space"></div>
                 <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
-                    <li>sudo zypper addrepo {{: repository }}</li>
+                    <li>sudo zypper addrepo {{: repository }}home:kamilprusko.repo</li>
                     <li>sudo zypper refresh</li>
                     <li>sudo zypper install gnome-pomodoro</li>
                 </ol>
@@ -108,7 +108,7 @@
                 <p>If you want to recieve updates, add the repository</p>
                 <ol class="bash">
                     <li>cd /etc/yum.repos.d/</li>
-                    <li>sudo wget {{: repository }}</li>
+                    <li>sudo wget {{: repository }}home:kamilprusko.repo</li>
                     <li>sudo {{if gte(fedora, "22") }}dnf{{else}}yum{{/if}} install gnome-pomodoro</li>
                 </ol>
             {{/if}}
