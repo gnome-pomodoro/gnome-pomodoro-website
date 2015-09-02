@@ -142,11 +142,11 @@
                 "packages": [
                   {
                     "label": "32 bit .rpm",
-                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/i586/gnome-pomodoro-0.11.0-65.1.i586.rpm"
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/i586/gnome-pomodoro-0.11.0-65.5.i586.rpm"
                   },
                   {
                     "label": "64 bit .rpm",
-                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/x86_64/gnome-pomodoro-0.11.0-65.1.x86_64.rpm"
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/x86_64/gnome-pomodoro-0.11.0-65.5.x86_64.rpm"
                   }
                 ],
                 "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Factory/"
@@ -159,11 +159,11 @@
                 "packages": [
                   {
                     "label": "32 bit .rpm",
-                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/i586/gnome-pomodoro-0.11.0-65.1.i586.rpm"
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/i586/gnome-pomodoro-0.11.0-65.5.i586.rpm"
                   },
                   {
                     "label": "64 bit .rpm",
-                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/x86_64/gnome-pomodoro-0.11.0-65.1.x86_64.rpm"
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/x86_64/gnome-pomodoro-0.11.0-65.5.x86_64.rpm"
                   }
                 ],
                 "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/"
