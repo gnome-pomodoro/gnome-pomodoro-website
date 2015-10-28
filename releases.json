@@ -283,6 +283,23 @@
                 "repository": "http://download.opensuse.org/repositories/home:kamilprusko/xUbuntu_15.04/"
               },
               "label": "15.04 <em>(Vivid Vervet)</em>"
+            },
+            "15.10": {
+              "context": {
+                "gnome": "3.16",
+                "packages": [
+                  {
+                    "label": "32 bit .deb",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/xUbuntu_15.10/i386/gnome-pomodoro_0.11.1-1_i386.deb"
+                  },
+                  {
+                    "label": "64 bit .deb",
+                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/xUbuntu_15.10/amd64/gnome-pomodoro_0.11.1-1_amd64.deb"
+                  }
+                ],
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/xUbuntu_15.10/"
+              },
+              "label": "15.10 <em>(Wily Werewolf)</em>"
             }
           },
           "childrenLabel": "Release",
