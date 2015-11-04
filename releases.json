@@ -91,6 +91,11 @@
                 ],
                 "repository": "http://download.opensuse.org/repositories/home:kamilprusko/Fedora_22/"
               }
+            },
+            "23": {
+              "context": {
+                "gnome": "3.18"
+              }
             }
           },
           "childrenLabel": "Release",
