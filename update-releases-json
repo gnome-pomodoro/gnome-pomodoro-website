@@ -127,7 +127,7 @@ class BuildServiceFile:
     def get_distro_names(self):
         distro_names = set()
         for repo_name, repo_data in self.data.items():
-            distro_name, distro_release = repo_name.split('_')
+            distro_name, distro_release = repo_name.split('_', 1)
             distro_names.add(distro_name)
 
         return distro_names
@@ -135,7 +135,7 @@ class BuildServiceFile:
     def get_distro_releases(self, distro_name):
         distro_releases = set()
         for repo_name, repo_data in self.data.items():
-            tmp_distro_name, distro_release = repo_name.split('_')
+            tmp_distro_name, distro_release = repo_name.split('_', 1)
             if tmp_distro_name == distro_name:
                 distro_releases.add(distro_release)
 
