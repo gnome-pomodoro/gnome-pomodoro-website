@@ -138,12 +138,13 @@
                     "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_13.2/x86_64/gnome-pomodoro-0.11.1-3.1.x86_64.rpm"
                   }
                 ],
-                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_13.2/"
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_13.2/",
+                "ymp": "http://software.opensuse.org/ymp/GNOME:Apps/openSUSE_13.2/gnome-pomodoro.ymp?base=openSUSE%3A13.2&query=gnome-pomodoro"
               }
             },
             "factory": {
               "context": {
-                "gnome": "3.16",
+                "gnome": "3.18",
                 "packages": [
                   {
                     "label": "32 bit .rpm",
@@ -154,7 +155,8 @@
                     "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/x86_64/gnome-pomodoro-0.11.1-3.1.x86_64.rpm"
                   }
                 ],
-                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Factory/"
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Factory/",
+                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE:Factory&query=gnome-pomodoro"
               },
               "label": "Factory"
             },
@@ -167,13 +169,14 @@
                     "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Leap_42.1/x86_64/gnome-pomodoro-0.11.1-3.1.x86_64.rpm"
                   }
                 ],
-                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Leap_42.1/"
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Leap_42.1/",
+                "ymp": "http://software.opensuse.org/ymp/GNOME:Apps/openSUSE_Leap_42.1/gnome-pomodoro.ymp?base=openSUSE%3ALeap%3A42.1&query=gnome-pomodoro"
               },
               "label": "Leap 42.1"
             },
             "tumbleweed": {
               "context": {
-                "gnome": "3.16",
+                "gnome": "3.18",
                 "packages": [
                   {
                     "label": "32 bit .rpm",
@@ -184,7 +187,8 @@
                     "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/x86_64/gnome-pomodoro-0.11.1-3.1.x86_64.rpm"
                   }
                 ],
-                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/"
+                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/",
+                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE%3AFactory&query=gnome-pomodoro"
               },
               "label": "Tumbleweed"
             }

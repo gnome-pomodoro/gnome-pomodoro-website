@@ -63,6 +63,29 @@
         </section>
     {{/if}}
 
+    {{if opensuse && !eq(opensuse, "13.1") }}
+        <section>
+            <header>
+                <h4>Install from repositories</h4>
+            </header>
+
+            {{if ymp }}
+            <div class="button-box">
+                <a href="{{>ymp}}" class="button button-default download-icon"><span>Install package</span></a>
+            </div>
+            {{/if}}
+
+            <p>Find Pomodoro with your favorite software manager or run</p>
+            <ol class="bash">
+                <li>sudo zypper install gnome-pomodoro</li>
+            </ol>
+
+            <footer>
+                <p class="contributors">openSUSE packages are provided by <a href="http://jubalh.github.io/" rel="nofollow">Michael Vetter</a>.</p>
+            </footer>
+        </section>
+    {{/if}}
+
 
     <!-- Install from a package -->
 
