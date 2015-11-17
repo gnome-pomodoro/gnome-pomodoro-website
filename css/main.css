@@ -127,10 +127,6 @@ h4 {
     margin-bottom: 1.0rem;
 }
 
-header + h4 {
-    margin-top: 
-}
-
 section:first-child h4 {
     margin-top: 0;
 }
