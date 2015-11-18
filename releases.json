@@ -142,25 +142,6 @@
                 "ymp": "http://software.opensuse.org/ymp/GNOME:Apps/openSUSE_13.2/gnome-pomodoro.ymp?base=openSUSE%3A13.2&query=gnome-pomodoro"
               }
             },
-            "factory": {
-              "context": {
-                "gnome": "3.18",
-                "packages": [
-                  {
-                    "label": "32 bit .rpm",
-                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/i586/gnome-pomodoro-0.11.1-3.1.i586.rpm"
-                  },
-                  {
-                    "label": "64 bit .rpm",
-                    "url": "http://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/x86_64/gnome-pomodoro-0.11.1-3.1.x86_64.rpm"
-                  }
-                ],
-                "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Factory/",
-                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE:Factory&query=gnome-pomodoro",
-                "hidePackages": true
-              },
-              "label": "Factory"
-            },
             "leap_42.1": {
               "context": {
                 "gnome": "3.16",
@@ -178,6 +159,7 @@
             "tumbleweed": {
               "context": {
                 "gnome": "3.18",
+                "hidePackages": true,
                 "packages": [
                   {
                     "label": "32 bit .rpm",
@@ -189,12 +171,12 @@
                   }
                 ],
                 "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/",
-                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE%3AFactory&query=gnome-pomodoro",
-                "hidePackages": true
+                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE%3AFactory&query=gnome-pomodoro"
               },
               "label": "Tumbleweed"
             }
           },
+          "sortFunc": "opensuse",
           "childrenLabel": "Release",
           "label": "openSUSE"
         },

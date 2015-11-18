@@ -107,13 +107,16 @@ var Utils = Utils || {};
             return 1;
 
         if (!(a instanceof Version))
-            a = new Utils.Version(a);
+            a = new Version(a);
 
         if (!(b instanceof Version))
             b = new Version(b);
 
         if (a.string == b.string)
             return 0;
+
+        if (a.isNumeric != b.isNumeric)
+            return a.isNumeric > b.isNumeric ? 1 : -1;
 
         var minLength = Math.min(a.parts.length, b.parts.length);
 
@@ -164,6 +167,32 @@ var Utils = Utils || {};
  * Site namespace
  */
 (function() {
+    function compare(a, b) {
+        if (a == 'other')
+            return 1;
+
+        if (b == 'other')
+            return -1;
+
+        if (a.isNumeric && b.isNumeric)
+            return b.gt(a) ? 1 : -1;
+        else
+            return b.gt(a) ? -1 : 1;
+    }
+
+    var COMPARE_METHODS = {
+        'default': compare,
+        'opensuse': function(a, b) {  // XXX: still a bit of a hack
+            if (a == 'tumbleweed')
+                return -1;
+
+            if (b == 'tumbleweed')
+                return 1;
+
+            return compare(a, b);
+        }
+    };
+
     /**
      * Site.StepChoice class
      */
@@ -342,19 +371,8 @@ var Utils = Utils || {};
                     return new Utils.Version(name);
                 });
 
-            childrenNames.sort(
-                function(a, b) {
-                    if (a == 'other')
-                        return 1;
-
-                    if (b == 'other')
-                        return -1;
-
-                    if (a.isNumeric && b.isNumeric)
-                        return b.gt(a) ? 1 : -1;
-                    else
-                        return b.gt(a) ? -1 : 1;
-                });
+            var sortFunc = COMPARE_METHODS[data.sortFunc || 'default'];
+            childrenNames.sort(sortFunc);
 
             if (childrenNames.length) {
                 this._childrenContainer = document.createElement('div');
