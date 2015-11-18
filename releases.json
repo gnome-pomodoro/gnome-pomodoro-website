@@ -156,7 +156,8 @@
                   }
                 ],
                 "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Factory/",
-                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE:Factory&query=gnome-pomodoro"
+                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE:Factory&query=gnome-pomodoro",
+                "hidePackages": true
               },
               "label": "Factory"
             },
@@ -188,7 +189,8 @@
                   }
                 ],
                 "repository": "http://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/",
-                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE%3AFactory&query=gnome-pomodoro"
+                "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE%3AFactory&query=gnome-pomodoro",
+                "hidePackages": true
               },
               "label": "Tumbleweed"
             }

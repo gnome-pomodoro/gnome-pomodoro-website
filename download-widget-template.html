@@ -63,19 +63,19 @@
         </section>
     {{/if}}
 
-    {{if opensuse && !eq(opensuse, "13.1") }}
+    {{if opensuse && hidePackages }}
         <section>
             <header>
                 <h4>Install from repositories</h4>
             </header>
 
             {{if ymp }}
-            <div class="button-box">
-                <a href="{{>ymp}}" class="button button-default download-icon"><span>Install package</span></a>
-            </div>
+                <div class="button-box">
+                    <a href="{{>ymp}}" class="button button-default download-icon"><span>Install Pomodoro</span></a>
+                </div>
             {{/if}}
 
-            <p>Find Pomodoro with your favorite software manager or run</p>
+            <p>Find Pomodoro with your software manager or run</p>
             <ol class="bash">
                 <li>sudo zypper install gnome-pomodoro</li>
             </ol>
@@ -89,7 +89,7 @@
 
     <!-- Install from a package -->
 
-    {{if packages && !opensuse }}
+    {{if packages && !hidePackages }}
         <section>
             <header>
                 <h4>Packages</h4>
