@@ -28,6 +28,39 @@ var Utils = Utils || {};
     Utils.loadJSON = loadJSON;
 
     /**
+     * Get JSONP data for cross-domain AJAX requests
+     * @param  {String} url      The URL of the JSON request
+     * @param  {Func}   callback The callback function to run on load
+     */
+    var _callbackId = 0;
+    var loadJSONP = function(url, callback) {
+        if (callback) {
+            var callbackName = '_loadJSONP_callback' + _callbackId;
+            _callbackId++;
+
+            window[callbackName] = function(data) {
+                delete window[callbackName];
+                callback(data);
+            };
+
+            url = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+        }
+
+        var element = window.document.createElement('script');
+        element.type  = 'application/javascript';
+        element.src   = url;
+        element.async = true;
+
+        // After the script is loaded and executed, remove it
+        element.onload = function () {
+            this.remove();
+        };
+
+        document.getElementsByTagName('head')[0].appendChild(element);
+    };
+    Utils.loadJSONP = loadJSONP;
+
+    /**
      * Utils.loadTemplate function
      *
      * Convenience method for loading a template file.
@@ -44,6 +77,14 @@ var Utils = Utils || {};
         request.send(null);
     };
     Utils.loadTemplate = loadTemplate;
+
+    var stringEndsWith = function(string, searchString) {
+        var position = string.length - searchString.length;
+        var lastIndex = string.toString().indexOf(searchString, position);
+
+        return lastIndex !== -1 && lastIndex === position;
+    };
+    Utils.stringEndsWith = stringEndsWith;
 
     /**
      * Utils.Version class
@@ -287,7 +328,7 @@ var Utils = Utils || {};
     };
 
     Step.prototype.getContext = function() {
-        var context = new Utils.Context(this._data.context).copy();
+        var context = new Utils.Context(this._data).copy();
 
         if (this.selection) {
             context.data[this.selection.name] = true;
@@ -721,6 +762,15 @@ var Utils = Utils || {};
 
 /* Main function */
 (function(global) {
+    var BUILD_SERVICE_JSON_URL = 'http://software.opensuse.org/download.json?project=home:kamilprusko&package=gnome-pomodoro';
+    var PACKAGE_LABELS = {
+        '_i386.deb':   '32 bit .deb',
+        '_amd64.deb':  '64 bit .deb',
+        '.i586.rpm':   '32 bit .rpm',
+        '.i686.rpm':   '32 bit .rpm',
+        '.x86_64.rpm': '64 bit .rpm'
+    };
+
     var downloadWidget = null;
     var downloadWidgetData = null;
     var downloadWidgetTemplate = null;
@@ -759,6 +809,20 @@ var Utils = Utils || {};
                     }
                 });
 
+                /* Custom data passed to the template */
+
+                var gnome = context.data.gnome;
+                if (gnome) {
+                    context.data.gnome = new Utils.Version(gnome);
+                }
+
+                var repo = window.packages && window.packages[step.parent.name]
+                            ? window.packages[step.parent.name][step.name]
+                            : null;
+                if (repo) {
+                    context.update(repo);
+                }
+
                 step.element.innerHTML = downloadWidgetTemplate.render(context.data);
 
                 $(step.element).find('section:not(:first) .button-box .button-default').removeClass('button-default');
@@ -782,5 +846,76 @@ var Utils = Utils || {};
             if (downloadWidgetData && downloadWidgetTemplate) {
                 createDownloadWidget();
             }
+        });
+
+    /* Load packages data from Open Build Service, don't require it while building download widget */
+    Utils.loadJSONP(BUILD_SERVICE_JSON_URL,
+        function(data) {
+            var packages = {};
+
+            function formatRelease(repoId) {
+                return repoId.split('_').slice(1).join('-').toLowerCase();
+            }
+
+            function formatPackages(urls) {
+                urls = urls || [];
+
+                if (!Array.isArray(urls)) {
+                    var urlsArray = [];
+
+                    for (var key in urls) {  // recieved object is formatted as {filename => url}
+                        urlsArray.push(urls[key]);
+                    }
+
+                    urls = urlsArray;
+                }
+
+                urls.sort();
+
+                var packages = [];
+
+                for (var i=0; i < urls.length; i++) {
+                    var url = urls[i];
+                    for (var suffix in PACKAGE_LABELS) {
+                        if (Utils.stringEndsWith(url, suffix)) {
+                            packages.push({
+                                'label': PACKAGE_LABELS[suffix],
+                                'url': url
+                            });
+                        }
+                    }
+                }
+
+                packages.sort(
+                    function(a, b) {
+                        if (a.label < b.label)
+                            return -1;
+
+                        if (a.label > b.label)
+                            return 1;
+
+                        return 0;
+                    });
+
+                return packages;
+            }
+
+            for (var repoId in data) {
+                var repo = data[repoId];
+                var distro = repo.flavor.toLowerCase();
+                var release = formatRelease(repoId);
+
+                if (!packages[distro]) {
+                    packages[distro] = {};
+                }
+
+                packages[distro][release] = {
+                    'packages': formatPackages(repo['package']),
+                    'repository': repo.repo,
+                    'ymp': repo.ymp
+                };
+            }
+
+            window.packages = packages;
         });
 })(this);
