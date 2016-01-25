@@ -775,6 +775,15 @@ var Utils = Utils || {};
     var downloadWidgetData = null;
     var downloadWidgetTemplate = null;
 
+    $(".scroll").on('click',
+        function(event) {
+            event.preventDefault();
+                $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    },
+                    900);
+        });
+
     $('#screenshots').owlCarousel({
         items: 1,
         autoWidth: true,
