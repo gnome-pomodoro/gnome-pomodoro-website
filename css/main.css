@@ -832,6 +832,86 @@ h2 {
     margin-top: 2rem;
 }
 
+.screenshot {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.screenshot-notification {
+    width: 800px;
+    height: 500px;
+    background-image: url(../images/screenshot-notification.png);
+    background-position: top center;
+}
+
+.screenshot-indicator {
+    width: 600px;
+    height: 500px;
+    background-image: url(../images/screenshot-indicator.png);
+    background-position: top right;
+}
+
+.screenshot-screen-notification {
+    width: 800px;
+    height: 500px;
+    background-image: url(../images/screenshot-screen-notification.png);
+}
+
+.screenshot-preferences {
+    width: 1000px;
+    height: 850px;
+    background-image: url(../images/screenshot-preferences.png);
+}
+
+@media (max-width: 599px)
+{
+    .screenshot-notification {
+        width: 400px;
+        height: 300px;
+        background-size: 250%;
+    }
+    .screenshot-indicator {
+        width: 400px;
+        height: 300px;
+        background-size: 250%;
+    }
+    .screenshot-screen-notification {
+        width: 400px;
+        height: 300px;
+        background-size: 250%;
+    }
+    .screenshot-preferences {
+        width: 400px;
+        height: 500px;
+        background-size: 250%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px)
+{
+    .screenshot-notification {
+        width: 600px;
+        height: 400px;
+        background-size: 300%;
+    }
+    .screenshot-indicator {
+        width: 600px;
+        height: 400px;
+        background-size: 300%;
+    }
+    .screenshot-screen-notification {
+        width: 600px;
+        height: 400px;
+        background-size: 300%;
+    }
+    .screenshot-preferences {
+        width: 600px;
+        height: 800px;
+        background-size: 300%;
+    }
+}
+
+
 #download {
     padding-top: 5em;
     padding-bottom: 3em;
