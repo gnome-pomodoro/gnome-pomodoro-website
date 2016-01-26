@@ -17,6 +17,40 @@
     src: url(../fonts/pacifico/Pacifico.ttf);
 }
 
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Open Sans Light"), local("OpenSans-Light"), url(http://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("OpenSans"), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url(http://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url(http://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Open Sans Extrabold"), local("OpenSans-Extrabold"), url(http://fonts.gstatic.com/s/opensans/v13/EInbV5DfGHOiMmvb1Xr-hugdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
+}
 
 /*
  * Base
@@ -38,10 +72,10 @@ html {
 }
 
 body {
-    font-family: Cantarell, "Open Sans", Asap, Helvetica;
+    font-family: "Open Sans", Asap, Helvetica;
     font-size: 1rem;
     line-height: 1.4em;
-    color: rgb(110, 110, 110);
+    color: rgb(90, 90, 90);
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
 
@@ -57,7 +91,7 @@ a {
 a:hover,
 a:focus {
     color: rgb(18, 156, 244);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 
@@ -135,11 +169,7 @@ section:first-child h4 {
 @media (min-width: 640px)
 {
     h2 {
-        font-size: 2.3rem;
-    }
-
-    header h2 + p {
-/*        font-size: 1.1rem;*/
+        font-size: 2.1rem;
     }
 }
 
@@ -261,7 +291,7 @@ ol.bash {
     list-style: none;
     padding: 0.5rem;
     font-family: "Monospace Regular", "Courier New", monospace;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     word-wrap: normal;
     color: #555;
     background-color: rgb(245, 245, 245);
@@ -291,15 +321,11 @@ p + ol.bash {
  * Layout
  */
 #page {
-    width: 90%;
-    max-width: 700px;
-    margin: 0 auto;
     margin-bottom: 50px;
 }
 
 #page > section {
-    padding-top: 3.0em;
-    margin-top: 1px;  /* skip section separators for eg. /#features */
+    overflow: hidden;
 }
 
 #page > section:after {
@@ -307,7 +333,6 @@ p + ol.bash {
     display: block;
     margin-top: 3.0em;
     width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #page > section h2 {
@@ -319,6 +344,9 @@ p + ol.bash {
     padding-top: 2.0em;
 }
 
+h2 {
+    opacity: 0.8;
+}
 
 /*
  * Header
@@ -390,7 +418,7 @@ p + ol.bash {
 }
 
 #header nav a:hover {
-    background: #3CB3F4;
+    background: #129CF4;
     color: white;
 }
 
@@ -431,10 +459,10 @@ p + ol.bash {
 
 /* larger header to fill space */
 @media (min-width: 900px),
-       (min-height: 900px)
+       (min-height: 600px)
 {
     #header {
-        min-height: 600px;
+        height: 900px;
     }
 
     #header header {
@@ -493,24 +521,14 @@ footer {
     font-weight: 400;
     text-align: center;
 
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    border-radius: 5px;
+    border: 0px;
+    border-radius: 4px;
 
     cursor: pointer;
 }
 
-.button:hover {
-    box-shadow: 0 1.0px 6px rgba(0, 0, 0, 0.2);
-    color: rgba(0, 0, 0, 0.8);
-}
-
-.button:hover span {
-    color: black;
-    opacity: 0.8;
-}
-
 .button:active {
-    box-shadow: 0 1.0px 6px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset;
 }
 
 .button:focus,
@@ -523,21 +541,21 @@ footer {
 .button.button-default {
     color: white;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
-    background: linear-gradient(to bottom, #129cf4 0, #0191e1 100%);
-    border-color: transparent;
+    background: #129CF4;
+    border: 0;
 }
 
 .button.button-default:hover {
-    background: linear-gradient(to bottom, #2caaf6 0, #009bf2 100%);
+    background: #21a9ff;
+}
+
+.button.button-default:active {
+    background: #129CF4;
 }
 
 .button.button-default:hover span {
     color: inherit;
     opacity: inherit;
-}
-
-.button.button-default:active {
-    background: linear-gradient(to bottom, #0d93d9 0, #0b92e5 100%); 
 }
 
 .button-box {
@@ -548,10 +566,12 @@ footer {
 
 .list-group-header {
     font-family: Asap, Cantarel, Helvetica;
+    font-size: 1.0rem;
     display: block;
-    font-weight: bold;
+    font-weight: normal;
     margin-left: 0.4em;
     margin-bottom: 1.0rem;
+    opacity: 0.3;
 }
 
 .list-group {
@@ -559,6 +579,7 @@ footer {
     padding: 0;
     margin: 0;
     margin-bottom: 0.5rem;
+    box-shadow: none;
 }
 
 .list-group-item {
@@ -568,9 +589,9 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     padding: 10px 30pt 10px 15px;
-    margin: 0 0 -1px 0;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 0 0 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0px; /* solid rgba(0, 0, 0, 0.1); */
     cursor: pointer;
 }
 
@@ -584,51 +605,43 @@ footer {
     border-bottom-right-radius: 4px;
 }
 
-.list-group-item:hover,
-.list-group-item.selected {
-    border-color: #111;
+.list-group-item:active {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset;
 }
 
-.list-group-item:after {
-    content: "❯";
-    color: #111;
-    font-size: 10pt;
-
+.list-group-item.active {
+    position: relative;
+    background-color: rgb(0, 200, 0, 0.3);
+    background-image: none;
+    overflow: visible;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-right: 5px;
+}
+.list-group-item.active:after {
+    content: "";
     position: absolute;
     display: inline-block;
-    right: 10pt;
-    top: 50%;
 
-    opacity: 0.0;
+    top: 0px;
+    bottom: 0px;
+    right: -14px;
+    width: 14px;
 
-    -webkit-transform: translate(-5pt, -60%);
-    transform: translate(-5pt, -60%);
-
-    -webkit-transition: opacity 0.5s ease-out;
-            transition: opacity 0.5s ease-out;
-
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-            transition:         transform 0.3s ease-out;
-}
-
-.list-group-item.selected:after {
-    color: white;
-
-    opacity: 1.0;
-
-    -webkit-transform: translate(0, -60%);
-            transform: translate(0, -60%);
+    background: url(../images/triangle.svg) no-repeat 0% 0%;;
+    background-size: 100% 100%;
 }
 
 .list-group-item:hover,
-.list-group-item.selected,
-.list-group-item.selected:hover {
-    background: rgb(20, 20, 20);
+.list-group-item:active,
+.list-group-item.active,
+.list-group-item.active:hover {
+    background: #129CF4;
+    background-image: none;
     color: white;
+    border-radius: 2px;
+    text-shadow: none;
 }
-
-
-/* FIXME START */
 
 .steps-widget {
     position: relative;
@@ -672,7 +685,7 @@ footer {
 .steps-widget .step .step-children > .step {
     position: absolute;
     top: 0;
-    left: 20px; /* step spacing */
+    left: 30px; /* step spacing */
 }
 
 .steps-widget .step .step-contents,
@@ -684,7 +697,8 @@ footer {
             transition: opacity 200ms ease-in-out;
 }
 
-.hidden {
+/* bootstrap already defines .hidden with display:none !important, arrgh! */
+.hidden-sm {
     opacity: 0.0 !important;
     /* visibility: hidden !important;*/
 
@@ -703,9 +717,6 @@ footer {
 .space {
     height: 1.0em;
 }
-
-
-/* FIXME END */
 
 
 /*
@@ -728,8 +739,40 @@ footer {
  * Hacks and Exceptions
  */
 
-#about h2 {
-    padding-top: 1.0em;
+h2 {
+    margin-top: 1.0rem;
+    margin-bottom: 3.0rem;
+}
+
+#about {
+    padding-top: 5em;
+    padding-bottom: 3em;
+}
+
+#about .container {
+}
+
+#about .about-left {
+    text-align: center;
+}
+
+#about .gnome-pomodoro-icon {
+    display: inline-block;
+    width: 256px;
+    height: 256px;
+    background-image: url(../images/icons/256x256.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+#features {
+    background: #F5F5F5;
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+
+#features .row {
+    margin: 2.0rem;
 }
 
 #contribute .row,
@@ -752,6 +795,10 @@ footer {
 
 @media (max-width: 639px)
 {
+    #about .gnome-pomodoro-icon {
+        display: none;
+    }
+
     #contribute .row,
     #features .row {
         -webkit-flex-direction: column;
@@ -762,11 +809,6 @@ footer {
     #features .column:not(:first-child) {
         margin-top: 3rem;
     }
-}
-
-.list-group-header {
-    font-size: 1.1rem;
-    font-weight: bold;
 }
 
 #contribute ul,
@@ -784,6 +826,22 @@ footer {
 
 #screenshots {
     margin: 2rem 0;
+}
+
+#screenshots .owl-controls {
+    margin-top: 2rem;
+}
+
+#download {
+    padding-top: 5em;
+    padding-bottom: 3em;
+    background-color: #333333;
+    color: #fff;
+}
+
+#download h2 {
+    color: #fff;
+    opacity: 1.0;
 }
 
 #download-back-button {
@@ -804,8 +862,7 @@ footer {
 #download .steps-widget .steps-back-button {
     min-width: 3.1em;
     white-space: nowrap;
-    top: -0.9em;
-    margin: 0;
+    margin-left: 15px;
 }
 
 #download .steps-widget .steps-back-button:before {
@@ -820,10 +877,6 @@ footer {
     display: none;
 }
 
-#download .list-group-item {
-/*    width: 300px;*/
-}
-
 #download header {
     margin-bottom: 2rem;
 }
@@ -834,7 +887,41 @@ footer {
 
 #download .step-last {
     text-align: left;
-    padding-top: 80px;
+    padding-top: 100px;
+    margin-left: 10px;
+}
+
+#download .bash {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#download .button {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#download .button:hover {
+    background: #129CF4;
+    color: white;
+}
+
+#download .download-icon span {
+    background-image: url("../images/document-save-symbolic-white.png");
+}
+
+#download h4,
+#download li,
+#download a {
+    color: white;
+}
+
+#contribute {
+    border-bottom: 1px solid #eee;
+}
+
+#contribute,
+#feedback {
+    padding-top: 5em;
+    padding-bottom: 3em;
 }
 
 
@@ -854,17 +941,17 @@ footer {
  * Owl Carousel Theme
  */
 .owl-carousel .owl-stage-outer {
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 .owl-carousel .owl-item:first-child div {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .owl-carousel .owl-item:last-child div {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .owl-carousel .owl-item {
@@ -897,4 +984,3 @@ footer {
 .owl-carousel .owl-dot.active span {
     background-color: #333;
 }
-

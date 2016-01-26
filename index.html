@@ -14,13 +14,14 @@
     <meta property="og:title" content="Pomodoro Timer for GNOME" />
     <meta property="og:image" content="images/icons/256x256.png" />
 
+    <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="libs/owl/owl-carousel.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <!-- <link rel="icon" href="images/icons/gnome-pomodoro.ico" sizes="16x16 32x32 48x48 64x64 128x128 192x192 256x256" type="image/vnd.microsoft.icon"> -->
 
     <script src="libs/jquery/jquery.min.js" defer></script>
     <script src="libs/jsrender/jsrender.min.js" defer></script>
-    <script src="libs/owl/owl-carousel.js" defer></script>
+    <script src="libs/owl/owl-carousel.min.js" defer></script>
 
     <script src="js/signals.js" defer></script>
     <script src="js/main.js" defer></script>
@@ -53,115 +54,134 @@
         <div id="page">
 
             <section id="about">
-                <header>
-                    <h2>About</h2>
-                </header>
+                <div class="container">
+                    <header>
+                        <h2>About</h2>
+                    </header>
 
-                <p>This <a href="http://www.gnome.org/" rel="nofollow">GNOME</a> app helps to manage time according to <a href="http://en.wikipedia.org/wiki/Pomodoro_technique" rel="nofollow">Pomodoro Technique</a>. It intends to improve productivity and quality of work by reminding you to take short breaks.</p>
+                    <div class="col-md-4 about-left">
+                        <span class="gnome-pomodoro-icon"></span>
+                    </div>
 
-                <dl>
-                    <dt>Pomodoro Technique is based on two principles:</dt>
-                    <dd>
-                        <ul>
-                            <li>focusing on work for limited time, about half an hour,</li>
-                            <li>clearing your mind during breaks.</li>
-                        </ul>
-                    </dd>
-                </dl>
+                    <div class="col-md-6 about-right">
+                        <p>This <a href="http://www.gnome.org/" rel="nofollow">GNOME</a> app helps to manage time according to <a href="http://en.wikipedia.org/wiki/Pomodoro_technique" rel="nofollow">Pomodoro Technique</a>. It intends to improve productivity and quality of work by reminding you to take short breaks.</p>
 
-                <p>This workflow can improve focus, physical health and mental agility depending on how you spend your breaks and how strictly you follow the routine.</p>
+                        <dl>
+                            <dt>Pomodoro Technique is based on two principles:</dt>
+                            <dd>
+                                <ul>
+                                    <li>focusing on work for limited time, about half an hour,</li>
+                                    <li>clearing your mind during breaks.</li>
+                                </ul>
+                            </dd>
+                        </dl>
 
-                <!--<p>If you’re curious about the name —&nbsp;<em>Pomodoro</em> comes from a kitchen timer, which can be used to keep track of time.</p>-->
+                        <p>This workflow can improve focus, physical health and mental agility depending on how you spend your breaks and how strictly you follow the routine.</p>
 
-                <p>You can read more about Pomodoro Technique <a href="http://www.pomodorotechnique.com/book/" rel="nofollow">here</a>.</p>
+                        <!--<p>If you’re curious about the name —&nbsp;<em>Pomodoro</em> comes from a kitchen timer, which can be used to keep track of time.</p>-->
 
+                        <!-- <p>You can read more about Pomodoro Technique <a href="http://www.pomodorotechnique.com/book/" rel="nofollow">here</a>.</p> -->
+                    </div>
+                </div>
             </section>
 
             <section id="features">
-                <header>
-                    <h2>Features</h2>
-                </header>
+                <div class="container">
+                    <header>
+                        <h2>Features</h2>
+                    </header>
 
-                <div id="screenshots" class="owl-carousel">
-                    <div style="width: 700px; height: 500px; background: #888 url(images/screenshot-notification.png) 50% 0%"><!-- data-src-retina="" --></div>
-                    <div style="width: 700px; height: 500px; background: #888 url(images/screenshot-indicator.png) 100% 0%;"><!-- data-src-retina="" --></div>
-                    <div style="width: 700px; height: 500px; background: #888 url(images/screenshot-screen-notification.png) 50% 50%"><!-- data-src-retina="" --></div>
-                    <div style="width: 700px; height: 500px; background: #888 url(images/screenshot-preferences.png) 50% 30%"><!-- data-src-retina="" --></div>
-                </div>
-
-                <div class="row">
-                    <div class="column">
-                        <h3>Pomodoro Timer</h3>
-                        <ul class="features-list">
-                            <li>Customizability</li>
-                            <!-- <li>Shorten/lenghten break</li> -->
-                            <li>Postpone pomodoro until active</li>
-                            <li>Break reminders</li>
-                            <li>Hotkey</li>
-                        </ul>
-                    </div>
-
-                    <div class="column">
-                        <h3>Desktop Integration</h3>
-                        <ul class="features-list">
-                            <li>Indicator</li>
-                            <li>Fullscreen notifications</li>
-                            <li>Lock screen notifications</li>
-                            <li>Hiding notifications during pomodoro</li>
-                            <li>IM status control</li>
-                        </ul>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h3>Timer</h3>
+                            <ul class="features-list">
+                                <li>Customizability</li>
+                                <li>Reminders</li>
+                                <li>Keyboard Shortcut</li>
+                                <!-- <li>Statistics</li> -->
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h3>Desktop Integration</h3>
+                            <ul class="features-list">
+                                <li>Indicator</li>
+                                <li>Fullscreen Notifications</li>
+                                <li>Presence Awareness</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <div id="screenshots" class="container-fluid owl-carousel">
+                    <div style="width: 800px; height: 500px; background: #888 url(images/screenshot-notification.png) no-repeat 50% 0%"><!-- data-src-retina="" --></div>
+                    <div style="width: 600px; height: 500px; background: #888 url(images/screenshot-indicator.png) no-repeat 100% 0%;"><!-- data-src-retina="" --></div>
+                    <div style="width: 800px; height: 500px; background: #888 url(images/screenshot-screen-notification.png) no-repeat 50% 50%"><!-- data-src-retina="" --></div>
+                    <div style="width: 1000px; height: 850px; background: #888 url(images/screenshot-preferences.png) no-repeat 50% 50%"><!-- data-src-retina="" --></div>
+                </div>
             </section>
 
             <section id="download">
-                <header>
-                    <h2>Download</h2>
-                </header>
+                <div class="container">
+                    <header>
+                        <h2>Download</h2>
+                    </header>
 
-                <div id="download-widget" class="steps-widget">
-                    <div id="download-steps" class="steps steps-wrapper">
+                    <div id="download-widget" class="col-md-8 col-md-offset-2 steps-widget">
+                        <div id="download-steps" class="steps steps-wrapper">
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section id="contribute">
-                <header>
-                    <h2>Contribute</h2>
-                </header>
+                <div class="container">
+                    <div class="col-md-8 col-md-offset-2">
+                        <header>
+                            <h2>Contribute</h2>
+                        </header>
 
-                <p>If you want to contribute, it would be really awesome to <a href="https://github.com/codito/gnome-pomodoro/wiki/Translating">add or&nbsp;improve translations</a>, or&nbsp;to add support for other desktops.</p>
+                        <p>If you want to contribute, it would be really awesome to <a href="https://github.com/codito/gnome-pomodoro/wiki/Translating">add or&nbsp;improve translations</a>, or&nbsp;to add support for other desktops.</p>
 
-                <footer>
-                    <address class="button-box">
-                        <a href="https://github.com/codito/gnome-pomodoro" class="button button-default"><span>View on Github</span></a>
-                    </address>
-                </footer>
+                        <footer>
+                            <address class="button-box">
+                                <a href="https://github.com/codito/gnome-pomodoro" class="button button-default"><span>View on Github</span></a>
+                            </address>
+                        </footer>
+                    </div>
+                </div>
             </section>
 
             <section id="feedback">
-                <header>
-                    <h2>Feedback</h2>
-                </header>
+                <div class="container">
+                    <div class="col-md-8 col-md-offset-2">
+                        <header>
+                            <h2>Feedback</h2>
+                        </header>
 
-                <div id="disqus_thread"></div>
-                <script type="text/javascript">
-                    var disqus_shortname = 'gnomepomodoro';
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            var disqus_shortname = 'gnomepomodoro';
 
-                    (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                            (function() {
+                                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+                    </div>
+                </div>
             </section>
 
             <footer>
-                <p class="disclaimer">This project is not affiliated with, authorized by, sponsored by, or otherwise approved by GNOME&nbsp;Foundation and/or the Pomodoro&nbsp;Technique®. The&nbsp;GNOME logo and GNOME name are registered trademarks or trademarks of GNOME&nbsp;Foundation in the United&nbsp;States or other countries. The&nbsp;Pomodoro Technique® and Pomodoro™ are registered trademarks of Francesco&nbsp;Cirillo.</p>
+                <div class="container">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p class="disclaimer">This project is not affiliated with, authorized by, sponsored by, or otherwise approved by GNOME&nbsp;Foundation and/or the Pomodoro&nbsp;Technique®. The&nbsp;GNOME logo and GNOME name are registered trademarks or trademarks of GNOME&nbsp;Foundation in the United&nbsp;States or other countries. The&nbsp;Pomodoro Technique® and Pomodoro™ are registered trademarks of Francesco&nbsp;Cirillo.</p>
 
-                <p class="copyright">Made with all the love in the world by&nbsp;<a href="http://kamilprusko.org">Kamil&nbsp;Prusko</a></p>
+                        <p class="copyright">Made with all the love in the world by&nbsp;<a href="http://kamilprusko.org">Kamil&nbsp;Prusko</a></p>
+                    </div>
+                </div>
             </footer>
 
         </div>

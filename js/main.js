@@ -277,7 +277,7 @@ var Utils = Utils || {};
     StepChoice.prototype.select = function() {
         if (!this.selected) {
             this.selected = true;
-            this.element.classList.add('selected');
+            this.element.classList.add('active');
 
             this.emit('select');
         }
@@ -286,7 +286,7 @@ var Utils = Utils || {};
     StepChoice.prototype.deselect = function() {
         if (this.selected) {
             this.selected = false;
-            this.element.classList.remove('selected');
+            this.element.classList.remove('active');
 
             this.emit('deselect');
         }
@@ -380,7 +380,7 @@ var Utils = Utils || {};
 
     Step.prototype.createElement = function() {
         var element = document.createElement('div');
-        element.classList.add('step', 'hidden');
+        element.classList.add('step', 'hidden-sm');
 
         /* create choices */
         var data = this._data;
@@ -442,7 +442,7 @@ var Utils = Utils || {};
 
     Step.prototype.showChoices = function() {
         if (this._contentsContainer) {
-            this._contentsContainer.classList.remove('hidden');
+            this._contentsContainer.classList.remove('hidden-sm');
 
             this.mapped = true;
         }
@@ -450,7 +450,7 @@ var Utils = Utils || {};
 
     Step.prototype.hideChoices = function() {
         if (this._contentsContainer) {
-            this._contentsContainer.classList.add('hidden');
+            this._contentsContainer.classList.add('hidden-sm-sm');
 
             this.mapped = false;
         }
@@ -464,7 +464,7 @@ var Utils = Utils || {};
         else
             this.emit('update', this);
 
-        this.element.classList.remove('hidden');
+        this.element.classList.remove('hidden-sm');
 
         this.emit('show');
 
@@ -474,7 +474,7 @@ var Utils = Utils || {};
     Step.prototype.hide = function() {
         this.mapped = false;
 
-        this.element.classList.add('hidden');
+        this.element.classList.add('hidden-sm');
 
         this.emit('hide');
 
@@ -603,7 +603,7 @@ var Utils = Utils || {};
     StepChooser.prototype._createBackButton = function() {
         var element = document.createElement('a');
         element.textContent = '';
-        element.classList.add('button', 'steps-back-button', 'hidden');
+        element.classList.add('button', 'steps-back-button', 'hidden-sm');
 
         element.addEventListener('click',
             function() {
@@ -730,10 +730,10 @@ var Utils = Utils || {};
             }
 
             this.backButton.innerHTML = labels.join(' ');
-            this.backButton.classList.remove('hidden');
+            this.backButton.classList.remove('hidden-sm');
         }
         else {
-            this.backButton.classList.add('hidden');
+            this.backButton.classList.add('hidden-sm');
         }
     },
 
@@ -787,9 +787,13 @@ var Utils = Utils || {};
     $('#screenshots').owlCarousel({
         items: 1,
         autoWidth: true,
+        autoHeight : true,
+        center: true,
         dots: true,
-        lazyLoad: true,
+        // lazyLoad: true,
         smartSpeed: 250,
+        autoHeight : true,
+        transitionStyle: "fade",
         responsiveBaseElement: $('#screenshots')
     });
 
