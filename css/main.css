@@ -731,7 +731,7 @@ footer {
 }
 
 .button-default.download-icon span {
-    background-image: url(../images/document-save-symbolic-white.png) !important;
+    background-image: url(../images/document-save-symbolic-white.svg) !important;
 }
 
 
@@ -905,7 +905,7 @@ h2 {
 }
 
 #download .download-icon span {
-    background-image: url("../images/document-save-symbolic-white.png");
+    background-image: url("../images/document-save-symbolic-white.svg");
 }
 
 #download h4,
