@@ -3,7 +3,7 @@
     "linux": {
       "children": {
         "arch": {
-          "gnome": "3.18",
+          "gnome": "3.20",
           "label": "Arch"
         },
         "debian": {
