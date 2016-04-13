@@ -316,6 +316,19 @@ p + ol.bash {
     margin-bottom: 2.0rem;
 }
 
+/*
+ * Bootstrap Theme
+ */
+.container {
+    padding: 0;
+}
+
+@media (max-width: 425px)
+{
+    .container-fluid {
+        padding: 0;
+    }
+}
 
 /*
  * Layout
@@ -376,6 +389,7 @@ h2 {
     top: 55%;
     left: 50%;
     width: 100%;
+    padding: 10px;
     -webkit-transform: translate(-50%, -45%);
             transform: translate(-50%, -45%);
 }
@@ -463,10 +477,6 @@ h2 {
 {
     #header {
         height: 900px;
-    }
-
-    #header header {
-        width: 900px;
     }
 
     #header h1 {
@@ -749,13 +759,6 @@ h2 {
     padding-bottom: 3em;
 }
 
-#about .container {
-}
-
-#about .about-left {
-    text-align: center;
-}
-
 #about .gnome-pomodoro-icon {
     display: inline-block;
     width: 256px;
@@ -771,12 +774,7 @@ h2 {
     padding-bottom: 2em;
 }
 
-#features .row {
-    margin: 2.0rem;
-}
-
-#contribute .row,
-#features .row {
+.row {
     display: -webkit-flex;
     display:         flex;
 
@@ -785,24 +783,26 @@ h2 {
 
     -webkit-justify-content: center;
             justify-content: center;
+
+    margin: 2.0rem 0;
 }
 
-#contribute .row .column,
-#features .row .column {
+.row .column {
     width: auto;
     padding: 0 1rem;
 }
 
-@media (max-width: 639px)
+@media (max-width: 425px)
 {
-    #about .gnome-pomodoro-icon {
-        display: none;
-    }
-
-    #contribute .row,
-    #features .row {
+    .row {
         -webkit-flex-direction: column;
                 flex-direction: column;
+    }
+    .row > * {
+        margin-top: 30px;
+    }
+    .row > *:first-child {
+        margin-top: 0;
     }
 
     #contribute .column:not(:first-child),
@@ -863,27 +863,43 @@ h2 {
     background-image: url(../images/screenshot-preferences.png);
 }
 
+@media (max-width: 425px)
+{
+    .container-fluid {
+        padding: 0;
+    }
+}
+
 @media (max-width: 599px)
 {
+    #features,
+    #screenshots {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    #features:after {
+        display: none !important;
+    }
+
     .screenshot-notification {
-        width: 400px;
-        height: 300px;
-        background-size: 250%;
+        width: 100vw;
+        height: 70vw;
+        background-size: 300%;
     }
     .screenshot-indicator {
-        width: 400px;
-        height: 300px;
-        background-size: 250%;
+        width: 100vw;
+        height: 70vw;
+        background-size: 300%;
     }
     .screenshot-screen-notification {
-        width: 400px;
-        height: 300px;
-        background-size: 250%;
+        width: 100vw;
+        height: 70vw;
+        background-size: 300%;
     }
     .screenshot-preferences {
-        width: 400px;
-        height: 500px;
-        background-size: 250%;
+        width: 100vw;
+        height: 140vw;
+        background-size: 300%;
     }
 }
 
@@ -1064,3 +1080,21 @@ h2 {
 .owl-carousel .owl-dot.active span {
     background-color: #333;
 }
+
+@media (max-width: 425px)
+{
+    .owl-carousel .owl-stage-outer,
+    .owl-carousel .owl-item:first-child div,
+    .owl-carousel .owl-item:last-child div {
+        border-radius: 0;
+    }
+
+    #screenshots .owl-controls {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        -webkit-transform: translate(-50%, 0);
+                transform: translate(-50%, 0);
+    }
+}
+
