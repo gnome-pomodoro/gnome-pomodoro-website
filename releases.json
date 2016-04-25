@@ -131,6 +131,10 @@
             "15.10": {
               "gnome": "3.16",
               "label": "15.10 <em>(Wily Werewolf)</em>"
+            },
+            "16.04": {
+              "gnome": "3.18",
+              "label": "16.04 LTS <em>(Xenial Xerus)</em>"
             }
           },
           "childrenLabel": "Release",
