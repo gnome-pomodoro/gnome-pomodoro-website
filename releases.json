@@ -36,6 +36,9 @@
             },
             "23": {
               "gnome": "3.18"
+            },
+            "24": {
+              "gnome": "3.20"
             }
           },
           "childrenLabel": "Release",
