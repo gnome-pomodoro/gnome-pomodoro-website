@@ -1005,12 +1005,13 @@ h2 {
 }
 
 #download .alert-warning {
-    color: #eeeeee;
-    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    background: none;
     border: none;
     border-left: 4px solid #1A9DF2;
     border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
+    padding: 0px 20px;
 }
 
 #download h4,
