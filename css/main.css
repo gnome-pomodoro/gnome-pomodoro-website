@@ -1004,18 +1004,13 @@ h2 {
     background-image: url("../images/document-save-symbolic-white.svg");
 }
 
-#download .warning-icon {
-    position: relative;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-image: url("../images/software-update-urgent-symbolic.svg");
-}
-
 #download .alert-warning {
-    color: #222;
-    background-color: rgb(255, 255, 255);
+    color: #eeeeee;
+    background-color: rgba(0, 0, 0, 0.2);
     border: none;
+    border-left: 4px solid #1A9DF2;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
 }
 
 #download h4,

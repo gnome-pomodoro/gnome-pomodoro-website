@@ -2,7 +2,7 @@
     <!-- Install from distro repos -->
 
     {{if lt(gnome, "3.16") }}
-        <div class="alert alert-warning" role="alert"><span class="warning-icon"></span> Available version supports only GNOME Shell. Support for Unity, Mate and XFCE is available for newer distro releases.</div>
+        <div class="alert alert-warning" role="alert">Available version supports only GNOME Shell. Support for Unity, Mate and XFCE is available for newer distro releases.</div>
     {{/if}}
 
     {{if arch }}
@@ -51,7 +51,7 @@
 
     {{if ubuntu && gte(ubuntu, "14.10") }}
         {{if gte(gnome, "3.16") }}
-            <div class="alert alert-warning" role="alert"><span class="warning-icon"></span> To get support for Unity, Mate or XFCE please install packages from this website. Packages in the repos haven't been updated.</div>
+            <div class="alert alert-warning" role="alert">To get support for Unity, Mate or XFCE please install packages from this website. Packages in the repos haven't been updated.</div>
         {{/if}}
 
         <section>
