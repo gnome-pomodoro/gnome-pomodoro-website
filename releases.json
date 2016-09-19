@@ -141,6 +141,10 @@
             "16.04": {
               "gnome": "3.18",
               "label": "16.04 LTS <em>(Xenial Xerus)</em>"
+            },
+            "16.10": {
+              "gnome": "3.22",
+              "label": "16.10 <em>(Yakkety Yak)</em>"
             }
           },
           "childrenLabel": "Release",
