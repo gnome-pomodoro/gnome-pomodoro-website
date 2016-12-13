@@ -39,6 +39,9 @@
             },
             "24": {
               "gnome": "3.20"
+            },
+            "25": {
+              "gnome": "3.22"
             }
           },
           "childrenLabel": "Release",
@@ -67,7 +70,7 @@
               "label": "Leap 42.1"
             },
             "tumbleweed": {
-              "gnome": "3.18",
+              "gnome": "3.20",
               "hidePackages": true,
               "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE%3AFactory&query=gnome-pomodoro",
               "label": "Tumbleweed"
