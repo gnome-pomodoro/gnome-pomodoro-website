@@ -21,9 +21,7 @@
  */
 
 
-var Signals = {};
-
-Signals._connect = function(name, callback) {
+function _connect(name, callback) {
     // be paranoid about callback arg since we'd start to throw from emit()
     // if it was messed up
     if (typeof(callback) != 'function')
@@ -50,7 +48,7 @@ Signals._connect = function(name, callback) {
     return id;
 };
 
-Signals._disconnect = function(id) {
+function _disconnect(id) {
     if ('_signalConnections' in this) {
         var i;
         var length = this._signalConnections.length;
@@ -71,7 +69,7 @@ Signals._disconnect = function(id) {
     throw new Error("No signal connection " + id + " found");
 };
 
-Signals._disconnectAll = function() {
+function _disconnectAll() {
     if ('_signalConnections' in this) {
         while (this._signalConnections.length > 0) {
             Signals._disconnect.call(this, this._signalConnections[0].id);
@@ -79,7 +77,7 @@ Signals._disconnectAll = function() {
     }
 };
 
-Signals._emit = function(name /* , arg1, arg2 */) {
+function _emit(name /* , arg1, arg2 */) {
     // may not be any signal handlers at all, if not then return
     if (!('_signalConnections' in this))
         return;
@@ -134,10 +132,13 @@ Signals._emit = function(name /* , arg1, arg2 */) {
     }
 };
 
-
-Signals.addSignalMethods = function(proto) {
-    proto.connect = Signals._connect;
-    proto.disconnect = Signals._disconnect;
-    proto.emit = Signals._emit;
-    proto.disconnectAll = Signals._disconnectAll;
+var Signals = {
+    addSignalMethods: function(proto) {
+        proto.connect = _connect;
+        proto.disconnect = _disconnect;
+        proto.emit = _emit;
+        proto.disconnectAll = _disconnectAll;
+    }
 };
+
+export default Signals;
