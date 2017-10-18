@@ -877,7 +877,7 @@ var Utils = Utils || {};
                     var urlsArray = [];
 
                     for (var key in urls) {  // recieved object is formatted as {filename => url}
-                        urlsArray.push(urls[key]);
+                        urlsArray.push(formatURL(urls[key]));
                     }
 
                     urls = urlsArray;
@@ -893,7 +893,7 @@ var Utils = Utils || {};
                         if (Utils.stringEndsWith(url, suffix)) {
                             packages.push({
                                 'label': PACKAGE_LABELS[suffix],
-                                'url': url
+                                'url': formatURL(url)
                             });
                         }
                     }
@@ -913,6 +913,10 @@ var Utils = Utils || {};
                 return packages;
             }
 
+            function formatURL(url) {
+                return url ? url.replace('/home:kamilprusko/', '/home:/kamilprusko/') : url;
+            }
+
             for (var repoId in data) {
                 var repo = data[repoId];
                 var distro = repo.flavor.toLowerCase();
@@ -924,7 +928,7 @@ var Utils = Utils || {};
 
                 packages[distro][release] = {
                     'packages': formatPackages(repo['package']),
-                    'repository': repo.repo,
+                    'repository': formatURL(repo.repo),
                     'ymp': repo.ymp
                 };
             }
