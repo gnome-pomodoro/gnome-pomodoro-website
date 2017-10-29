@@ -159,11 +159,11 @@
                 "packages": [
                   {
                     "label": "32 bit .rpm",
-                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/i586/gnome-pomodoro-0.13.3-1.7.i586.rpm"
+                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/i586/gnome-pomodoro-0.13.3-1.8.i586.rpm"
                   },
                   {
                     "label": "64 bit .rpm",
-                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/x86_64/gnome-pomodoro-0.13.3-1.7.x86_64.rpm"
+                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Factory/x86_64/gnome-pomodoro-0.13.3-1.8.x86_64.rpm"
                   }
                 ],
                 "repository": "https://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Factory/"
@@ -194,11 +194,11 @@
                 "packages": [
                   {
                     "label": "32 bit .rpm",
-                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/i586/gnome-pomodoro-0.13.3-1.7.i586.rpm"
+                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/i586/gnome-pomodoro-0.13.3-1.8.i586.rpm"
                   },
                   {
                     "label": "64 bit .rpm",
-                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/x86_64/gnome-pomodoro-0.13.3-1.7.x86_64.rpm"
+                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/openSUSE_Tumbleweed/x86_64/gnome-pomodoro-0.13.3-1.8.x86_64.rpm"
                   }
                 ],
                 "repository": "https://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/"
@@ -343,6 +343,19 @@
               },
               "gnome": "3.22",
               "label": "17.04 <em>(Zesty Zapus)</em>"
+            },
+            "17.10": {
+              "context": {
+                "packages": [
+                  {
+                    "label": "64 bit .deb",
+                    "url": "https://download.opensuse.org/repositories/home:/kamilprusko/xUbuntu_17.10/amd64/gnome-pomodoro_0.13.3-1_amd64.deb"
+                  }
+                ],
+                "repository": "https://download.opensuse.org/repositories/home:kamilprusko/xUbuntu_17.10/"
+              },
+              "gnome": "3.26",
+              "label": "17.10 <em>(Artful Aardvark)</em>"
             }
           },
           "childrenLabel": "Release",
