@@ -110,6 +110,11 @@
                 "repository": "https://download.opensuse.org/repositories/home:kamilprusko/Fedora_26/"
               },
               "gnome": "3.24"
+            },
+            "27": {
+              "context": {
+              },
+              "gnome": "3.26"
             }
           },
           "childrenLabel": "Release",
