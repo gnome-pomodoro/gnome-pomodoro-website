@@ -111,7 +111,7 @@
 
             {{if (debian || ubuntu) && repository}}
                 <div class="space"></div>
-                <p>If you want to recieve updates, add the repository</p>
+                <p>If you want to receive updates, add the repository</p>
                 <ol class="bash">
                     <li>curl -L {{: repository }}Release.key | sudo apt-key add -</li>
                     <li>sudo sh -c "echo 'deb {{: repository }} /' >> /etc/apt/sources.list.d/gnome-pomodoro.list"</li>
@@ -122,7 +122,7 @@
 
             {{if opensuse && repository}}
                 <div class="space"></div>
-                <p>If you want to recieve updates, add the repository</p>
+                <p>If you want to receive updates, add the repository</p>
                 <ol class="bash">
                     <li>sudo zypper addrepo {{: repository }}home:kamilprusko.repo</li>
                     <li>sudo zypper refresh</li>
@@ -132,7 +132,7 @@
 
             {{if fedora && repository}}
                 <div class="space"></div>
-                <p>If you want to recieve updates, add the repository</p>
+                <p>If you want to receive updates, add the repository</p>
                 <ol class="bash">
                     <li>cd /etc/yum.repos.d/</li>
                     <li>sudo wget {{: repository }}home:kamilprusko.repo</li>
