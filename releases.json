@@ -134,6 +134,12 @@
                 "repository": "https://download.opensuse.org/repositories/home:kamilprusko/Fedora_28/"
               },
               "gnome": "3.28"
+            },
+            "29": {
+              "gnome": "3.30"
+            },
+            "30": {
+              "gnome": "3.32"
             }
           },
           "childrenLabel": "Release",
