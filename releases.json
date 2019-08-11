@@ -214,6 +214,10 @@
               "gnome": "3.26",
               "label": "Leap 15.0"
             },
+            "leap-15.1": {
+              "gnome": "3.26",
+              "label": "Leap 15.1"
+            },
             "leap-42.1": {
               "context": {
                 "packages": [
@@ -270,7 +274,7 @@
                 ],
                 "repository": "https://download.opensuse.org/repositories/home:kamilprusko/openSUSE_Tumbleweed/"
               },
-              "gnome": "3.24",
+              "gnome": "3.32",
               "hidePackages": true,
               "label": "Tumbleweed",
               "ymp": "http://software.opensuse.org/ymp/openSUSE:Factory/standard/gnome-pomodoro.ymp?base=openSUSE%3AFactory&query=gnome-pomodoro"
