@@ -450,6 +450,11 @@
               "context": {},
               "gnome": "3.30",
               "label": "18.10 <em>(Cosmic Cuttlefish)</em>"
+            },
+            "19.04": {
+              "context": {},
+              "gnome": "3.32",
+              "label": "19.04 <em>(Disco Dingo)</em>"
             }
           },
           "childrenLabel": "Release",
