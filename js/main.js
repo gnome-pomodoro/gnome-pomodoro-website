@@ -866,18 +866,6 @@ var Utils = Utils || {};
     var appDirectoryWidgetData = null;
     var appDirectoryWidgetTemplate = null; 
 
-    $('.app-directory-cover').owlCarousel({
-        items: 1,
-        autoWidth: true,
-        autoHeight : true,
-        center: true,
-        dots: true,
-        smartSpeed: 250,
-        transitionStyle: "fade",
-        responsiveBaseElement: $('.app-directory-cover')
-    });
-
-
     var createAppDirectoryWidget = function (){
         var element = document.getElementById('app-directory-widget');
         appDirectoryWidget = new Site.StepChooser(element, appDirectoryWidgetData);
