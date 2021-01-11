@@ -901,6 +901,7 @@ h2 {
         height: 140vw;
         background-size: 300%;
     }
+    
 }
 
 @media (min-width: 600px) and (max-width: 900px)
@@ -925,6 +926,8 @@ h2 {
         height: 800px;
         background-size: 300%;
     }
+    
+
 }
 
 
@@ -951,17 +954,17 @@ h2 {
     z-index: 2;
 }
 
-#download .steps-widget .step .step-contents {
+.steps-widget .step .step-contents {
     padding-bottom: 1px;
 }
 
-#download .steps-widget .steps-back-button {
+ .steps-widget .steps-back-button {
     min-width: 3.1em;
     white-space: nowrap;
     margin-left: 15px;
 }
 
-#download .steps-widget .steps-back-button:before {
+ .steps-widget .steps-back-button:before {
     content: "❮";
     display: inline-block;
     margin-right: 10px;
@@ -969,11 +972,11 @@ h2 {
     top: -1px;
 }
 
-#download .steps-widget .steps-back-button em {
+.steps-widget .steps-back-button em {
     display: none;
 }
 
-#download header {
+ #download header {
     margin-bottom: 2rem;
 }
 
@@ -981,7 +984,7 @@ h2 {
     margin: 0;
 }
 
-#download .step-last {
+ .step-last {
     text-align: left;
     padding-top: 100px;
     margin-left: 10px;
@@ -996,7 +999,7 @@ h2 {
 }
 
 #download .button:hover {
-    background: #129CF4;
+    background: #939ea5;
     color: white;
 }
 
@@ -1020,12 +1023,28 @@ h2 {
     color: white;
 }
 
+.app-directory-cover img{
+    width: 100%;
+    background-position: top center;
+}
+
+#app-directory .steps-back-button {
+    background-color: #1A9DF2;
+    color: white;
+}
+
+#app-directory .steps-back-button:hover{
+    background-color: #939ea5;
+    color: white;
+}
+
 #contribute {
     border-bottom: 1px solid #eee;
+    background: #F5F5F5;
 }
 
 #contribute,
-#feedback {
+#feedback, #app-directory {
     padding-top: 5em;
     padding-bottom: 3em;
 }
@@ -1106,5 +1125,5 @@ h2 {
         -webkit-transform: translate(-50%, 0);
                 transform: translate(-50%, 0);
     }
+    
 }
-
