@@ -860,6 +860,57 @@ var Utils = Utils || {};
                 createDownloadWidget();
             }
         });
+    
+    /*App directory  */
+    var appDirectoryWidget = null;
+    var appDirectoryWidgetData = null;
+    var appDirectoryWidgetTemplate = null; 
+
+    $('.app-directory-cover').owlCarousel({
+        items: 1,
+        autoWidth: true,
+        autoHeight : true,
+        center: true,
+        dots: true,
+        smartSpeed: 250,
+        transitionStyle: "fade",
+        responsiveBaseElement: $('.app-directory-cover')
+    });
+
+
+    var createAppDirectoryWidget = function (){
+        var element = document.getElementById('app-directory-widget');
+        appDirectoryWidget = new Site.StepChooser(element, appDirectoryWidgetData);
+        appDirectoryWidget.step.connect('update', function(object, step){
+        var context = step.getContext();
+        context.update({
+            IsApp: function(a, b) {
+                return a == b;
+            },
+        });
+        step.element.innerHTML = appDirectoryWidgetTemplate.render(context.data);
+            
+            $(step.element).find('section:not(:first) .button-box .button-default').removeClass('button-default');
+
+        });
+    }
+
+    Utils.loadTemplate('app-directory-widget-template.html',
+        function(data) {
+            appDirectoryWidgetTemplate = $.templates(data);
+            if (appDirectoryWidgetData && appDirectoryWidgetTemplate) {
+                createAppDirectoryWidget();
+            }
+        });
+
+    Utils.loadJSON('app-directory.json',
+        function(data) {
+            appDirectoryWidgetData = data;
+            if (appDirectoryWidgetData && appDirectoryWidgetTemplate) {
+                createAppDirectoryWidget();
+            }
+        });
+
 
     /* Load packages data from Open Build Service, don't require it while building download widget */
     Utils.loadJSONP(BUILD_SERVICE_JSON_URL,

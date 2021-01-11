@@ -1,0 +1,37 @@
+{{if IsApp(app, "gnome-pomodoro-tracking") }}
+<section>
+    
+
+    <header>
+        <div class="container-fluid app-directory-cover">
+            <img  src="https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/assets/how-does-it-work.png"/>            
+        </div>
+        <h4> </h4>
+    </header>
+
+    <p>
+        It is a custom action, that connect any Time Tracking Software and create Time Entries.
+    </p>
+    <p>Install</p>
+    <ol class="bash">
+        <li>sh -c "$(curl -fsSL https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/startup.sh)" "" --install</li>
+    </ol>
+    <p>Try</p>
+    <ol class="bash">
+        <li>gnome-pomodoro-tracking --plugin toggl</li>
+        <li>gnome-pomodoro-tracking --name try-gnome-pomodoro-tracking</li>
+        <li>gnome-pomodoro-tracking --status</li>
+    </ol>
+
+    <div class="button-box">
+        <a href="https://github.com/gnome-pomodoro/gnome-pomodoro-tracking" class="button button-default download-icon">
+            <span>View on Github</span>
+        </a>
+    </div>
+
+    <footer>
+        <p class="contributors"> Python packages are provided by <a href="https://github.com/josehbez"> Jose hbez</a></p>
+    </footer>
+
+</section>
+{{/if}}
