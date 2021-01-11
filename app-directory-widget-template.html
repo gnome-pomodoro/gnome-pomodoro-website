@@ -9,13 +9,19 @@
         <h4> </h4>
     </header>
 
-    <p>
+    <h4>
         It is a custom action, that connect any Time Tracking Software and create Time Entries.
-    </p>
+    </h4>
     <p>Install</p>
     <ol class="bash">
         <li>sh -c "$(curl -fsSL https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/startup.sh)" "" --install</li>
     </ol>
+    <p>Go to Gnome Pomodoro <a>Preferences / Plugins ... / Custom Actions(Execute shell scripts) / Add</a></p>
+    <ol class="bash">        
+        <li>gnome-pomodoro-tracking -gps "$(state)" -gpt "$(triggers)" -gpd "$(duration)" -gpe "$(elapsed)"
+        </li>
+    </ol>
+
     <p>Try</p>
     <ol class="bash">
         <li>gnome-pomodoro-tracking --plugin toggl</li>
