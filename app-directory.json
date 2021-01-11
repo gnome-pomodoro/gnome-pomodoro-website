@@ -1,0 +1,16 @@
+{
+    "children": {
+      "Tracking": {
+        "children": {
+          "gnome-pomodoro-tracking": {
+            "app": "gnome-pomodoro-tracking",
+            "label": "Gnome Pomodoro Tracking"
+          }          
+        },
+        "childrenLabel": "App",
+        "label": "Tracking"
+      }
+    },
+    "childrenLabel": "Category"
+  }
+  
