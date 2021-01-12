@@ -1,33 +1,61 @@
 {{if IsApp(app, "gnome-pomodoro-tracking") }}
 <section>
     
-
-    <header>
-        <div class="container-fluid app-directory-cover">
-            <img  src="https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/assets/how-does-it-work.png"/>            
-        </div>
-        <h4> </h4>
+    <header class="text-center">        
+        <h4>Connect any Time Tracking Software and create Time Entries.</h4>
     </header>
-
-    <h4>
-        It is a custom action, that connect any Time Tracking Software and create Time Entries.
-    </h4>
+    
     <p>Install</p>
     <ol class="bash">
         <li>sh -c "$(curl -fsSL https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/startup.sh)" "" --install</li>
     </ol>
+
     <p>Go to Gnome Pomodoro <a>Preferences / Plugins ... / Custom Actions(Execute shell scripts) / Add</a></p>
     <ol class="bash">        
         <li>gnome-pomodoro-tracking -gps "$(state)" -gpt "$(triggers)" -gpd "$(duration)" -gpe "$(elapsed)"
         </li>
     </ol>
 
-    <p>Try</p>
+    <p>CLI</p>
     <ol class="bash">
         <li>gnome-pomodoro-tracking --plugin toggl</li>
-        <li>gnome-pomodoro-tracking --name try-gnome-pomodoro-tracking</li>
+        <li>gnome-pomodoro-tracking --name first-time-entry</li>
         <li>gnome-pomodoro-tracking --status</li>
+        <li>gnome-pomodoro-tracking --restart</li>
+        <li>gnome-pomodoro-tracking --stop</li>
     </ol>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <small>
+                This is some plugin availables.
+            </small>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        
+        <div class="col-md-3">
+            <img src="https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/assets/toggl/logo.png" alt="..." class="img-thumbnail">
+            <small>
+                How to use? <a href="https://github.com/gnome-pomodoro/gnome-pomodoro-tracking/blob/master/assets/toggl/README.md"><mark>here!</mark></a>
+            </small>        
+        </div>
+        <div class="col-md-3">
+            <img src="https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/assets/odoo/logo.png" alt="..." class="img-thumbnail">
+            <small>
+                How to use? <a href="https://github.com/gnome-pomodoro/gnome-pomodoro-tracking/blob/master/assets/odoo/README.md"><mark>here!</mark></a>
+            </small>
+        </div>            
+        <div class="col-md-3">
+            <img src="https://raw.githubusercontent.com/gnome-pomodoro/gnome-pomodoro-tracking/master/assets/clockify/logo.png" alt="..." class="img-thumbnail">
+            <small>
+                How to use? <a href="https://github.com/gnome-pomodoro/gnome-pomodoro-tracking/blob/master/assets/clockify/README.md"> <mark>here!</mark></a>
+            </small>
+        </div>        
+    </div>
+    
 
     <div class="button-box">
         <a href="https://github.com/gnome-pomodoro/gnome-pomodoro-tracking" class="button button-default download-icon">

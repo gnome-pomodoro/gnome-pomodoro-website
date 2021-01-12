@@ -1023,11 +1023,6 @@ h2 {
     color: white;
 }
 
-.integrations-cover img{
-    width: 100%;
-    background-position: top center;
-}
-
 #integrations .steps-back-button {
     background-color: #1A9DF2;
     color: white;
@@ -1126,4 +1121,8 @@ h2 {
                 transform: translate(-50%, 0);
     }
     
+}
+
+.list-group-item[data-name="time-tracking"]::before {
+    content: "⏳";
 }
