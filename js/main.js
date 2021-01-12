@@ -861,41 +861,41 @@ var Utils = Utils || {};
             }
         });
     
-    /*App directory  */
-    var appDirectoryWidget = null;
-    var appDirectoryWidgetData = null;
-    var appDirectoryWidgetTemplate = null; 
+    /*Integrations  */
+    var integrationsWidget = null;
+    var integrationsWidgetData = null;
+    var integrationsWidgetTemplate = null; 
 
-    var createAppDirectoryWidget = function (){
-        var element = document.getElementById('app-directory-widget');
-        appDirectoryWidget = new Site.StepChooser(element, appDirectoryWidgetData);
-        appDirectoryWidget.step.connect('update', function(object, step){
+    var createIntegrationsWidget = function (){
+        var element = document.getElementById('integrations-widget');
+        integrationsWidget = new Site.StepChooser(element, integrationsWidgetData);
+        integrationsWidget.step.connect('update', function(object, step){
         var context = step.getContext();
         context.update({
             IsApp: function(a, b) {
                 return a == b;
             },
         });
-        step.element.innerHTML = appDirectoryWidgetTemplate.render(context.data);
+        step.element.innerHTML = integrationsWidgetTemplate.render(context.data);
             
             $(step.element).find('section:not(:first) .button-box .button-default').removeClass('button-default');
 
         });
     }
 
-    Utils.loadTemplate('app-directory-widget-template.html',
+    Utils.loadTemplate('integrations-widget-template.html',
         function(data) {
-            appDirectoryWidgetTemplate = $.templates(data);
-            if (appDirectoryWidgetData && appDirectoryWidgetTemplate) {
-                createAppDirectoryWidget();
+            integrationsWidgetTemplate = $.templates(data);
+            if (integrationsWidgetData && integrationsWidgetTemplate) {
+                createIntegrationsWidget();
             }
         });
 
-    Utils.loadJSON('app-directory.json',
+    Utils.loadJSON('integrations.json',
         function(data) {
-            appDirectoryWidgetData = data;
-            if (appDirectoryWidgetData && appDirectoryWidgetTemplate) {
-                createAppDirectoryWidget();
+            integrationsWidgetData = data;
+            if (integrationsWidgetData && integrationsWidgetTemplate) {
+                createIntegrationsWidget();
             }
         });
 

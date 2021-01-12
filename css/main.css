@@ -1023,17 +1023,17 @@ h2 {
     color: white;
 }
 
-.app-directory-cover img{
+.integrations-cover img{
     width: 100%;
     background-position: top center;
 }
 
-#app-directory .steps-back-button {
+#integrations .steps-back-button {
     background-color: #1A9DF2;
     color: white;
 }
 
-#app-directory .steps-back-button:hover{
+#integrations .steps-back-button:hover{
     background-color: #939ea5;
     color: white;
 }
@@ -1044,7 +1044,7 @@ h2 {
 }
 
 #contribute,
-#feedback, #app-directory {
+#feedback, #integrations {
     padding-top: 5em;
     padding-bottom: 3em;
 }
