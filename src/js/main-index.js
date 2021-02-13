@@ -762,7 +762,7 @@ var Utils = Utils || {};
 
 /* Main function */
 (function(global) {
-    var BUILD_SERVICE_JSON_URL = 'http://software.opensuse.org/download.json?project=home:kamilprusko&package=gnome-pomodoro';
+    var BUILD_SERVICE_JSON_URL = 'https://software.opensuse.org/download.json?project=home:kamilprusko&package=gnome-pomodoro';
     var PACKAGE_LABELS = {
         '_i386.deb':   '32 bit .deb',
         '_amd64.deb':  '64 bit .deb',
@@ -842,7 +842,7 @@ var Utils = Utils || {};
             });
     };
 
-    Utils.loadTemplate('download-widget-template.html',
+    Utils.loadTemplate('js/download-widget-template.tpl',
         function(data) {
             downloadWidgetTemplate = $.templates(data);
             // downloadWidgetTemplate = global.jsviews.templates(data);

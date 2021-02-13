@@ -1,39 +1,29 @@
-#!/usr/bin/env python3
+#!/usr/bin/env bash
 
-import argparse
-import os
-import http.server
+set -e
 
+script=`realpath -s $0`
+script_path=`dirname $script`
+working_dir=`pwd`
 
-def run_http_server(host, port):
-    server = http.server.HTTPServer((host, port),
-                                     http.server.SimpleHTTPRequestHandler)
-
-    print('Development server is running at http://{host}:{port}/'
-                                     .format(host=host, port=port))
-    print('Quit the server with CONTROL-C.')
-
-    try:
-        server.serve_forever()
-    except KeyboardInterrupt:
-        print('\nKeyboard interrupt received, exiting.')
-
-    server.server_close()
+venv_name="website"
+venv_path="${script_path}/.virtualenv"
 
 
-def main(args):
-    directory = os.path.abspath(args.directory)
-    os.chdir(directory)
+if [ ! -f "${venv_path}/bin/activate" ]; then
+    python -m venv --clear --system-site-packages --prompt="${venv_name}" "${venv_path}"
+    source "${venv_path}/bin/activate"
 
-    run_http_server(args.host, args.port)
+    echo "Created \"$venv_path\" dir"
+else
+    source "${venv_path}/bin/activate"
+fi
 
+cd "${script_path}" && python setup.py develop --quiet
+cd "${working_dir}"
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--host', default='localhost')
-    parser.add_argument('--port', default=8000, type=int)
-    parser.add_argument('directory', default=os.getcwd(), nargs='?')
+export PS1="(${venv_name}) [\u@\h \W]\$ "
 
-    args = parser.parse_args()
+# spawn mkdocs
+exec mkdocs serve
 
-    main(args)

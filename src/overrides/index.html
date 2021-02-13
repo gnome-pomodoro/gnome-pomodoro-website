@@ -1,39 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% extends "base.html" %}
 
-    <title>A Pomodoro Timer for GNOME</title>
-    <meta name="description" content=""/>
-    <meta name="keywords" content="gnome, gnome-shell, pomodoro, pomodoro timer, break timer, extension"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
+{% block extra_head %}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.gnome-pomodoro.org/" />
-    <meta property="og:title" content="A Pomodoro Timer for GNOME" />
-    <meta property="og:image" content="images/icons/256x256.png" />
+    <meta property="og:url" content="https://gnomepomodoro.org/" />
+    <meta property="og:title" content="Pomodoro Timer for GNOME" />
+    <meta property="og:image" content="{{ base_url }}/images/icons/256x256.png" />
+{% endblock %}
 
-    <link rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="libs/owl/owl-carousel.css"/>
-    <link rel="stylesheet" href="css/main.css"/>
-    <!-- <link rel="icon" href="images/icons/gnome-pomodoro.ico" sizes="16x16 32x32 48x48 64x64 128x128 192x192 256x256" type="image/vnd.microsoft.icon"> -->
+{% block styles %}
+    {{ super() }}
+    <link href="{{ base_url }}/css/style-index.css" rel="stylesheet" />
+    <link href="{{ base_url }}/libs/owl/owl-carousel.css" rel="stylesheet" />
+{% endblock %}
 
-    <script src="libs/jquery/jquery.min.js" defer></script>
-    <script src="libs/jsrender/jsrender.min.js" defer></script>
-    <script src="libs/owl/owl-carousel.min.js" defer></script>
+{% block scripts %}
+    <script src="{{ base_url }}/libs/jquery/jquery.min.js" defer></script>
+    <script src="{{ base_url }}/libs/jsrender/jsrender.min.js" defer></script>
+    <script src="{{ base_url }}/libs/owl/owl-carousel.min.js" defer></script>
 
-    <script src="js/signals.js" defer></script>
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-<!--[if lt IE 10]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+    <script src="{{ base_url }}/js/signals.js" defer></script>
+    <script src="{{ base_url }}/js/main-index.js" defer></script>
 
+    {{ super() }}
+{% endblock %}
+
+{% block body %}
 <main role="main">
     <article>
-        <div id="header">
+        <div id="hero">
             <aside>
                 <nav>
                     <ul>
@@ -52,7 +46,7 @@
         </div>
 
         <aside>
-            <a href="https://github.com/codito/gnome-pomodoro" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1); -webkit-transform: sale(-1, 1);"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+            <a href="https://github.com/gnome-pomodoro/gnome-pomodoro" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1); -webkit-transform: sale(-1, 1);"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
         </aside>
 
         <div id="page">
@@ -68,7 +62,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <p>This <a href="http://www.gnome.org/" rel="nofollow">GNOME</a> app helps to manage time according to <a href="http://en.wikipedia.org/wiki/Pomodoro_technique" rel="nofollow">Pomodoro Technique</a>. It intends to improve productivity and quality of work by reminding you to take short breaks.</p>
+                        <p>This <a href="https://www.gnome.org/" rel="nofollow">GNOME</a> app helps to manage time according to <a href="https://en.wikipedia.org/wiki/Pomodoro_technique" rel="nofollow">Pomodoro Technique</a>. It intends to improve productivity and quality of work by reminding you to take short breaks.</p>
 
                         <dl>
                             <dt>Pomodoro Technique is based on two principles:</dt>
@@ -84,7 +78,7 @@
 
                         <!--<p>If you’re curious about the name —&nbsp;<em>Pomodoro</em> comes from a kitchen timer, which can be used to keep track of time.</p>-->
 
-                        <!-- <p>You can read more about Pomodoro Technique <a href="http://www.pomodorotechnique.com/book/" rel="nofollow">here</a>.</p> -->
+                        <!-- <p>You can read more about Pomodoro Technique <a href="https://www.pomodorotechnique.com/book/" rel="nofollow">here</a>.</p> -->
                     </div>
                 </div>
             </section>
@@ -149,11 +143,11 @@
                             <h2>Contribute</h2>
                         </header>
 
-                        <p>If you want to contribute, it would be really awesome to <a href="https://github.com/codito/gnome-pomodoro/wiki/Translating">add or&nbsp;improve translations</a>, or&nbsp;to add support for other desktops.</p>
+                        <p>If you want to contribute, it would be really awesome to <a href="/translating/">add or&nbsp;improve translations</a>, or&nbsp;to add support for other desktops.</p>
 
                         <footer>
                             <address class="button-box">
-                                <a href="https://github.com/codito/gnome-pomodoro" class="button button-default"><span>View on Github</span></a>
+                                <a href="https://github.com/gnome-pomodoro/gnome-pomodoro" class="button button-default"><span>View on Github</span></a>
                             </address>
                         </footer>
                     </div>
@@ -188,7 +182,7 @@
                     <div class="col-md-8 col-md-offset-2">
                         <p class="disclaimer">This project is not affiliated with, authorized by, sponsored by, or otherwise approved by GNOME&nbsp;Foundation and/or the Pomodoro&nbsp;Technique®. The&nbsp;GNOME logo and GNOME name are registered trademarks or trademarks of GNOME&nbsp;Foundation in the United&nbsp;States or other countries. The&nbsp;Pomodoro Technique® and Pomodoro™ are registered trademarks of Francesco&nbsp;Cirillo.</p>
 
-                        <p class="copyright">Made with all the love in the world by&nbsp;<a href="http://kamilprusko.org">Kamil&nbsp;Prusko</a></p>
+                        <p class="copyright">Made with all the love in the world by&nbsp;<a href="https://kamilprusko.org">Kamil&nbsp;Prusko</a></p>
                     </div>
                 </div>
             </footer>
@@ -197,6 +191,4 @@
 
     </article>
 </main>
-
-</body>
-</html>
+{% endblock %}

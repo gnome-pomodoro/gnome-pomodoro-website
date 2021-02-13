@@ -1,0 +1,556 @@
+
+
+
+/*
+ * Header
+ */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    padding: 0.5em;
+    margin: 0;
+    overflow-x: hidden;
+
+    font-family: Asap, Cantarel, Helvetica;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+
+    background: rgb(20, 20, 20) url(../images/background.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+
+    cursor: default;
+}
+
+#hero header {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 100%;
+    padding: 10px;
+    transform: translate(-50%, -45%);
+}
+
+#hero h1 {
+    color: inherit;
+    text-shadow: 2pt 4pt 20pt rgba(0, 0, 0, 0.3);
+}
+
+#hero p {
+    opacity: 0.6;
+    color: #AAA;
+}
+
+#hero nav {
+    position: absolute;
+    top: 3.0rem;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, 0);
+}
+
+#hero nav ul {
+    display: table-row;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#hero nav ul li {
+    display: table-cell;
+}
+
+#hero nav a {
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: white;
+}
+
+#hero nav a:hover {
+    background: #129CF4;
+    color: white;
+}
+
+#hero nav a,
+#hero nav a:active,
+#hero nav a:visited,
+#hero nav a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* hide navigation */
+@media (max-width: 639px)
+{
+    #hero nav {
+        display: none;
+    }
+
+    #hero header {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* one word per line when in portrait */
+@media (orientation: portrait),
+       (max-width: 639px)
+{
+    #hero {
+        min-height: 600px;
+    }
+
+    #hero h1 {
+        word-spacing: 9999999px;
+    }
+}
+
+/* larger header to fill space */
+@media (min-width: 900px),
+       (min-height: 600px)
+{
+    #hero {
+        height: 900px;
+    }
+
+    #hero h1 {
+        font-size: 5.0rem;
+    }
+
+    #hero h1 + p {
+        font-size: 1.5rem;
+    }
+}
+
+#about {
+    padding-top: 5em;
+    padding-bottom: 3em;
+}
+
+#about .gnome-pomodoro-icon {
+    display: inline-block;
+    width: 256px;
+    height: 256px;
+    background-image: url(../images/icons/256x256.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+#features {
+    background: #F5F5F5;
+    padding-top: 3em;
+    padding-bottom: 2em;
+}
+
+#contribute ul,
+#features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contribute ul li,
+#features ul li {
+    line-height: 1.2em;
+    margin-bottom: 1.0em;
+}
+
+#screenshots {
+    margin: 2rem 0;
+}
+
+#screenshots .owl-controls {
+    margin-top: 2rem;
+}
+
+.screenshot {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.screenshot-notification {
+    width: 800px;
+    height: 500px;
+    background-image: url(../images/screenshot-notification.png);
+    background-position: top center;
+}
+
+.screenshot-indicator {
+    width: 600px;
+    height: 500px;
+    background-image: url(../images/screenshot-indicator.png);
+    background-position: top right;
+}
+
+.screenshot-screen-notification {
+    width: 800px;
+    height: 500px;
+    background-image: url(../images/screenshot-screen-notification.png);
+}
+
+.screenshot-preferences {
+    width: 1000px;
+    height: 850px;
+    background-image: url(../images/screenshot-preferences.png);
+}
+
+
+@media (max-width: 425px)
+{
+    #contribute .column:not(:first-child),
+    #features .column:not(:first-child) {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 599px)
+{
+    #features,
+    #screenshots {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    #features:after {
+        display: none !important;
+    }
+
+    .screenshot-notification {
+        width: 100vw;
+        height: 70vw;
+        background-size: 300%;
+    }
+    .screenshot-indicator {
+        width: 100vw;
+        height: 70vw;
+        background-size: 300%;
+    }
+    .screenshot-screen-notification {
+        width: 100vw;
+        height: 70vw;
+        background-size: 300%;
+    }
+    .screenshot-preferences {
+        width: 100vw;
+        height: 140vw;
+        background-size: 300%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px)
+{
+    .screenshot-notification {
+        width: 600px;
+        height: 400px;
+        background-size: 300%;
+    }
+    .screenshot-indicator {
+        width: 600px;
+        height: 400px;
+        background-size: 300%;
+    }
+    .screenshot-screen-notification {
+        width: 600px;
+        height: 400px;
+        background-size: 300%;
+    }
+    .screenshot-preferences {
+        width: 600px;
+        height: 800px;
+        background-size: 300%;
+    }
+}
+
+
+#download {
+    padding-top: 5em;
+    padding-bottom: 3em;
+    background-color: #333333;
+    color: #fff;
+}
+
+#download h2 {
+    color: #fff;
+    opacity: 1.0;
+}
+
+#download-back-button {
+    position: absolute;
+    display: block;
+    top: -10pt;
+    left: 0px;
+    width: 48px;
+    height: 48px;
+    background: white;
+    z-index: 2;
+}
+
+#download .steps-widget .step .step-contents {
+    padding-bottom: 1px;
+}
+
+#download .steps-widget .steps-back-button {
+    min-width: 3.1em;
+    white-space: nowrap;
+    margin-left: 15px;
+}
+
+#download .steps-widget .steps-back-button:before {
+    content: "❮";
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    top: -1px;
+}
+
+#download .steps-widget .steps-back-button em {
+    display: none;
+}
+
+#download header {
+    margin-bottom: 2rem;
+}
+
+#download .step header {
+    margin: 0;
+}
+
+#download .step-last {
+    text-align: left;
+    padding-top: 100px;
+    margin-left: 10px;
+}
+
+#download .bash {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#download .button {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#download .button:hover {
+    background: #129CF4;
+    color: white;
+}
+
+#download .download-icon span {
+    background-image: url("../images/document-save-symbolic-white.svg");
+}
+
+#download .alert-warning {
+    color: #fff;
+    background: none;
+    border: none;
+    border-left: 4px solid #1A9DF2;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    padding: 0px 20px;
+}
+
+#download h4,
+#download li,
+#download a {
+    color: white;
+}
+
+#contribute {
+    border-bottom: 1px solid #eee;
+}
+
+#contribute,
+#feedback {
+    padding-top: 5em;
+    padding-bottom: 3em;
+}
+
+
+/*
+ * Owl Carousel Theme
+ */
+.owl-carousel .owl-stage-outer {
+    border-radius: 5px;
+}
+
+.owl-carousel .owl-item:first-child div {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.owl-carousel .owl-item:last-child div {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.owl-carousel .owl-item {
+    background-color: rgb(238, 238, 238);
+}
+
+.owl-carousel .owl-dots {
+    display:         flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.owl-carousel .owl-dot {
+    padding: 1rem 0.5rem;
+}
+
+.owl-carousel .owl-dot span {
+    display: block;
+    background-color: #DDD;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.owl-carousel .owl-dot.active span {
+    background-color: #333;
+}
+
+@media (max-width: 425px)
+{
+    .owl-carousel .owl-stage-outer,
+    .owl-carousel .owl-item:first-child div,
+    .owl-carousel .owl-item:last-child div {
+        border-radius: 0;
+    }
+
+    #screenshots .owl-controls {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+
+.list-group-header {
+    font-family: Asap, Cantarel, Helvetica;
+    font-size: 1.0rem;
+    display: block;
+    font-weight: normal;
+    margin-left: 0.4em;
+    margin-bottom: 1.0rem;
+    opacity: 0.3;
+}
+
+.list-group {
+    min-width: 150px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    box-shadow: none;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 10px 30pt 10px 15px;
+    margin: 0 0 0 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0px; /* solid rgba(0, 0, 0, 0.1); */
+    cursor: pointer;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.list-group-item:active {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15) inset;
+}
+
+.list-group-item.active {
+    position: relative;
+    background-color: rgb(0, 200, 0, 0.3);
+    background-image: none;
+    overflow: visible;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-right: 5px;
+}
+.list-group-item.active:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+
+    top: 0px;
+    bottom: 0px;
+    right: -14px;
+    width: 14px;
+
+    background: url(../images/triangle.svg) no-repeat 0% 0%;;
+    background-size: 100% 100%;
+}
+
+.list-group-item:hover,
+.list-group-item:active,
+.list-group-item.active,
+.list-group-item.active:hover {
+    background: #129CF4;
+    background-image: none;
+    color: white;
+    border-radius: 2px;
+    text-shadow: none;
+}
+
+.steps-widget {
+    position: relative;
+}
+
+.steps-widget .steps-back-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.steps-widget .steps-wrapper {
+    position: relative;
+    overflow: visible;
+    transition: transform 400ms ease-out,
+                height 600ms ease-in-out;
+}
+
+.steps-widget .step {
+    display: table-row;
+}
+
+.steps-widget .step .step-contents {
+    display: table-cell;
+}
+
+.steps-widget .step .step-contents h4 {
+    text-align: left;
+}
+
+.steps-widget .step .step-children {
+    display: table-cell;
+    position: relative;
+    overflow: visible;
+}
+
+.steps-widget .step .step-children > .step {
+    position: absolute;
+    top: 0;
+    left: 30px; /* step spacing */
+}
+
+.steps-widget .step .step-contents,
+.steps-widget .step {
+    opacity: 1.0;
+    visibility: visible;
+    transition: opacity 200ms ease-in-out;
+}

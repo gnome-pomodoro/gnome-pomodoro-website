@@ -1,0 +1,18 @@
+site_name: 'A Pomodoro Timer for GNOME'
+docs_dir: 'docs'
+site_dir: 'site'
+theme:
+    name: null
+    custom_dir: 'src/'
+    language: 'en'
+    include_search_page: false
+    search_index_only: true
+strict: true
+plugins:
+    - search
+nav:
+    - 'index.md'
+    - 'Contribute':
+        - 'Translating': 'docs/translating.md'
+        - 'Development': 'docs/development.md'
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+    {% if config.site_description %}
+        <meta name="description" content="{{ config.site_description }}" />
+    {% endif %}
+    {% if config.site_author %}
+        <meta name="author" content="{{ config.site_author }}" />
+    {% endif %}
+
+    {% block styles %}
+        <link href="{{ base_url }}/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+        <link href="{{ base_url }}/css/style.css" rel="stylesheet" />
+        {% for path in extra_css %}
+            <link href="{{ path }}" rel="stylesheet" />
+        {% endfor %}
+    {% endblock %}
+
+    {% block scripts %}
+        {% for path in extra_javascript %}
+            <script src="{{ path }}" defer></script>
+        {% endfor %}
+    {% endblock %}
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block body %}
+        <div class="container">
+            <div id="header">
+                <div class="logo" /> {{ config.site_name }}
+            </div>
+            <div class="columns">
+                <div id="sidebar">
+                    {% block sidebar %}
+                        {% block search_button %}
+                            {% if 'search' in config['plugins'] %}
+                                <div id="book-search-input" role="search">
+                                    <input type="text" placeholder="Type to search" />
+                                </div>
+                            {% endif %}
+                        {% endblock %}
+
+                        {% block site_nav %}
+                            {% include "nav.html" %}
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+                <div id="content-wrapper">
+                    {% block content %}{% include "content.html" %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

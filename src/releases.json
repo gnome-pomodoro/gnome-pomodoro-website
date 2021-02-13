@@ -45,6 +45,13 @@
               },
               "gnome": "3.22",
               "label": "9 <em>(Stretch)</em>"
+            },
+            "10.0": {
+              "context": {
+                "packages": []
+              },
+              "gnome": "3.38",
+              "label": "10 <em>(Buster)</em>"
             }
           },
           "childrenLabel": "Release",
@@ -143,6 +150,12 @@
             },
             "31": {
               "gnome": "3.34"
+            },
+            "32": {
+              "gnome": "3.36"
+            },
+            "33": {
+              "gnome": "3.38"
             }
           },
           "childrenLabel": "Release",
@@ -334,6 +347,9 @@
             "3.36": {
               "gnome": "3.36"
             },
+            "3.38": {
+              "gnome": "3.38"
+            },
             "3.4": {
               "gnome": "3.4"
             },
@@ -457,7 +473,7 @@
                 "repository": "https://download.opensuse.org/repositories/home:kamilprusko/xUbuntu_18.04/"
               },
               "gnome": "3.28",
-              "label": "18.04 <em>(Bionic Beaver)</em>"
+              "label": "18.04 LTS <em>(Bionic Beaver)</em>"
             },
             "18.10": {
               "context": {},
@@ -473,6 +489,16 @@
               "context": {},
               "gnome": "3.34",
               "label": "19.10 <em>(Eoan Ermine)</em>"
+            },
+            "20.04": {
+              "context": {},
+              "gnome": "3.36",
+              "label": "20.04 LTS <em>(Focal Fossa)</em>"
+            },
+            "20.10": {
+              "context": {},
+              "gnome": "3.38",
+              "label": "20.10 <em>(Groovy Gorilla)</em>"
             }
           },
           "childrenLabel": "Release",
