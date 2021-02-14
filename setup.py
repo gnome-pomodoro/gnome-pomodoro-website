@@ -10,6 +10,7 @@ setup(
     author_email='kamilprusko@gmail.com',
     install_requires=[
         'mkdocs',
+        # 'mkdocs-extra-sass-plugin',
         # 'mkdocs-material',
         # 'mkdocs-gitbook',
         # 'mkdocs-bulma',

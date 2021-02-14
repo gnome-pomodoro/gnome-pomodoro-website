@@ -1,18 +1,43 @@
+
+# Project information
 site_name: 'A Pomodoro Timer for GNOME'
-docs_dir: 'docs'
+site_url: https://github.com/gnome-pomodoro/gnome-pomodoro/
+site_author: Kamil Prusko
+site_description: >-
+  TODO
+
+# Repository
+repo_name: gnome-pomodoro
+repo_url: https://github.com/gnome-pomodoro/gnome-pomodoro/
+edit_uri: ""
+
+# Copyright
+copyright: Copyright &copy; 2021 Kamil Prusko
+
+
 site_dir: 'site'
+docs_dir: 'docs'
+
 theme:
     name: null
-    custom_dir: 'src/'
+    custom_dir: 'theme/'
+
+    static_templates:
+        - 404.html
+
     language: 'en'
     include_search_page: false
     search_index_only: true
+
 strict: true
+
 plugins:
     - search
+
 nav:
-    - 'index.md'
-    - 'Contribute':
-        - 'Translating': 'docs/translating.md'
-        - 'Development': 'docs/development.md'
+    - Getting started:
+        - Pomodoro Technique: 'docs/introduction.md'
+    - Contributing:
+        - Translating: 'docs/translating.md'
+        - Development: 'docs/development.md'
 

@@ -1,10 +1,10 @@
 {% if not nav_item.children %}
     <li>
-        <a href="{{ nav_item.url|url }}" class="{% if nav_item.active %}active{% endif %}">{{ nav_item.title }}</a>
+        <a href="{{ nav_item.url|url }}" class="{% if nav_item.active %}is-current{% endif %}">{{ nav_item.title }}</a>
     </li>
 {% else %}
     <li>
-        <a href="#">{{ nav_item.title }}</a>
+        <header>{{ nav_item.title }}</header>
         <ul>
             {% for nav_item in nav_item.children %}{% include "nav-sub.html" %}{% endfor %}
         </ul>

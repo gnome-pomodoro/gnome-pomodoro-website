@@ -1,0 +1,16 @@
+
+
+sassc -a -M -t compact INPUT OUTPUT
+
+
+
+sass --watch app/sass:public/stylesheets
+
+
+
+sass main.scss build/main.css
+
+
+
+Compile with
+$ sass --sourcemap=none sass/main.scss:css/main.css
