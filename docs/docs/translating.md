@@ -1,3 +1,11 @@
+---
+title: Translating
+authors:
+    - Remy Marquis
+    - Bastien Traverse
+    - Kamil Prusko
+---
+
 This is a quick guide on how to get started with translating gnome-pomodoro and how to update existing translations.
 
 You'll need to grab gnome-pomodoro source code. Fork it on github and run in terminal
@@ -39,9 +47,9 @@ If you change `translator-credits` to your name, you will be listed in the about
 
 Open the `<locale>.po` file with your favorite text editor or with a specialized PO editor, popular are:
 
- * Poedit http://www.poedit.net
- * Gtranslator https://projects.gnome.org/gtranslator/
- * Viraal http://virtaal.translatehouse.org
+ * [Poedit](https://www.poedit.net)
+ * [Gtranslator](https://projects.gnome.org/gtranslator/) 
+ * [Viraal](https://virtaal.translatehouse.org)
 
 Add your translation in the `msgstr` fields. Do not replace the original text in the `msgid` fields:
 
@@ -94,10 +102,11 @@ Thank you for your interest in translating gnome-pomodoro!
 
 ## Authors
 
-This guide was originally written by [Remy Marquis](https://github.com/rmarquis/pacaur/blob/master/po/HOWTO) and adapted by [Bastien Traverse](https://github.com/neitsab) and [Kamil Prusko](https://github.com/kamilprusko).
+This guide was originally written by [](https://github.com/rmarquis/pacaur/blob/master/po/HOWTO) and adapted by [Bastien Traverse](https://github.com/neitsab) and [Kamil Prusko](https://github.com/kamilprusko).
 
 
 ## Resources
 
 1. [GNOME Localisation Guide](https://wiki.gnome.org/TranslationProject/LocalisationGuide)
 2. [gettext Manual](http://www.gnu.org/software/gettext/manual/gettext.html)
+

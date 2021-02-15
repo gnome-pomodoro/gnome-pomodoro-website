@@ -1,6 +1,6 @@
 
 # Project information
-site_name: 'A Pomodoro Timer for GNOME'
+site_name: 'A Pomodoro Timer for&nbsp;GNOME'
 site_url: https://github.com/gnome-pomodoro/gnome-pomodoro/
 site_author: Kamil Prusko
 site_description: >-
@@ -33,10 +33,66 @@ strict: true
 
 plugins:
     - search
+    - git-revision-date-localized:
 
+#    - git-revision-date:
+#        modify_md: false
+#        as_datetime: true
+
+# Extensions
+# See https://python-markdown.github.io/extensions/
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - extra
+  - toc:
+      permalink: true
+
+#  - sane_lists
+
+#  - admonition
+#  - abbr
+#  - attr_list
+#  - def_list
+#  - footnotes
+#  - md_in_html
+#  - pymdownx.arithmatex:
+#      generic: true
+#  - pymdownx.betterem:
+#      smart_enable: all
+#  - pymdownx.caret
+#  - pymdownx.critic
+#  - pymdownx.details
+#  - pymdownx.inlinehilite
+#  - pymdownx.keys
+#  - pymdownx.mark
+#  - pymdownx.smartsymbols
+#  - pymdownx.superfences:
+#      custom_fences:
+#        - name: mermaid
+#          class: mermaid
+#          format: !!python/name:pymdownx.superfences.fence_code_format
+#  - pymdownx.tabbed
+#  - pymdownx.tasklist:
+#      custom_checkbox: true
+#  - pymdownx.tilde
+#  - pymdownx.highlight
+#  - pymdownx.magiclink:
+#      repo_url_shorthand: true
+#      user: gnome-pomodoro
+#      repo: gnome-pomodoro
+#  - pymdownx.extra
+
+# Documents
 nav:
-    - Getting started:
-        - Pomodoro Technique: 'docs/introduction.md'
+    - About: 'index.md'
+    - Download: 'download.md'
+    - User Guide:
+        - Introduction: 'docs/introduction.md'
+        - Customize: 'docs/customize.md'
+        - Integrations: 'docs/integrations.md'
+        - Report Issue: 'docs/report-issue.md'
     - Contributing:
         - Translating: 'docs/translating.md'
         - Development: 'docs/development.md'

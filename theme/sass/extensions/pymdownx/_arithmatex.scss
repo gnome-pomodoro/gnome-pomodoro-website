@@ -1,0 +1,21 @@
+// Scoped in typesetted content to match specificity of regular content
+// .md-typeset {
+
+// Arithmatex container
+div.arithmatex {
+    overflow: auto;
+
+//    // [mobile -]: Align with body copy
+//    @include break-to-device(mobile) {
+//        margin: 0 px2rem(-16px);
+//    }
+
+    // Arithmatex content
+    > * {
+        width: min-content;
+        margin: 1em auto !important;  // stylelint-disable-line
+        padding: 0 px2rem(16px);
+        touch-action: auto;
+    }
+}
+// }

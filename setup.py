@@ -10,6 +10,10 @@ setup(
     author_email='kamilprusko@gmail.com',
     install_requires=[
         'mkdocs',
+#        'mkdocs-git-revision-date-plugin',
+        'mkdocs-git-revision-date-localized-plugin',
+        'pygments',
+        'pymdown-extensions',
         # 'mkdocs-extra-sass-plugin',
         # 'mkdocs-material',
         # 'mkdocs-gitbook',

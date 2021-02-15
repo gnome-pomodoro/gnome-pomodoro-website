@@ -58,7 +58,8 @@
 
 // Set your brand colors
 $bright-blue: rgb(18, 156, 244);
-$dark-blue: #23527c;
+$dark-blue: #2c556dff;
+$pale-blue: #cde0f0ff;
 $white: #FFFFFF;
 $white-ter: #FAFAFA;
 
@@ -79,6 +80,13 @@ $link: $bright-blue;
 $light: hsl(0, 0%, 90%);
 $text: hsl(0, 0%, 16%);
 $background: $white;
+$code: hsl(0, 0%, 40%);
+$code-background: hsl(0, 0%, 95%);
+$pre: $code;
+$pre-background: $code-background;
+$pre-padding: 1.0rem 1.5rem;
+
+
 
 // Update some of Bulma's component variables
 $body-background-color: $white;
@@ -121,29 +129,32 @@ $input-shadow: none;
     flex-grow: 0;
     flex-basis: 350px;
     min-width: 350px;
+//    font-size: $size-normal;
+    margin-bottom: 100px;
 }
 #sidebar header {
-    color: $text-light;
-    font-size: $size-6;
+    font-weight: $weight-semibold;
     text-transform: uppercase;
-    word-break: keep-all;
     letter-spacing: 0.05rem;
-    margin: 0.5rem 0.5rem;
+    margin: 0 0 0.5rem 0;
+    word-break: keep-all;
 }
 #sidebar li {
+    color: $text-light;
     padding: 0;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
 }
 #sidebar li a {
-    display: block;
-    padding: 0.5rem 0.5rem;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    margin: 0.0 -0.75rem;
 }
 #sidebar a {
     color: inherit;
     font-weight: 600;
 }
 #sidebar a:hover {
-    color: $link;
+    color: $text;
 }
 /*
 #sidebar a.is-current {
@@ -154,8 +165,12 @@ $input-shadow: none;
 }
 */
 #sidebar a.is-current {
-    background-color: $light;
-    border-radius: 4px;
+    /*
+    background-color: $pale-blue;
+    color: $dark-blue;
+    */
+    color: $bright-blue;
+    border-radius: $radius-large;
     pointer-events: none;
 }
 /*
@@ -166,12 +181,224 @@ $input-shadow: none;
 #sidebar .section {
     padding: 1.5rem 1.5rem;
 }
+#sidebar .brand img {
+    margin: 0 50px;
+}
+#sidebar .brand .title {
+    font-weight: 500;
+    color: $text;
+}
 
 #content {
     overflow: auto;
 }
 
+#footer {
+    margin: 5rem 0;
+//    color: $grey-darker;
+    color: $grey;
+}
+#footer a {
+    color: inherit;
+    font-weight: $weight-semibold;
+}
+#footer a:hover {
+    color: $text;
+}
+#footer em {
+    font-weight: $weight-semibold;
+    font-style: normal;
+}
+#footer > .container {
+    padding: 1.5rem;
+}
+#footer .copyright,
+#footer .disclaimer {
+    font-size: $size-normal;
+    margin: 1.5rem 0;
+}
+#footer .button.is-text {
+    text-decoration: none;
+}
+#footer .button.is-text:hover {
+    background-color: unset;
+}
 
+
+
+body {
+    min-height: 100vh;
+//    background-color: $light;
+//    background-color: $grey-lightest;
+    // background-color: $scheme-main-bis;
+}
+.container > .columns {
+    margin: 0;
+    padding: 0;
+}
+#layout {
+    background-color: $white;
+}
+
+
+h1 {
+    font-size: $size-3;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+h2 {
+    font-size: $size-4;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+h3 {
+    font-size: $size-5;
+    font-weight: 600;
+    margin-top: 1.0rem;
+    margin-bottom: 0.25rem;
+}
+h4 {
+    font-size: $size-6;
+    font-weight: 600;
+    margin-top: 1.0rem;
+    margin-bottom: 0.25rem;
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit !important;
+}
+
+//h5 {
+//    font-size: $size-6;
+//    font-weight: 600;
+//}
+//h6 {
+//    font-size: $size-7;
+//    font-weight: 600;
+//}
+code {
+    border-radius: $radius;
+}
+pre {
+    border-radius: $radius-large;
+    width: 100%;
+    max-width: 100%;
+    white-space: pre-wrap;
+    overflow: auto;
+}
+.content table {
+    width: auto;
+}
+
+/*
+p, pre, blockquote {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+blockquote {
+    border-left: 4px solid $pre;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: $pre;
+    padding: 0 1.5rem;
+    
+}
+dt {
+    font-weight: $weight-semibold;
+    margin-top: 0.25rem;
+}
+dd {
+    margin-left: 3rem;
+    margin-bottom: 0.75rem;
+}
+hr {
+    border-bottom: 4px solid $light;
+    margin: 1rem 0;
+}*/
+
+// TODO: tables
+//$content-heading-color
+//$content-heading-weight
+//$content-heading-line-height
+//$content-blockquote-background-color
+//$content-blockquote-border-left
+//$content-blockquote-padding
+//$content-pre-padding
+//$content-table-cell-border
+//$content-table-cell-border-width
+//$content-table-cell-padding
+//$content-table-cell-heading-color
+//$content-table-head-cell-border-width
+//$content-table-head-cell-color
+//$content-table-foot-cell-border-width
+//$content-table-foot-cell-color
+
+
+
+//@import "extensions/pymdownx/arithmatex";
+@import "extensions/pymdownx/critic";
+//@import "extensions/pymdownx/details";
+@import "extensions/pymdownx/highlight";
+@import "extensions/pymdownx/keys";
+@import "extensions/pymdownx/tabbed";
+@import "extensions/pymdownx/tasklist";
+
+
+
+// Permalinks
+a.headerlink {
+    color: $text;
+    padding: 0 0.5rem;
+    opacity: 0;
+    user-select: none;
+}
+h1:hover a.headerlink,
+h2:hover a.headerlink {
+    opacity: 1;
+}
+
+
+// Pluigin: git-revision-date-localized
+.revision-date {
+    border-top: 1px solid $light;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    color: $grey;
+    font-size: $size-normal;
+}
+
+
+.admonition {
+    border: 1px solid red;
+}
+
+
+
+
+/*
+#footer {
+    background-color: $light;
+    height: 290px;
+    overflow: visible;
+    position: absolute;
+    bottom: 0;
+}
+*/
+
+
+
+/*
+.container {
+    outline: 1px dashed red;
+}
+*/
 
 /*
 @import "material-color";

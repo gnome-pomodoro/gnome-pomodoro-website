@@ -1,3 +1,10 @@
+<div class="section">
+    <a href="{{ nav.homepage.url | url }}" target="_blank" class="brand">
+        <img src="{{ base_url }}/images/icons/128x128.png" alt="" title="{{ config.site_name }}" />
+<!--        <div class="title is-4">{{ config.site_name }}</div>-->
+    </a>
+</div>
+
 {% if nav | length >= 1 %}
     {% for nav_item in nav %}
         <div class="section">
@@ -8,7 +15,7 @@
                 </ul>
             {% else %}
                 <div class="{% if nav_item.active %} is-current{% endif %}" data-path="{{ nav_item.url }}">
-                    <a href="{{ nav_item.url | url }}">{{ nav_item.title }} YYY</a>
+                    <a href="{{ nav_item.url | url }}">{{ nav_item.title }}</a>
                 </div>
             {% endif %}
         </div>
