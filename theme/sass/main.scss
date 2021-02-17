@@ -77,6 +77,7 @@ $widescreen-enabled: false;
 $body-font-size: 1.25em;
 $primary: $bright-blue;
 $link: $bright-blue;
+$link-hover: $link;
 $light: hsl(0, 0%, 90%);
 $text: hsl(0, 0%, 16%);
 $background: $white;
@@ -85,7 +86,7 @@ $code-background: hsl(0, 0%, 95%);
 $pre: $code;
 $pre-background: $code-background;
 $pre-padding: 1.0rem 1.5rem;
-
+$hr-background-color: $light;
 
 
 // Update some of Bulma's component variables
@@ -110,6 +111,15 @@ $input-shadow: none;
 @import "../libs/bulma/bulma.sass";
 
 
+$fa-font-path: "../fonts/fontawesome" !default;
+@import "../libs/fontawesome/fontawesome.scss";
+@import "../libs/fontawesome/solid.scss";
+
+
+
+.button:hover {
+    color: $text;
+}
 
 .navbar {
     padding: 1.0rem 1.5rem;
@@ -127,20 +137,28 @@ $input-shadow: none;
 #sidebar {
     user-select: none;
     flex-grow: 0;
-    flex-basis: 350px;
-    min-width: 350px;
+    flex-basis: 300px;
+    min-width: 300px;
 //    font-size: $size-normal;
     margin-bottom: 100px;
 }
 #sidebar header {
     font-weight: $weight-semibold;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    margin: 0 0 0.5rem 0;
-    word-break: keep-all;
+//    text-transform: uppercase;
+//    letter-spacing: 0.05rem;
+//    margin: 0 0 0.5rem 0;
+//    word-break: keep-all;
+}
+#sidebar li > ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+#sidebar li.nested > a {
+    font-weight: $weight-normal;
+    color: $text;
 }
 #sidebar li {
-    color: $text-light;
+    color: $text-strong;
     padding: 0;
     margin: 0.25rem 0;
 }
@@ -153,51 +171,35 @@ $input-shadow: none;
     color: inherit;
     font-weight: 600;
 }
-#sidebar a:hover {
-    color: $text;
-}
-/*
+//#sidebar a:hover {
+//    text-underline-offset: 2px;
+//    text-decoration-line: underline;
+//    text-decoration-thickness: 1px;
+//}
+
+//#sidebar a:hover {
+//    color: $text;
+//}
 #sidebar a.is-current {
-    background-color: $dark;
-    color: $primary-invert;
-    border-radius: 4px;
+    color: $bright-blue !important;
+//    border-radius: $radius-large;
     pointer-events: none;
 }
-*/
-#sidebar a.is-current {
-    /*
-    background-color: $pale-blue;
-    color: $dark-blue;
-    */
-    color: $bright-blue;
-    border-radius: $radius-large;
-    pointer-events: none;
-}
-/*
-#sidebar a.is-current:hover {
-    color: initial;
-}
-*/
-#sidebar .section {
-    padding: 1.5rem 1.5rem;
-}
-#sidebar .brand img {
-    margin: 0 50px;
-}
-#sidebar .brand .title {
-    font-weight: 500;
-    color: $text;
+.brand {
+    display: inline-block !important;
+    margin: 40px 20px;
+//    background-color: red;
 }
 
-#content {
-    overflow: auto;
+#content {  // TODO: is it needed?
+    // overflow: auto;
 }
 
 #footer {
     margin: 5rem 0;
-//    color: $grey-darker;
     color: $grey;
 }
+/*
 #footer a {
     color: inherit;
     font-weight: $weight-semibold;
@@ -205,6 +207,18 @@ $input-shadow: none;
 #footer a:hover {
     color: $text;
 }
+*/
+
+
+// Empasized link - it's meant not to stand out as regular links, only as part of UI
+a.em-link {
+    color: inherit;
+    font-weight: $weight-semibold;
+}
+a.em-link:hover {
+    color: $text;
+}
+
 #footer em {
     font-weight: $weight-semibold;
     font-style: normal;
@@ -235,9 +249,6 @@ body {
 .container > .columns {
     margin: 0;
     padding: 0;
-}
-#layout {
-    background-color: $white;
 }
 
 
@@ -282,19 +293,47 @@ h6 a {
 //    font-size: $size-7;
 //    font-weight: 600;
 //}
-code {
+.content code {
     border-radius: $radius;
 }
-pre {
+.content pre {
     border-radius: $radius-large;
-    width: 100%;
-    max-width: 100%;
     white-space: pre-wrap;
-    overflow: auto;
 }
+
+a:not(.button):hover {
+    // text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-line: underline;
+    // text-decoration-style: solid;
+    text-decoration-thickness: 1px;
+}
+
+.content blockquote {
+    border: none;
+}
+.content blockquote:before {
+    content: "\275D";  /* ❝ */
+    display: block;
+    position: absolute;
+    font-size: 200%;
+    color: $text-strong;
+    transform: translate(-2rem, -0.8rem);
+}
+
 .content table {
     width: auto;
 }
+
+.content dt {
+    font-weight: $weight-semibold;
+}
+
+.toc li > ol {
+    margin-left: 2rem;
+}
+
+
 
 /*
 p, pre, blockquote {
@@ -343,41 +382,44 @@ hr {
 
 
 //@import "extensions/pymdownx/arithmatex";
-@import "extensions/pymdownx/critic";
+//@import "extensions/pymdownx/critic";
 //@import "extensions/pymdownx/details";
-@import "extensions/pymdownx/highlight";
-@import "extensions/pymdownx/keys";
-@import "extensions/pymdownx/tabbed";
-@import "extensions/pymdownx/tasklist";
+//@import "extensions/pymdownx/highlight";
+//@import "extensions/pymdownx/keys";
+//@import "extensions/pymdownx/tabbed";
+//@import "extensions/pymdownx/tasklist";
 
 
 
 // Permalinks
 a.headerlink {
-    color: $text;
+    color: inherit;
     padding: 0 0.5rem;
     opacity: 0;
     user-select: none;
 }
 h1:hover a.headerlink,
-h2:hover a.headerlink {
+h2:hover a.headerlink,
+h3:hover a.headerlink,
+h4:hover a.headerlink,
+h5:hover a.headerlink,
+h6:hover a.headerlink {
     opacity: 1;
 }
 
 
 // Pluigin: git-revision-date-localized
+/*
 .revision-date {
-    border-top: 1px solid $light;
-    margin-top: 2rem;
-    padding: 1rem 0;
     color: $grey;
     font-size: $size-normal;
 }
+*/
 
 
-.admonition {
-    border: 1px solid red;
-}
+//.admonition {
+//    border: 1px solid red;
+//}
 
 
 

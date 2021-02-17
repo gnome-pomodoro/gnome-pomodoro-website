@@ -1,0 +1,30 @@
+<!-- TODO port to bulma -->
+
+<nav class="hidden-print affix" role="complementary">
+    <div class="toc">
+        <header>
+            Table of contents
+        </header>
+
+        {% macro toc_item(item) %}
+            {% if item.level <= config.theme.navigation_depth %}
+                <li class="nav-item" data-level="{{ item.level }}">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                    {% if item.children %}
+                        <ol>
+                            {% for child in item.children %}
+                                {{ toc_item(child) }}
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+                </li>
+            {% endif %}
+        {% endmacro %}
+
+        <ol>
+            {% for item in page.toc %}
+                {{ toc_item(item) }}
+            {% endfor %}
+        </ol>
+    </div>
+</nav>

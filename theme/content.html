@@ -7,6 +7,11 @@
 {#     </div> #}
 {# {% endif %} #}
 
+<div class="toc">
+    {% include "toc.html" %}
+</div>
+
+
 <div class="content">
     {% if page.meta.title %}
         <h1 class="title">{{ page.meta.title }}</h1>
@@ -19,10 +24,88 @@
     {# <pre>{{ page.meta }}</pre> #}
 
     {{ page.content }}
+
+    {% if page %}
+        <p class="mt-6 is-size-6">
+            Last update: {{ page.meta.git_revision_date_localized }}
+            {% if page.edit_url %}
+                &nbsp; <a href="{{ page.edit_url | url }}" class="em-link">Edit</a>
+            {% endif %}
+        </p>
+    {% endif %}
 </div>
 
-{% if page.meta.git_revision_date_localized %}
-    <div class="revision-date">
-        Last update: {{ page.meta.git_revision_date_localized }}
+<div>
+<!--    self.parent = None-->
+<!--    self.children = None-->
+<!--    self.previous_page = None-->
+<!--    self.next_page = None-->
+<!--    self.active = False-->
+<!--
+    {% if page.previous_page %}
+        <a href="{{ page.previous_page.url | url }}">{{ page.previous_page.title }}</a>
+    {% endif %}
+
+    {% if page.next_page %}
+        <a href="{{ page.next_page.url | url }}">{{ page.next_page.title }}</a>
+    {% endif %}
+-->
+
+
+<!--
+        {% if 'search' in config['plugins'] %}
+            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                <i class="fa fa-search"></i> Search
+            </a>
+        {% endif %}
+-->
+
+
+<!--
+    <div class="level">
+        <div class="level-left">
+            {% if page.meta.git_revision_date_localized %}
+                <div class="level-item">
+                </div>
+            {% endif%}
+        </div>
+        <div class="level-right">
+            {% if page and page.edit_url %}
+                <div class="level-item">
+                    <a href="{{ page.edit_url }}">
+                        <span>Edit Page</span>
+                    </a>
+
+                </div>
+            {% endif %}
+        </div>
     </div>
-{% endif %}
+-->
+    <hr />
+
+    <div class="level">
+        <div class="level-left">
+            {% if page and page.previous_page %}
+                <a href="{{ page.previous_page.url | url }}" class="button is-medium is-secondary">
+                    <span class="icon is-small">
+                        <i class="fa fa-arrow-left"></i>
+                    </span>
+                    <span>{{ page.previous_page.title }}</span>
+                </a>
+            {% endif %}
+        </div>
+        <div class="level-right">
+            {% if page and page.next_page %}
+                <a href="{{ page.next_page.url | url }}" class="button is-medium is-secondary">
+                    <span>{{ page.next_page.title }}</span>
+                    <span class="icon is-small">
+                        <i class="fas fa fa-arrow-right"></i>
+                    </span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+

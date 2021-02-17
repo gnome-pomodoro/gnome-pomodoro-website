@@ -7,9 +7,9 @@ site_description: >-
   TODO
 
 # Repository
-repo_name: gnome-pomodoro
+repo_name: GitHub
 repo_url: https://github.com/gnome-pomodoro/gnome-pomodoro/
-edit_uri: ""
+edit_uri: "edit/master/docs/"
 
 # Copyright
 copyright: Copyright &copy; 2021 Kamil Prusko
@@ -21,40 +21,68 @@ docs_dir: 'docs'
 theme:
     name: null
     custom_dir: 'theme/'
+    language: 'en'
 
     static_templates:
         - 404.html
 
-    language: 'en'
     include_search_page: false
-    search_index_only: true
+    search_index_only: false
 
-strict: true
+    navigation_depth: 2
+
+#strict: true
 
 plugins:
-    - search
-    - git-revision-date-localized:
+    # to get last revision date from git repo rather than page meta
+    - git-revision-date-localized
 
-#    - git-revision-date:
-#        modify_md: false
-#        as_datetime: true
+    # allow docs_dir to begin at "."
+#    - same-dir
+
+    # allow sections to have their own pages
+    - section-index
+
+#    - search
+
+extra_css:
+    # code styles for the codehilite extension
+    - css/code_styles.css
+
+nav:
+    - Home: index.md
+    - Download: download.md
+    - User Guide:
+        - docs/index.md
+        - Getting Started: docs/getting-started.md
+        - Preferences: docs/preferences.md
+        - Integrations: docs/integrations.md
+    - Contributing:
+        - docs/contributing/index.md
+        - Development: docs/contributing/development.md
+        - Documentation: docs/contributing/documentation.md
+        - Translating: docs/contributing/translating.md
+        - Maintainers: docs/contributing/maintainers.md
+
 
 # Extensions
 # See https://python-markdown.github.io/extensions/
 markdown_extensions:
-  - admonition
-  - attr_list
-  - def_list
-  - extra
-  - toc:
-      permalink: true
+#    - admonition
+    - attr_list
+    - def_list
+    - extra
+    - toc:
+        permalink: true
+    - codehilite
+
+# TODO:
+# - strikethrough is not working
+
 
 #  - sane_lists
-
 #  - admonition
 #  - abbr
-#  - attr_list
-#  - def_list
 #  - footnotes
 #  - md_in_html
 #  - pymdownx.arithmatex:
@@ -84,16 +112,46 @@ markdown_extensions:
 #      repo: gnome-pomodoro
 #  - pymdownx.extra
 
-# Documents
-nav:
-    - About: 'index.md'
-    - Download: 'download.md'
-    - User Guide:
-        - Introduction: 'docs/introduction.md'
-        - Customize: 'docs/customize.md'
-        - Integrations: 'docs/integrations.md'
-        - Report Issue: 'docs/report-issue.md'
-    - Contributing:
-        - Translating: 'docs/translating.md'
-        - Development: 'docs/development.md'
+# TODO: ENABLE search plugin 
+# TODO: include Download and release info above footer
+
+
+# Home Page navbar
+# - About (a quick summary / hero)
+# - Features (list of features)
+# - Docs (link to docs)
+# - Download (link to download page)  # / User must select their GNOME Shell version)
+
+# Documentation
+#nav:
+#    - Home: 'index.md'
+##    - About: 
+#    - Download: 'download.md'
+#    - User Guide:
+#        - Getting Started: 'docs/getting-started.md'
+#    #        (assumes user has downloaded the app, if not it provides links)
+#    #        - Enable Extension
+#    #        - Pomodoro Technique & Time Boxing
+#        - Preferences: 'docs/preferences.md'
+#        - Integrations: 'docs/integrations.md'
+#    #        - Custom Actions
+#    #        - DBus
+#    #        - ...
+#    - Contributing:
+#        - Overview: 'docs/contributing/overview.md'
+#        - Development: 'docs/contributing/development.md'
+##            - Getting Code
+##            - Setting up development envirionment
+##            - Building from source
+##            - Style Guide
+##            - Writing Tests
+#        - Documentation: 'docs/contributing/documentation.md'
+#        - Translating: 'docs/contributing/translating.md'
+#        - Maintainers: 'docs/contributing/maintainers.md'
+##            - Releasing a version
+##    - Support: 'support.md'
+##        - Reporting issues
+##        - Asking a question
+
+##    - Test Page: 'test-page.md'
 
