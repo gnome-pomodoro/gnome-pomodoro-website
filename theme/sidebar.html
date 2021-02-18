@@ -16,8 +16,8 @@
 -->
 
 
-{% macro render_nav(items) %}
-    <ul>
+{% macro render_nav(level, items) %}
+    <ul data-level="{{ level }}">
     {% for item in items %}
         {% if item.children %}
             <li>
@@ -26,7 +26,7 @@
                 {% else %}
                     <header>{{ item.title }}</header>
                 {% endif %}
-                {{ render_nav(item.children) }}
+                {{ render_nav(level + 1, item.children) }}
             </li>
         {% else %}
             <li>
@@ -37,7 +37,7 @@
     </ul>
 {% endmacro %}
 
-{{ render_nav(nav) }}
+{{ render_nav(1, nav) }}
 
 
 
@@ -46,4 +46,3 @@
 {{ page.toc }}
 </pre>
 -->
-

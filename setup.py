@@ -13,12 +13,5 @@ setup(
         'mkdocs-git-revision-date-localized-plugin',
         'mkdocs-section-index',
         'pygments',
-#        'mkdocs-same-dir',
-#        'mkdocs-literate-nav',
-        # 'pymdown-extensions',
-        # 'mkdocs-extra-sass-plugin',
-        # 'mkdocs-material',
-        # 'mkdocs-gitbook',
-        # 'mkdocs-bulma',
     ],
 )

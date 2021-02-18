@@ -6,6 +6,8 @@ authors:
     - Kamil Prusko
 ---
 
+# Translating
+
 This is a quick guide on how to get started with translating gnome-pomodoro and how to update existing translations.
 
 You'll need to grab gnome-pomodoro source code. Fork it on github and run in terminal

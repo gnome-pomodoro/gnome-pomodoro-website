@@ -1,18 +1,5 @@
 @charset "utf-8";
 
-
-@font-face {
-    font-family: Asap;
-    src: url(fonts/asap/Asap-Regular.otf);
-     font-weight: 100; 
-}
-
-@font-face {
-    font-family: Asap;
-    src: url(fonts/asap/Asap-Bold.otf);
-    font-weight: 600;
-}
-
 @font-face {
     font-family: Pacifico;
     src: url(fonts/pacifico/Pacifico.ttf);
@@ -53,12 +40,9 @@
     src: local("Open Sans Extrabold"), local("OpenSans-Extrabold"), url(https://fonts.gstatic.com/s/opensans/v13/EInbV5DfGHOiMmvb1Xr-hugdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
 }
 
-// Import a Google Font
-//@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-
 // Set your brand colors
 $bright-blue: rgb(18, 156, 244);
-$dark-blue: #2c556dff;
+$dark-blue: #0988dc;
 $pale-blue: #cde0f0ff;
 $white: #FFFFFF;
 $white-ter: #FAFAFA;
@@ -68,20 +52,20 @@ $family-sans-serif: "Open Sans", "Cantarell", "Droid Sans", "Ubuntu", "DejaVu Sa
 $family-secondary: "Asap";
 // $size-1: 5rem;
 // $size-2: 4rem;
-// $size-7: 1.75rem;
+// $size-7: 0.8rem;
 // $grey-dark: $brown;
 // $grey-light: $beige-light;
-$widescreen-enabled: false;
-//$fullhd-enabled: true;
+$widescreen-enabled: true;
+$fullhd-enabled: true;
 //$body-size: 16px;
-$body-font-size: 1.25em;
+$body-font-size: 1.25rem;
 $primary: $bright-blue;
 $link: $bright-blue;
-$link-hover: $link;
+$link-hover: $dark-blue;
 $light: hsl(0, 0%, 90%);
 $text: hsl(0, 0%, 16%);
 $background: $white;
-$code: hsl(0, 0%, 40%);
+$code: #555555; // hsl(0, 0%, 40%);
 $code-background: hsl(0, 0%, 95%);
 $pre: $code;
 $pre-background: $code-background;
@@ -138,22 +122,16 @@ $fa-font-path: "../fonts/fontawesome" !default;
     user-select: none;
     flex-grow: 0;
     flex-basis: 300px;
-    min-width: 300px;
-//    font-size: $size-normal;
     margin-bottom: 100px;
 }
 #sidebar header {
     font-weight: $weight-semibold;
-//    text-transform: uppercase;
-//    letter-spacing: 0.05rem;
-//    margin: 0 0 0.5rem 0;
-//    word-break: keep-all;
 }
 #sidebar li > ul {
     padding-left: 1.5rem;
     margin-bottom: 1rem;
 }
-#sidebar li.nested > a {
+#sidebar ul[data-level="2"] > li > a {
     font-weight: $weight-normal;
     color: $text;
 }
@@ -171,43 +149,22 @@ $fa-font-path: "../fonts/fontawesome" !default;
     color: inherit;
     font-weight: 600;
 }
-//#sidebar a:hover {
-//    text-underline-offset: 2px;
-//    text-decoration-line: underline;
-//    text-decoration-thickness: 1px;
-//}
 
-//#sidebar a:hover {
-//    color: $text;
-//}
+
 #sidebar a.is-current {
     color: $bright-blue !important;
-//    border-radius: $radius-large;
     pointer-events: none;
 }
-.brand {
+#sidebar .brand {
     display: inline-block !important;
     margin: 40px 20px;
-//    background-color: red;
-}
-
-#content {  // TODO: is it needed?
-    // overflow: auto;
 }
 
 #footer {
-    margin: 5rem 0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     color: $grey;
 }
-/*
-#footer a {
-    color: inherit;
-    font-weight: $weight-semibold;
-}
-#footer a:hover {
-    color: $text;
-}
-*/
 
 
 // Empasized link - it's meant not to stand out as regular links, only as part of UI
@@ -223,14 +180,12 @@ a.em-link:hover {
     font-weight: $weight-semibold;
     font-style: normal;
 }
-#footer > .container {
-    padding: 1.5rem;
-}
-#footer .copyright,
-#footer .disclaimer {
-    font-size: $size-normal;
-    margin: 1.5rem 0;
-}
+//#footer .copyright,
+//#footer .disclaimer {
+//    // $size-normal;
+////    font-size: 0.8em;
+//    margin: 1.5rem 0;
+//}
 #footer .button.is-text {
     text-decoration: none;
 }
@@ -239,19 +194,46 @@ a.em-link:hover {
 }
 
 
-
-body {
-    min-height: 100vh;
-//    background-color: $light;
-//    background-color: $grey-lightest;
-    // background-color: $scheme-main-bis;
+p.is-small {
+    font-size: 0.8em;
 }
+
+
+.fat-button {
+    text-align: left;
+    padding: 1.5rem 1.5rem;
+    height: 3.5em;
+}
+.fat-button em {
+    display: block;
+    font-size: 0.75em;
+    font-style: normal;
+    opacity: 0.5;
+    
+}
+.fat-button strong {
+    display: block;
+    font-weight: $weight-semibold;
+}
+
+/*
 .container > .columns {
     margin: 0;
-    padding: 0;
 }
+*/
 
+//body {
+//    min-height: 100vh;
+////    background-color: $light;
+////    background-color: $grey-lightest;
+//    // background-color: $scheme-main-bis;
+//}
+//.container > .columns {
+//    margin: 0;
+//    padding: 0;
+//}
 
+/*
 h1 {
     font-size: $size-3;
     font-weight: 600;
@@ -276,6 +258,7 @@ h4 {
     margin-top: 1.0rem;
     margin-bottom: 0.25rem;
 }
+*/
 h1 a,
 h2 a,
 h3 a,
@@ -316,7 +299,7 @@ a:not(.button):hover {
     content: "\275D";  /* ❝ */
     display: block;
     position: absolute;
-    font-size: 200%;
+    font-size: 2rem;
     color: $text-strong;
     transform: translate(-2rem, -0.8rem);
 }
@@ -335,12 +318,12 @@ a:not(.button):hover {
 
 
 
-/*
 p, pre, blockquote {
     margin-top: 0.5rem;
     margin-bottom: 0.75rem;
 }
 
+/*
 blockquote {
     border-left: 4px solid $pre;
     margin-left: 2rem;
@@ -380,14 +363,15 @@ hr {
 //$content-table-foot-cell-color
 
 
-
-//@import "extensions/pymdownx/arithmatex";
-//@import "extensions/pymdownx/critic";
-//@import "extensions/pymdownx/details";
-//@import "extensions/pymdownx/highlight";
-//@import "extensions/pymdownx/keys";
-//@import "extensions/pymdownx/tabbed";
-//@import "extensions/pymdownx/tasklist";
+@import "extensions/markdown/_codehilte.scss";
+//@import "extensions/pymdownx/arithmatex.scss";
+//@import "extensions/pymdownx/critic.scss";
+//@import "extensions/pymdownx/details.scss";
+//@import "extensions/pymdownx/highlight.scss";
+//@import "extensions/pymdownx/highlight.scss";
+//@import "extensions/pymdownx/keys.scss";
+//@import "extensions/pymdownx/tabbed.scss";
+//@import "extensions/pymdownx/tasklist.scss";
 
 
 
@@ -397,6 +381,9 @@ a.headerlink {
     padding: 0 0.5rem;
     opacity: 0;
     user-select: none;
+}
+a.headerlink:hover {
+    text-decoration-line: none;
 }
 h1:hover a.headerlink,
 h2:hover a.headerlink,
@@ -434,13 +421,6 @@ h6:hover a.headerlink {
 }
 */
 
-
-
-/*
-.container {
-    outline: 1px dashed red;
-}
-*/
 
 /*
 @import "material-color";
@@ -485,3 +465,77 @@ h6:hover a.headerlink {
 
 @import "main/shame";
 */
+
+
+.button.is-medium {
+    font-size: 1em;
+}
+
+main {
+    margin-top: 3rem;
+}
+
+body {
+    @include mobile {
+        font-size: 1.0rem;
+    }
+    @include tablet-only {
+        font-size: 1.125rem;
+    }
+    @include desktop-only {
+        font-size: 1.125rem;
+    }
+}
+
+
+
+/* TODO: is this the best way? */
+body > .container {
+    padding: 0 32px;
+
+    @include mobile {
+        padding: 0 24px;
+    }
+    @include tablet-only {
+        padding: 0 32px;
+    }
+    @include desktop-only {
+        padding: 0 32px;
+    }
+}
+
+
+#sidebar {
+    @include until($tablet) {
+        display: none;
+    }
+    @include until($widescreen) {
+        flex-basis: 250px;
+    }
+}
+
+//@mixin desktop {
+//}
+
+
+/*
+@media (max-width: $screen-xs-max) {
+
+
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
