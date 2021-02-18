@@ -57,15 +57,15 @@ $family-secondary: "Asap";
 // $grey-light: $beige-light;
 $widescreen-enabled: true;
 $fullhd-enabled: true;
-//$body-size: 16px;
-$body-font-size: 1.25rem;
+$body-size: 20px;
+$body-font-size: 1.0em;
 $primary: $bright-blue;
 $link: $bright-blue;
 $link-hover: $dark-blue;
 $light: hsl(0, 0%, 90%);
 $text: hsl(0, 0%, 16%);
 $background: $white;
-$code: #555555; // hsl(0, 0%, 40%);
+$code: hsl(0, 0%, 33%);
 $code-background: hsl(0, 0%, 95%);
 $pre: $code;
 $pre-background: $code-background;
@@ -180,12 +180,6 @@ a.em-link:hover {
     font-weight: $weight-semibold;
     font-style: normal;
 }
-//#footer .copyright,
-//#footer .disclaimer {
-//    // $size-normal;
-////    font-size: 0.8em;
-//    margin: 1.5rem 0;
-//}
 #footer .button.is-text {
     text-decoration: none;
 }
@@ -201,7 +195,6 @@ p.is-small {
 
 .fat-button {
     text-align: left;
-    padding: 1.5rem 1.5rem;
     height: 3.5em;
 }
 .fat-button em {
@@ -475,15 +468,15 @@ main {
     margin-top: 3rem;
 }
 
-body {
+html {
     @include mobile {
-        font-size: 1.0rem;
+        font-size: 16px;
     }
     @include tablet-only {
-        font-size: 1.125rem;
+        font-size: 18px;
     }
     @include desktop-only {
-        font-size: 1.125rem;
+        font-size: 18px;
     }
 }
 

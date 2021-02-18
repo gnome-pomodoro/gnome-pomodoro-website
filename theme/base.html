@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config.language }}">
+<html lang="{{ config.theme.language }}">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
@@ -42,17 +42,21 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body {% if page and page.is_homepage %} class="homepage"{% endif %}>
+    {% block header %}
+        <nav id="header" class="navbar" role="navigation" aria-label="navigation">
+            <div class="navbar-brand">
+                <div class="navbar-item">
+                    <a href="{{ nav.homepage.url | url }}" class="title is-4"><img src="{{ base_url }}/images/icons/48x48.png" alt="" /></a>
+                </div>
+                <div class="navbar-item">
+                    <a>Home</a>
+                    <a>Docs</a>
+                </div>
+            </div>
+        </nav>
+    {% endblock %}
     {% block body %}
         <div class="container">
-            <!--
-            <nav id="header" class="navbar" role="navigation" aria-label="navigation">
-                <div class="navbar-brand">
-                    <div class="navbar-item">
-                        <a href="{{ nav.homepage.url | url }}" class="title is-4"><img src="{{ base_url }}/images/icons/48x48.png" alt="" />{{ config.site_name }}</a>
-                    </div>
-                </div>
-            </nav>
-            -->
             <div class="columns">
                 <nav id="sidebar" role="navigation" aria-label="main navigation" class="column is-one-forth">
                     {% include "sidebar.html" %}

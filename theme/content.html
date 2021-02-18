@@ -14,9 +14,9 @@
 
     <hr />
 
-    <div class="level">
+    <div class="level is-flex">
         <div class="level-left">
-            <div class="level-item">
+            <div class="level-item is-justify-content-flex-start">
                 {% if page and page.previous_page %}
                     <a href="{{ page.previous_page.url | url }}" class="button is-medium is-primary is-light fat-button">
                         <span class="icon is-small">
@@ -35,14 +35,17 @@
             </div>
         </div>
         <div class="level-right">
-            <div class="level-item">
+            <div class="level-item is-justify-content-flex-end">
                 {% if page and page.next_page %}
                     <a href="{{ page.next_page.url | url }}" class="button is-medium is-primary is-light fat-button">
-                        <span>
-                            {% if page.next_page.parent and not page.next_page.is_section %}<em>{{ page.next_page.parent.title }}:</em>{% endif %}
+                        {% if page.next_page.parent and not page.next_page.is_section %}
+                            <span>
+                                <em>{{ page.next_page.parent.title }}:</em>
+                                <strong>{{ page.next_page.title }}</strong>
+                            </span>
+                        {% else%}
                             <strong>{{ page.next_page.title }}</strong>
-                        </span>
-<!--                            <span>{{ page.next_page.title }}</span>-->
+                        {% endif %}
                         <span class="icon is-small">
                             <i class="fas fa fa-arrow-right"></i>
                         </span>
