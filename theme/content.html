@@ -14,44 +14,40 @@
 
     <hr />
 
-    <div class="level is-flex">
-        <div class="level-left">
-            <div class="level-item is-justify-content-flex-start">
-                {% if page and page.previous_page %}
-                    <a href="{{ page.previous_page.url | url }}" class="button is-medium is-primary is-light fat-button">
-                        <span class="icon is-small">
-                            <i class="fa fa-arrow-left"></i>
-                        </span>
-                        {% if page.previous_page.parent and not page.previous_page.is_section %}
-                            <span>
-                                <em>{{ page.previous_page.parent.title }}:</em>
-                                <strong>{{ page.previous_page.title }}</strong>
-                            </span>
-                        {% else%}
+    <div class="is-flex is-justify-content-space-between is-flex-wrap-wrap">
+        <div class="is-justify-content-flex-start mb-3">
+            {% if page and page.previous_page %}
+                <a href="{{ page.previous_page.url | url }}" class="button is-medium is-primary is-light fat-button">
+                    <span class="icon is-small">
+                        <i class="fa fa-arrow-left"></i>
+                    </span>
+                    {% if page.previous_page.parent and not page.previous_page.is_section %}
+                        <span>
+                            <em>{{ page.previous_page.parent.title }}:</em>
                             <strong>{{ page.previous_page.title }}</strong>
-                        {% endif %}
-                    </a>
-                {% endif %}
-            </div>
-        </div>
-        <div class="level-right">
-            <div class="level-item is-justify-content-flex-end">
-                {% if page and page.next_page %}
-                    <a href="{{ page.next_page.url | url }}" class="button is-medium is-primary is-light fat-button">
-                        {% if page.next_page.parent and not page.next_page.is_section %}
-                            <span>
-                                <em>{{ page.next_page.parent.title }}:</em>
-                                <strong>{{ page.next_page.title }}</strong>
-                            </span>
-                        {% else%}
-                            <strong>{{ page.next_page.title }}</strong>
-                        {% endif %}
-                        <span class="icon is-small">
-                            <i class="fas fa fa-arrow-right"></i>
                         </span>
-                    </a>
-                {% endif %}
-            </div>
+                    {% else%}
+                        <strong>{{ page.previous_page.title }}</strong>
+                    {% endif %}
+                </a>
+            {% endif %}
+        </div>
+        <div class="is-justify-content-flex-end mb-3">
+            {% if page and page.next_page %}
+                <a href="{{ page.next_page.url | url }}" class="button is-medium is-primary is-light fat-button">
+                    {% if page.next_page.parent and not page.next_page.is_section %}
+                        <span>
+                            <em>{{ page.next_page.parent.title }}:</em>
+                            <strong>{{ page.next_page.title }}</strong>
+                        </span>
+                    {% else%}
+                        <strong>{{ page.next_page.title }}</strong>
+                    {% endif %}
+                    <span class="icon is-small">
+                        <i class="fas fa fa-arrow-right"></i>
+                    </span>
+                </a>
+            {% endif %}
         </div>
     </div>
 </footer>

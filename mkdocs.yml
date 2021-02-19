@@ -60,10 +60,10 @@ nav:
         - Preferences: docs/preferences.md
         - Integrations: docs/integrations.md
     - Get Involved:
-        - docs/contributing/index.md
-        - Development: docs/contributing/development.md
-        - Documentation: docs/contributing/documentation.md
-        - Translating: docs/contributing/translating.md
-        - Maintanance: docs/contributing/maintainers.md
-        - Report Issue: docs/contributing/report-issue.md
+        - docs/get-involved/index.md
+        - Development: docs/get-involved/development.md
+        - Documentation: docs/get-involved/documentation.md
+        - Translating: docs/get-involved/translating.md
+        - Maintanance: docs/get-involved/maintainers.md
+        - Report Issue: docs/get-involved/report-issue.md
 

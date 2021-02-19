@@ -104,7 +104,7 @@ Thank you for your interest in translating gnome-pomodoro!
 
 ## Authors
 
-This guide was originally written by [](https://github.com/rmarquis/pacaur/blob/master/po/HOWTO) and adapted by [Bastien Traverse](https://github.com/neitsab) and [Kamil Prusko](https://github.com/kamilprusko).
+This guide was [originally written](https://github.com/rmarquis/pacaur/blob/master/po/HOWTO) by and adapted by [Bastien Traverse](https://github.com/neitsab) and [Kamil Prusko](https://github.com/kamilprusko).
 
 
 ## Resources

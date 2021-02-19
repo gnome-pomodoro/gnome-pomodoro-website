@@ -63,7 +63,8 @@ $primary: $bright-blue;
 $link: $bright-blue;
 $link-hover: $dark-blue;
 $light: hsl(0, 0%, 90%);
-$text: hsl(0, 0%, 16%);
+//$text: hsl(0, 0%, 16%);
+$text: hsl(0, 0%, 15%);
 $background: $white;
 $code: hsl(0, 0%, 33%);
 $code-background: hsl(0, 0%, 95%);
@@ -149,20 +150,52 @@ $fa-font-path: "../fonts/fontawesome" !default;
     color: inherit;
     font-weight: 600;
 }
-
-
 #sidebar a.is-current {
     color: $bright-blue !important;
     pointer-events: none;
 }
 #sidebar .brand {
     display: inline-block !important;
-    margin: 40px 20px;
+    margin: 50px 20px 30px 20px;
 }
 
+
+#header-menu header {
+    font-weight: $weight-semibold;
+}
+#header-menu li > ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+#header-menu ul[data-level="2"] > li > a {
+    font-weight: $weight-normal;
+    color: $text;
+}
+#header-menu li {
+    color: $text-strong;
+    padding: 0;
+    margin: 0.25rem 0;
+}
+#header-menu li a {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    margin: 0.0 -0.75rem;
+}
+#header-menu a {
+    color: inherit;
+    font-weight: 600;
+}
+#header-menu a.is-current {
+    color: $bright-blue !important;
+    pointer-events: none;
+}
+
+
+
+
 #footer {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     color: $grey;
 }
 
@@ -185,6 +218,10 @@ a.em-link:hover {
 }
 #footer .button.is-text:hover {
     background-color: unset;
+}
+
+#footer p {
+    margin-bottom: 1.0rem;
 }
 
 
@@ -466,6 +503,10 @@ h6:hover a.headerlink {
 
 main {
     margin-top: 3rem;
+
+    @include mobile {
+        margin-top: 1.5rem;
+    }
 }
 
 html {
@@ -495,6 +536,87 @@ body > .container {
     @include desktop-only {
         padding: 0 32px;
     }
+}
+
+#header {
+    display: none;
+    padding: 0;
+    margin: 0;
+
+    @include mobile {
+        display: block;
+    }
+}
+
+.navbar a:hover {
+    color: inherit;
+    text-decoration-line: none !important;
+}
+.navbar {
+//    background-color: red;
+}
+.navbar-brand {
+    height: 80px;
+}
+.navbar-brand > .navbar-logo {
+    padding: 0 24px;
+
+    strong {
+        font-weight: $weight-semibold;
+        font-size: 1.25rem;
+    }
+}
+#header-burger {
+    width: 50px;
+    padding: 0;
+    justify-content: center;
+
+    position: relative;
+    top: 0;
+    z-index: 2;
+    width: 60px;
+    padding-right: 10px;
+}
+#header-menu {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    padding-top: 32px;  // just looks good
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: $background;
+    opacity: 0;
+    transition: opacity 350ms ease;
+    font-size: 1.125rem;
+}
+#header-menu.is-active {
+    opacity: 1;
+}
+#header-menu:not(.is-active) {
+    pointer-events: none;
+}
+#header-menu > .container {
+    padding: 24px;
+    transition: transform 500ms ease-out;
+}
+#header-menu:not(.is-active) > .container {
+    transform: translateY(-80px);
+}
+
+.navbar-item:focus {
+    outline: none;
+}
+.navbar-burger {
+    height: auto;
+}
+.navbar-burger > span {
+    height: 2px;
+    border-radius: 1px;
+}
+.navbar-burger:hover {
+    background-color: initial;
 }
 
 
