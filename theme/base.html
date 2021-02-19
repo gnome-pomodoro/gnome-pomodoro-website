@@ -64,6 +64,7 @@
             </div>
         </nav>
     {% endblock %}
+
     {% block body %}
         <div class="container">
             <div class="columns">
@@ -82,14 +83,17 @@
             </div>
         </div>
     {% endblock %}
+
     {% block footer %}
         <footer id="footer" class="container">
+            {% block extra_footer %}{% endblock %}
+
             <p class="is-small">
                 <em>Disclaimer:</em> This project is not affiliated with, authorized by, sponsored by, or otherwise approved by GNOME&nbsp;Foundation and/or the Pomodoro&nbsp;Technique®. The&nbsp;GNOME logo and GNOME name are registered trademarks or trademarks of GNOME&nbsp;Foundation in the United&nbsp;States or other countries. The&nbsp;Pomodoro Technique® and Pomodoro™ are registered trademarks of Francesco&nbsp;Cirillo.
             </p>
 
             <p class="is-small">
-                &copy; 2021. Content is available under  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow noreferrer" class="em-link">Creative Commons CC-BY</a>.
+                &copy; 2021.  The website content is licensed <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="nofollow noreferrer" class="em-link">Creative&nbsp;Commons&nbsp;CC-BY</a>.
             </p>
 
             <p class="has-text-right mt-4">

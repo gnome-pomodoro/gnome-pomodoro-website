@@ -20,17 +20,19 @@ document.addEventListener('DOMContentLoaded', () => {
         return menuBurger.classList.contains('is-active');
     }
 
-    menuBurger.addEventListener('click', () => {
-        if (!isMenuOpened()) {
-            openMenu();
-            document.documentElement.classList.add('is-clipped');
-            document.documentElement.scroll(0, 0)
-        }
-        else {
-            closeMenu();
-            document.documentElement.classList.remove('is-clipped');
-        }
-    });
+    if (menuBurger) {
+        menuBurger.addEventListener('click', () => {
+            if (!isMenuOpened()) {
+                openMenu();
+                document.documentElement.classList.add('is-clipped');
+                document.documentElement.scroll(0, 0)
+            }
+            else {
+                closeMenu();
+                document.documentElement.classList.remove('is-clipped');
+            }
+        });
+    }
 
     // Smooth scrolling
     function scrollToAnchor() {

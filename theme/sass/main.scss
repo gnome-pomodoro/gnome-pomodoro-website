@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Pacifico;
-    src: url(fonts/pacifico/Pacifico.ttf);
+    src: url(../fonts/pacifico/Pacifico.ttf);
 }
 
 @font-face {
@@ -451,3 +451,155 @@ h6:hover .headerlink {
         margin-bottom: 1.0rem;
     }
 }
+
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: clamp(600px, 100vh, 900px);
+    overflow-x: hidden;
+    // max-height: 900px;
+
+    background: rgb(20, 20, 20) url(../images/background.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+
+    text-align: center;
+    color: white;
+    cursor: default;
+
+    abbr {
+        font-family: Asap;
+    }
+    .hero-head {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 3rem;
+        width: 100%;
+
+        .button.is-text {
+            color: white;
+            text-decoration: none;
+            margin: 0.5rem 0;
+        }
+        .button.is-text:hover,
+        .button.is-text:focus {
+            background-color: $primary;
+            color: white;
+            text-shadow: none;
+            text-decoration: none;
+            box-shadow: 0.05rem 0.1rem 1.0rem rgba(0, 0, 0, 0.2);
+        }
+
+        // show burger instead
+//        @include mobile {
+//            display: none;
+//        }
+    }
+    .hero-body {
+        flex-grow: 0;
+
+        display: flex;
+        // min-height: 400px;
+        flex-direction: column;
+
+        .title {
+            // padding-top: 10rem;
+            font-family: Pacifico;
+            text-rendering: optimizeSpeed;
+            font-size: 4.5rem;
+            color: inherit;
+        }
+        .subtitle {
+            color: hsla(0, 0, 67%, 0.6);
+            margin: 1rem 0;
+        }
+    }
+    .hero-footer {
+        position: absolute;
+        bottom: 1.5rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+// replace header with burger
+@media screen and (max-width: 500px) {
+    #hero .hero-head {
+        display: none;
+    }
+}
+
+// force one word per line when in portrait
+@media screen and (max-aspect-ratio: 1/1) and (max-width: 900px)
+{
+    /*
+    #hero {
+        min-height: 600px;
+    }
+    */
+    #hero .title {
+        word-spacing: 9999999px;
+    }
+}
+
+.homepage {
+    .section .title {
+        text-align: center;
+    }
+
+    .nav.is-level-2 {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+.download-button {
+    color: rgba(171, 171, 171, 0.6);
+    text-decoration: none !important;
+    background-color: transparent;  // rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(171, 171, 171, 0.3);
+    font-size: 1.25rem !important;  /* same as subtitle */
+
+    .icon > .fas {
+        transform: translateY(-0.2em);
+        transition: transform 200ms ease-out;
+    }
+    .icon:after {
+        content: '';
+        background-color: rgba(171, 171, 171, 0.6);
+        height: 3px;
+        width: 22px;
+        border-radius: 1.5px;
+        position: absolute;
+        bottom: 0.5em;
+    }
+    
+}
+.download-button:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: white;
+
+    .icon > .fas {
+        transform: translateY(0);
+    }
+    .icon:after {
+        background-color: white;
+    }
+}
+
+/*
+// larger header to fill space
+@media screen and (min-width: 900px),
+       screen and (min-height: 600px)
+{
+    #hero {
+        height: 900px;
+    }
+}
+*/

@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
-{% block styles %}
+{% block old_styles %}
     {{ super() }}
     <link href="{{ base_url }}/css/style-index.css" rel="stylesheet" />
     <link href="{{ base_url }}/libs/owl/owl-carousel.css" rel="stylesheet" />
 {% endblock %}
 
-{% block scripts %}
+{% block old_scripts %}
     <script src="{{ base_url }}/libs/jquery/jquery.min.js" defer></script>
     <script src="{{ base_url }}/libs/jsrender/jsrender.min.js" defer></script>
     <script src="{{ base_url }}/libs/owl/owl-carousel.min.js" defer></script>
@@ -17,7 +17,101 @@
     {{ super() }}
 {% endblock %}
 
+{% block header %}
+{% endblock %}
+
 {% block body %}
+<section id="hero" class="hero is-fullheight">
+    <div class="hero-head">
+        <a href="#about" class="button is-text">About</a>
+        <a href="#features" class="button is-text">Features</a>
+        <a href="/docs/" class="button is-text">Documentation</a>
+    </div>
+    <div class="hero-body">
+        <h1 class="title">
+            A Pomodoro timer<br>for</br><abbr>GNOME</abbr>
+        </h1>
+        <p class="subtitle">
+            Get things done by taking short breaks
+        </p>
+    </div>
+    <div class="hero-footer">
+        <!-- TODO: link to flatpak -->
+        <a href="/download/" class="button download-button is-medium is-outlined">
+            <span class="icon is-small">
+                <i class="fas fa-arrow-down"></i>
+            </span>
+            <span>Download</span>
+        </a>
+    </div>
+</section>
+<div class="container section">
+    <section id="about" class="section">
+    <!--    <div class="container">-->
+            <h2 class="title">About</h2>
+    <!--    </div>-->
+    </section>
+
+    <section id="features" class="section">
+    <!--    <div class="container">-->
+            <h2 class="title">Features</h2>
+            
+    <!--    </div>-->
+    </section>
+
+    <!--
+    <section id="download" class="section is-primary">
+            <h2 class="title">Download</h2>
+    </section>
+    -->
+</div>
+{% endblock %}
+
+{% block extra_footer %}
+    {% macro render_nav(items, level=1) %}
+        <ul class="nav is-level-{{ level }}">
+            {% for item in items %}
+                {% if item.children %}
+                    <li>
+                        {% if item.url %}
+                            <header><a href="{{ item.url | url }}" {% if item.active and item == page %}class="is-current"{% endif %}>{{ item.title }}</a></header>
+                        {% else %}
+                            <header>{{ item.title }}</header>
+                        {% endif %}
+                        {{ render_nav(item.children, level=level+1) }}
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ item.url | url }}" {% if item.active %}class="is-current"{% endif %}>{{ item.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endmacro %}
+
+    <div class="columns">
+        <div class="column is-6">
+            <a class="button is-primary is-medium">
+                <span class="icon is-small">
+                    <i class="fas fa-download"></i>
+                </span>
+                <strong>Download Flatpak</strong>
+            </a>
+        </div>
+
+        {% for item in nav %}
+            {% if item.is_section %}
+                <div class="column">
+                    {{ render_nav([item]) }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+
+{% block old_body %}
 <main role="main">
     <div id="hero">
         <aside>
