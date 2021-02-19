@@ -8,7 +8,7 @@
 -->
 
 {% macro render_nav(level, items) %}
-    <ul data-level="{{ level }}" {% if level == 1 %}class="nav"{% endif %}>
+    <ul class="nav is-level-{{ level }}">
     {% for item in items %}
         {% if item.children %}
             <li>
