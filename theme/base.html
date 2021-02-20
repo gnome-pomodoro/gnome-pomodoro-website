@@ -66,7 +66,7 @@
     {% endblock %}
 
     {% block body %}
-        <div class="container">
+        <section class="container">
             <div class="columns">
                 <nav id="sidebar" role="navigation" aria-label="main navigation" class="column is-one-forth">
                     <div>
@@ -77,11 +77,11 @@
 
                     {% include "nav.html" %}
                 </nav>
-                <main class="column">
+                <article class="column content">
                     {% block content %}{% include "content.html" %}{% endblock %}
-                </main>
+                </article>
             </div>
-        </div>
+        </section>
     {% endblock %}
 
     {% block footer %}

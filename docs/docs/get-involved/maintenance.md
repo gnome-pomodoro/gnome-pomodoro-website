@@ -1,10 +1,10 @@
 ---
-title: Development
+title: Maintenence
 authors:
     - Kamil Prusko
 ---
 
-# Development
+# Maintenence
 
 ## Releasing a version
 

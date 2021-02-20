@@ -141,14 +141,6 @@ $fa-font-path: "../fonts/fontawesome" !default;
 
 // Bulma overrides
 
-main {
-    margin-top: 3rem;
-
-    @include mobile {
-        margin-top: 1.5rem;
-    }
-}
-
 html {
     @include mobile {
         font-size: 16px;
@@ -172,6 +164,14 @@ body > .container {
     }
     @include desktop-only {
         padding: 0 32px;
+    }
+}
+
+article {
+    margin-top: 3rem;
+
+    @include mobile {
+        margin-top: 1.5rem;
     }
 }
 
@@ -484,34 +484,11 @@ h6:hover .headerlink {
         display: flex;
         justify-content: center;
 
-        .button.is-text {
-            color: white;
-            text-decoration: none;
-            margin: 0.5rem 0;
-        }
-        .button.is-text:hover {
-            background-color: $primary;
-            color: white;
-            text-shadow: none;
-            text-decoration: none;
-            box-shadow: 0.05rem 0.1rem 1.0rem rgba(0, 0, 0, 0.2);
-        }
-
         .columns {
             @include until($tablet) {
                 display: none;
             }
         }
-    }
-    .button:focus {
-        background-color: transparent;
-        outline: 2px solid white;
-        color: white;
-        box-shadow: none;
-    }
-    .button.is-outlined:focus {
-        border-color: white;
-        outline: none;
     }
     .hero-body {
         flex-grow: 0;
@@ -533,6 +510,22 @@ h6:hover .headerlink {
     .subtitle {
         color: hsla(0, 0, 67%, 0.6);
         margin: 1rem 0;
+    }
+    .button.is-text {
+        color: white;
+        text-decoration: none;
+        margin: 0.5rem 0;
+    }
+    .button.is-text:hover,
+    .button.is-text:focus {
+        background-color: $primary;
+        color: white;
+        text-shadow: none;
+        text-decoration: none;
+    }
+    .button:hover,
+    .button:focus {
+        box-shadow: 0.05rem 0.1rem 1.0rem rgba(0, 0, 0, 0.2);
     }
     .download-button {
         margin-top: 1.5rem;
@@ -587,7 +580,8 @@ h6:hover .headerlink {
     }
     
 }
-.download-button:hover {
+.download-button:hover,
+.download-button:focus {
     background-color: $primary;
     border-color: $primary;
     color: white;
@@ -617,14 +611,3 @@ h6:hover .headerlink {
     }
 }
 
-
-/*
-// larger header to fill space
-@media screen and (min-width: 900px),
-       screen and (min-height: 600px)
-{
-    #hero {
-        height: 900px;
-    }
-}
-*/

@@ -64,6 +64,7 @@ nav:
         - Development: docs/get-involved/development.md
         - Documentation: docs/get-involved/documentation.md
         - Translating: docs/get-involved/translating.md
-        - Maintanance: docs/get-involved/maintainers.md
+        - Maintenance: docs/get-involved/maintenance.md
+        - Troubleshooting: docs/get-involved/troubleshooting.md
         - Report Issue: docs/get-involved/report-issue.md
 
