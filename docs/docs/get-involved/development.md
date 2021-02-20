@@ -1,6 +1,12 @@
+---
+title: Development
+authors:
+    - Kamil Prusko
+---
 
+# Development
 
-## Getting Code
+## Getting code
 
 ## Setting up development envirionment
 

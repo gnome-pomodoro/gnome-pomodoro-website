@@ -1,4 +1,8 @@
-
+---
+title: Integrations
+authors:
+    - Kamil Prusko
+---
 
 # Integrations
 

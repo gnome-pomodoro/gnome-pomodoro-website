@@ -274,6 +274,10 @@ a:not(.button):hover {
     padding-left: 1.5rem;
     margin-bottom: 1rem;
 }
+.nav p {
+    font-weight: $weight-normal;
+    color: $text;
+}
 .nav.is-level-1 {
     font-weight: $weight-semibold;
     color: $text-strong;
@@ -473,19 +477,19 @@ h6:hover .headerlink {
         font-family: Asap;
     }
     .hero-head {
+        flex-grow: 1;
+        align-items: center;
+        padding-bottom: 2rem;
+
         display: flex;
         justify-content: center;
-        position: absolute;
-        top: 3rem;
-        width: 100%;
 
         .button.is-text {
             color: white;
             text-decoration: none;
             margin: 0.5rem 0;
         }
-        .button.is-text:hover,
-        .button.is-text:focus {
+        .button.is-text:hover {
             background-color: $primary;
             color: white;
             text-shadow: none;
@@ -493,45 +497,48 @@ h6:hover .headerlink {
             box-shadow: 0.05rem 0.1rem 1.0rem rgba(0, 0, 0, 0.2);
         }
 
-        // show burger instead
-//        @include mobile {
-//            display: none;
-//        }
+        .columns {
+            @include until($tablet) {
+                display: none;
+            }
+        }
+    }
+    .button:focus {
+        background-color: transparent;
+        outline: 2px solid white;
+        color: white;
+        box-shadow: none;
+    }
+    .button.is-outlined:focus {
+        border-color: white;
+        outline: none;
     }
     .hero-body {
         flex-grow: 0;
-
+        padding: 1rem;
         display: flex;
-        // min-height: 400px;
         flex-direction: column;
-
-        .title {
-            // padding-top: 10rem;
-            font-family: Pacifico;
-            text-rendering: optimizeSpeed;
-            font-size: 4.5rem;
-            color: inherit;
-        }
-        .subtitle {
-            color: hsla(0, 0, 67%, 0.6);
-            margin: 1rem 0;
-        }
     }
     .hero-footer {
-        position: absolute;
-        bottom: 1.5rem;
-        width: 100%;
-        text-align: center;
+        flex-grow: 1;
+    }
+
+    .title {
+        // padding-top: 10rem;
+        font-family: Pacifico;
+        text-rendering: optimizeSpeed;
+        font-size: 4.5rem;
+        color: inherit;
+    }
+    .subtitle {
+        color: hsla(0, 0, 67%, 0.6);
+        margin: 1rem 0;
+    }
+    .download-button {
+        margin-top: 1.5rem;
     }
 }
 
-
-// replace header with burger
-@media screen and (max-width: 500px) {
-    #hero .hero-head {
-        display: none;
-    }
-}
 
 // force one word per line when in portrait
 @media screen and (max-aspect-ratio: 1/1) and (max-width: 900px)
@@ -592,6 +599,24 @@ h6:hover .headerlink {
         background-color: white;
     }
 }
+
+.github-corner:hover .octo-arm {
+    animation:octocat-wave 560ms ease-in-out
+}
+@keyframes octocat-wave {
+    0%, 100% { transform:rotate(0) }
+    20%,60% { transform:rotate(-25deg) }
+    40%, 80% { transform:rotate(10deg) }
+}
+@media (max-width:500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+    .github-corner .octo-arm {
+        animation:octocat-wave 560ms ease-in-out
+    }
+}
+
 
 /*
 // larger header to fill space

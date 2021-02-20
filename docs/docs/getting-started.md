@@ -1,12 +1,13 @@
+---
+title: Getting Started
+authors:
+    - Kamil Prusko
+---
+
+# Getting started
 
 
-(assumes user has downloaded the app, if not it provides links)
-
-
-# Getting Started
-
-
-## Enable Extension
+## Enable extension
 
 
 ## Pomodoro Technique & Time Boxing

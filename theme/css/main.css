@@ -12403,6 +12403,10 @@ a:not(.button):hover {
   padding-left: 1.5rem;
   margin-bottom: 1rem; }
 
+.nav p {
+  font-weight: 400;
+  color: #262626; }
+
 .nav.is-level-1 {
   font-weight: 600;
   color: #363636; }
@@ -12569,43 +12573,50 @@ h6:hover .headerlink {
   #hero abbr {
     font-family: Asap; }
   #hero .hero-head {
+    flex-grow: 1;
+    align-items: center;
+    padding-bottom: 2rem;
     display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 3rem;
-    width: 100%; }
+    justify-content: center; }
     #hero .hero-head .button.is-text {
       color: white;
       text-decoration: none;
       margin: 0.5rem 0; }
-    #hero .hero-head .button.is-text:hover,
-    #hero .hero-head .button.is-text:focus {
+    #hero .hero-head .button.is-text:hover {
       background-color: #129cf4;
       color: white;
       text-shadow: none;
       text-decoration: none;
       box-shadow: 0.05rem 0.1rem 1rem rgba(0, 0, 0, 0.2); }
+    @media screen and (max-width: 768px) {
+      #hero .hero-head .columns {
+        display: none; } }
+  #hero .button:focus {
+    background-color: transparent;
+    outline: 2px solid white;
+    color: white;
+    box-shadow: none; }
+  #hero .button.is-outlined:focus {
+    border-color: white;
+    outline: none; }
   #hero .hero-body {
     flex-grow: 0;
+    padding: 1rem;
     display: flex;
     flex-direction: column; }
-    #hero .hero-body .title {
-      font-family: Pacifico;
-      text-rendering: optimizeSpeed;
-      font-size: 4.5rem;
-      color: inherit; }
-    #hero .hero-body .subtitle {
-      color: rgba(171, 171, 171, 0.6);
-      margin: 1rem 0; }
   #hero .hero-footer {
-    position: absolute;
-    bottom: 1.5rem;
-    width: 100%;
-    text-align: center; }
+    flex-grow: 1; }
+  #hero .title {
+    font-family: Pacifico;
+    text-rendering: optimizeSpeed;
+    font-size: 4.5rem;
+    color: inherit; }
+  #hero .subtitle {
+    color: rgba(171, 171, 171, 0.6);
+    margin: 1rem 0; }
+  #hero .download-button {
+    margin-top: 1.5rem; }
 
-@media screen and (max-width: 500px) {
-  #hero .hero-head {
-    display: none; } }
 @media screen and (max-aspect-ratio: 1 / 1) and (max-width: 900px) {
   /*
   #hero {
@@ -12648,6 +12659,22 @@ h6:hover .headerlink {
   .download-button:hover .icon:after {
     background-color: white; }
 
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out; }
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0); }
+  20%,60% {
+    transform: rotate(-25deg); }
+  40%, 80% {
+    transform: rotate(10deg); } }
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none; }
+
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out; } }
 /*
 // larger header to fill space
 @media screen and (min-width: 900px),
