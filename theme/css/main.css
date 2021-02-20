@@ -1,7 +1,20 @@
 @charset "UTF-8";
 @font-face {
-  font-family: Pacifico;
-  src: url(../fonts/pacifico/Pacifico.ttf); }
+  font-family: "Pacifico";
+  src: url(../fonts/pacifico/Pacifico.ttf);
+  font-display: block; }
+@font-face {
+  font-family: "Asap";
+  src: url(../fonts/asap/Asap-Regular.otf);
+  font-style: normal;
+  font-weight: 400;
+  font-display: block; }
+@font-face {
+  font-family: "Asap";
+  src: url(../fonts/asap/Asap-Bold.otf);
+  font-style: normal;
+  font-weight: 600;
+  font-display: block; }
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
@@ -12592,7 +12605,10 @@ h6:hover .headerlink {
     font-family: Pacifico;
     text-rendering: optimizeSpeed;
     font-size: 4.5rem;
-    color: inherit; }
+    color: inherit;
+    font-weight: normal; }
+    #hero .title abbr {
+      font-weight: bold; }
   #hero .subtitle {
     color: rgba(171, 171, 171, 0.6);
     margin: 1rem 0; }
