@@ -47,6 +47,8 @@ markdown_extensions:
     - extra
     - toc:
         permalink: true
+    - pymdownx.tabbed
+    - pymdownx.tasklist
 
 # Strict mode doesn't work with section-index plugin
 strict: false

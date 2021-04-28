@@ -13,5 +13,6 @@ setup(
         'mkdocs-git-revision-date-localized-plugin',
         'mkdocs-section-index',
         'pygments',
+        'pymdown-extensions',
     ],
 )
