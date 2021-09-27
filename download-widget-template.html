@@ -209,8 +209,11 @@
                     {{if gte(gnome, "3.14") && lte(gnome, "3.18") }}
                         <li>sudo dnf install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel telepathy-glib-devel google-droid-sans-fonts</li>
                     {{/if}}
-                    {{if gte(gnome, "3.20") }}
+                    {{if gte(gnome, "3.20") && lte(gnome, "3.38")}}
                         <li>sudo dnf install autoconf-archive gettext vala vala-tools pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel libappindicator-gtk3-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gsettings-desktop-schemas-devel gstreamer1-devel</li>
+                    {{/if}}
+                    {{if gte(gnome, "40")}}
+                        <li>sudo dnf install meson gcc gettext vala pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel gdk-pixbuf2-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gstreamer1-devel</li>
                     {{/if}}
                 </ol>
             {{/if}}
@@ -224,13 +227,21 @@
 
             <p>Inside unpacked directory run</p>
             <ol class="bash">
-                {{if gentoo }}
-                    <li>export VALAC=/usr/bin/valac-0.26</li>
-                    <li>export VAPIGEN=/usr/bin/vapigen-0.26</li>
+                {{if gte(gnome, "40") }}
+                    <!-- Build with Meson -->
+                    <li>meson . build</li>
+                    <li>meson compile -C build</li>
+                    <li>sudo meson install -C build --no-rebuild</li>
+                {{else}}
+                    <!-- Build older versions with Autotools -->
+                    {{if gentoo }}
+                        <li>export VALAC=/usr/bin/valac-0.26</li>
+                        <li>export VAPIGEN=/usr/bin/vapigen-0.26</li>
+                    {{/if}}
+                    <li>./autogen.sh --prefix=/usr --datadir=/usr/share</li>
+                    <li>make</li>
+                    <li>sudo make install</li>
                 {{/if}}
-                <li>./autogen.sh --prefix=/usr --datadir=/usr/share</li>
-                <li>make</li>
-                <li>sudo make install</li>
             </ol>
         </section>
     {{/if}}
