@@ -463,7 +463,7 @@
                 "repository": "https://download.opensuse.org/repositories/home:kamilprusko/xUbuntu_18.04/"
               },
               "gnome": "3.28",
-              "label": "18.04 <em>(Bionic Beaver)</em>"
+              "label": "18.04 LTS <em>(Bionic Beaver)</em>"
             },
             "18.10": {
               "context": {},
@@ -479,6 +479,11 @@
               "context": {},
               "gnome": "3.34",
               "label": "19.10 <em>(Eoan Ermine)</em>"
+            },
+            "20.04": {
+              "context": {},
+              "gnome": "3.36",
+              "label": "20.04 LTS <em>(Focal Fossa)</em>"
             }
           },
           "childrenLabel": "Release",
