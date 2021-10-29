@@ -78,3 +78,11 @@ See:
 
 ## Writing tests
 
+
+## Updating dependencies
+
+To check latest dependency version run
+```
+$ pkg-config --modversion <dependency-name>
+```
+
