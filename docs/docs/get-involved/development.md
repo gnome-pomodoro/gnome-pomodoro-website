@@ -33,6 +33,20 @@ $ cd gnome-pomodoro
 
 TODO: About setting up JHBuild
 
+### Updating jhbuild
+
+```
+cd ~/jhbuild/checkout/jhbuild
+$ git pull --rebase
+$ autoreconf
+$ make install
+$ jhbuild sanitycheck
+$ jhbuild sysdeps  # and install missing dependencies
+$ jhbuild build
+```
+
+
+### Running gnome-pomodoro from jhbuild
 
 Finally, to open a nested gnome-shell session in Wayland do:
 ```
