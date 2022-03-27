@@ -191,8 +191,11 @@
                     {{if gte(gnome, "3.14") && lte(gnome, "3.18") }}
                         <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libgnome-desktop-3-dev libcanberra-dev libdbus-glib-1-dev libgstreamer1.0-dev libtelepathy-glib-dev fonts-droid </li>
                     {{/if}}
-                    {{if gte(gnome, "3.20") }}
+                    {{if gte(gnome, "3.20") && lte(gnome, "3.38") }}
                         <li>sudo apt-get install autoconf-archive gettext valac pkg-config desktop-file-utils appstream-util libappstream-glib-dev libglib2.0-dev gsettings-desktop-schemas-dev gobject-introspection libgirepository1.0-dev libsqlite3-dev libgom-1.0-dev libgstreamer1.0-dev libgtk-3-dev libcanberra-dev libpeas-dev libappindicator3-dev</li>
+                    {{/if}}
+                    {{if gte(gnome, "40") }}
+                        <li>sudo apt-get install meson gettext valac pkg-config desktop-file-utils appstream-util libappstream-glib-dev libglib2.0-dev gsettings-desktop-schemas-dev gobject-introspection libgirepository1.0-dev libsqlite3-dev libgom-1.0-dev libgstreamer1.0-dev libgtk-3-dev libcanberra-dev libpeas-dev libjson-glib-dev</li>
                     {{/if}}
                 </ol>
             {{/if}}
@@ -213,7 +216,7 @@
                         <li>sudo dnf install autoconf-archive gettext vala vala-tools pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel libappindicator-gtk3-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gsettings-desktop-schemas-devel gstreamer1-devel</li>
                     {{/if}}
                     {{if gte(gnome, "40")}}
-                        <li>sudo dnf install meson gcc gettext vala pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel gdk-pixbuf2-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gstreamer1-devel</li>
+                        <li>sudo dnf install meson gcc gettext vala pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel gdk-pixbuf2-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gstreamer1-devel json-glib-devel</li>
                     {{/if}}
                 </ol>
             {{/if}}
@@ -229,7 +232,7 @@
             <ol class="bash">
                 {{if gte(gnome, "40") }}
                     <!-- Build with Meson -->
-                    <li>meson . build</li>
+                    <li>meson . build --prefix=/usr</li>
                     <li>meson compile -C build</li>
                     <li>sudo meson install -C build --no-rebuild</li>
                 {{else}}
