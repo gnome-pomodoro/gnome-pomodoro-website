@@ -31,6 +31,15 @@ $ cd gnome-pomodoro
 ## Setting up development environment
 
 
+### Testing
+
+To get gnome-shell logs you can start a new session:
+
+```
+dbus-run-session -- gnome-shell --nested --wayland
+```
+
+
 TODO: About setting up JHBuild
 
 ### Updating jhbuild

@@ -13,7 +13,8 @@ TODO: how contributors can help
 
 - Make sure you have latest code:
 ```
-$ git pull
+$ git checkout master
+$ git pull --rebase
 ```
 
 - Make sure you don't have local changes:
@@ -54,6 +55,14 @@ $ git push --tags
 ```
 git commit -a -m "Post release version bump"
 git push
+```
+
+- Update relevant gnome-* branches
+
+```
+git checkout gnome-xxx
+git reset --hard master
+git push --force-with-lease
 ```
 
 
