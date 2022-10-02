@@ -40,6 +40,9 @@
             },
             "36": {
               "gnome": "42"
+            },
+            "37": {
+              "gnome": "43"
             }
           },
           "childrenLabel": "Release",
@@ -86,6 +89,9 @@
             },
             "42": {
               "gnome": "42"
+            },
+            "43": {
+              "gnome": "43"
             }
           },
           "childrenLabel": "GNOME",
@@ -112,6 +118,10 @@
             "22.04": {
               "gnome": "42",
               "label": "22.04 LTS <em>(Jammy Jellyfish)</em>"
+            },
+            "22.10": {
+              "gnome": "43",
+              "label": "22.10 <em>(Kinetic Kudu)</em>"
             }
           },
           "childrenLabel": "Release",
