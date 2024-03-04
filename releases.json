@@ -3,15 +3,11 @@
     "linux": {
       "children": {
         "arch": {
-          "gnome": "44",
+          "gnome": "45",
           "label": "Arch"
         },
         "debian": {
           "children": {
-            "11": {
-              "gnome": "3.38",
-              "label": "11 <em>(Bullseye)</em>"
-            },
             "12": {
               "gnome": "43",
               "label": "12 <em>(Bookworm)</em>"
@@ -22,12 +18,6 @@
         },
         "fedora": {
           "children": {
-            "32": {
-              "gnome": "3.36"
-            },
-            "33": {
-              "gnome": "3.38"
-            },
             "34": {
               "gnome": "40"
             },
@@ -45,23 +35,26 @@
             },
             "39": {
               "gnome": "45"
+            },
+            "40": {
+              "gnome": "46"
             }
           },
           "childrenLabel": "Release",
           "label": "Fedora"
         },
         "gentoo": {
-          "gnome": "43",
+          "gnome": "45",
           "label": "Gentoo"
         },
         "opensuse": {
           "children": {
-            "leap-15.2": {
-              "gnome": "3.34",
-              "label": "Leap 15.2"
+            "leap-15.5": {
+              "gnome": "41",
+              "label": "Leap 15.5"
             },
             "tumbleweed": {
-              "gnome": "43",
+              "gnome": "45",
               "label": "Tumbleweed"
             }
           },
@@ -71,12 +64,6 @@
         },
         "other": {
           "children": {
-            "3.36": {
-              "gnome": "3.36"
-            },
-            "3.38": {
-              "gnome": "3.38"
-            },
             "40": {
               "gnome": "40"
             },
@@ -94,6 +81,9 @@
             },
             "45": {
               "gnome": "45"
+            },
+            "46": {
+              "gnome": "46"
             }
           },
           "childrenLabel": "GNOME",
@@ -101,14 +91,6 @@
         },
         "ubuntu": {
           "children": {
-            "20.04": {
-              "gnome": "3.36",
-              "label": "20.04 LTS <em>(Focal Fossa)</em>"
-            },
-            "21.10": {
-              "gnome": "3.38",
-              "label": "21.04 <em>(Hirsute Hippo)</em>"
-            },
             "21.10": {
               "gnome": "40",
               "label": "21.10 <em>(Impish Indri)</em>"
@@ -128,6 +110,10 @@
             "23.10": {
               "gnome": "45",
               "label": "23.10 <em>(Mantic Minotaur)</em>"
+            },
+            "24.04": {
+              "gnome": "46",
+              "label": "24.04 <em>(Noble Numbat)</em>"
             }
           },
           "childrenLabel": "Release",
