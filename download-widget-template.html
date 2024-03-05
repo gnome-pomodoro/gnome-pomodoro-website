@@ -1,10 +1,6 @@
 {{if linux }}
     <!-- Install from distro repos -->
 
-    {{if lt(gnome, "3.16") }}
-        <div class="alert alert-warning" role="alert">Available version supports only GNOME Shell. Support for Unity, Mate and XFCE is available for newer distro releases.</div>
-    {{/if}}
-
     {{if arch }}
         <section>
             <header>
@@ -30,7 +26,7 @@
         </section>
     {{/if}}
 
-    {{if debian && gte(debian, "7") }}
+    {{if debian }}
         <section>
             <header>
                 <h4>Install from repositories</h4>
@@ -45,11 +41,7 @@
         </section>
     {{/if}}
 
-    {{if ubuntu && gte(ubuntu, "14.10") }}
-        {{if eq(ubuntu, "15.10") || eq(ubuntu, "16.04") }}
-            <div class="alert alert-warning" role="alert">To get support for Unity, Mate or XFCE please install packages from this website. Packages in the repos haven't been updated.</div>
-        {{/if}}
-
+    {{if ubuntu }}
         <section>
             <header>
                 <h4>Install from repositories</h4>
@@ -163,121 +155,58 @@
 
     <!-- Install from source -->
 
-    {{if gte(gnome, "3.8") }}
-        <section>
-            <header>
-                <h4>Build from source code</h4>
-            </header>
+    <section>
+        <header>
+            <h4>Build from source code</h4>
+        </header>
 
-            <div class="button-box">
-                <a download href="https://github.com/gnome-pomodoro/gnome-pomodoro/tarball/gnome-{{: gnome }}" rel="nofollow" class="button button-default download-icon"><span>Get source code</span></a>
-            </div>
+        <div class="button-box">
+            <a download href="https://github.com/gnome-pomodoro/gnome-pomodoro/tarball/gnome-{{: gnome }}" rel="nofollow" class="button button-default download-icon"><span>Get source code</span></a>
+        </div>
 
-            <p>or if you wish to get it with git</p>
-            <ol class="bash">
-                <li>git clone -b gnome-{{: gnome }} https://github.com/gnome-pomodoro/gnome-pomodoro.git</li>
-                <li>cd gnome-pomodoro</li>
-            </ol>
+        <p>or if you wish to get it with git</p>
+        <ol class="bash">
+            <li>git clone -b gnome-{{: gnome }} https://github.com/gnome-pomodoro/gnome-pomodoro.git</li>
+            <li>cd gnome-pomodoro</li>
+        </ol>
 
-            {{if debian || ubuntu }}
-                <p>Install dependencies</p>
-                <ol class="bash">
-                    {{if lte(gnome, "3.8") }}
-                        <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libclutter-gtk-1.0-dev libgnome-desktop-3-dev libcanberra-dev libgdata-dev libgstreamer0.10-dev libupower-glib-dev fonts-droid</li>
-                    {{/if}}
-                    {{if gte(gnome, "3.10") && lte(gnome, "3.12") }}
-                        <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libgnome-desktop-3-dev libcanberra-dev libdbus-glib-1-dev libgstreamer1.0-dev libupower-glib-dev fonts-droid</li>
-                    {{/if}}
-                    {{if gte(gnome, "3.14") && lte(gnome, "3.18") }}
-                        <li>sudo apt-get install gnome-common intltool valac libglib2.0-dev gobject-introspection libgirepository1.0-dev libgtk-3-dev libgnome-desktop-3-dev libcanberra-dev libdbus-glib-1-dev libgstreamer1.0-dev libtelepathy-glib-dev fonts-droid </li>
-                    {{/if}}
-                    {{if gte(gnome, "3.20") && lte(gnome, "3.38") }}
-                        <li>sudo apt-get install autoconf-archive gettext valac pkg-config desktop-file-utils appstream-util libappstream-glib-dev libglib2.0-dev gsettings-desktop-schemas-dev gobject-introspection libgirepository1.0-dev libsqlite3-dev libgom-1.0-dev libgstreamer1.0-dev libgtk-3-dev libcanberra-dev libpeas-dev libappindicator3-dev</li>
-                    {{/if}}
-                    {{if gte(gnome, "40") }}
-                        <li>sudo apt-get install meson gettext valac pkg-config desktop-file-utils appstream-util libappstream-glib-dev libglib2.0-dev gsettings-desktop-schemas-dev gobject-introspection libgirepository1.0-dev libsqlite3-dev libgom-1.0-dev libgstreamer1.0-dev libgtk-3-dev libcanberra-dev libpeas-dev libjson-glib-dev</li>
-                    {{/if}}
-                </ol>
-            {{/if}}
-
-            {{if fedora }}
-                <p>Install dependencies</p>
-                <ol class="bash">
-                    {{if lte(gnome, "3.8") }}
-                        <li>sudo yum install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel clutter-gtk-devel gnome-desktop3-devel libcanberra-devel libgdata-devel gstreamer-devel upower-devel google-droid-sans-fonts</li>
-                    {{/if}}
-                    {{if gte(gnome, "3.10") && lte(gnome, "3.12") }}
-                        <li>sudo yum install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel upower-devel google-droid-sans-fonts</li>
-                    {{/if}}
-                    {{if gte(gnome, "3.14") && lte(gnome, "3.18") }}
-                        <li>sudo dnf install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel telepathy-glib-devel google-droid-sans-fonts</li>
-                    {{/if}}
-                    {{if gte(gnome, "3.20") && lte(gnome, "3.38")}}
-                        <li>sudo dnf install autoconf-archive gettext vala vala-tools pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel libappindicator-gtk3-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gsettings-desktop-schemas-devel gstreamer1-devel</li>
-                    {{/if}}
-                    {{if gte(gnome, "40")}}
-                        <li>sudo dnf install meson gcc gettext vala pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel gdk-pixbuf2-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gstreamer1-devel json-glib-devel</li>
-                    {{/if}}
-                </ol>
-            {{/if}}
-
-            {{if gentoo }}
-                <p>Install dependencies</p>
-                <ol class="bash">
-                    <li>sudo emerge gnome-common intltool vala-common vala gobject-introspection-common gobject-introspection dev-libs/glib dbus-glib dev-libs/gom</li>
-                </ol>
-            {{/if}}
-
-            <p>Inside unpacked directory run</p>
+        {{if debian || ubuntu }}
+            <p>Install dependencies</p>
             <ol class="bash">
                 {{if gte(gnome, "40") }}
-                    <!-- Build with Meson -->
-                    <li>meson . build --prefix=/usr</li>
-                    <li>meson compile -C build</li>
-                    <li>sudo meson install -C build --no-rebuild</li>
-                {{else}}
-                    <!-- Build older versions with Autotools -->
-                    {{if gentoo }}
-                        <li>export VALAC=/usr/bin/valac-0.26</li>
-                        <li>export VAPIGEN=/usr/bin/vapigen-0.26</li>
-                    {{/if}}
-                    <li>./autogen.sh --prefix=/usr --datadir=/usr/share</li>
-                    <li>make</li>
-                    <li>sudo make install</li>
+                    <li>sudo apt-get install meson gettext valac pkg-config desktop-file-utils appstream-util libappstream-glib-dev libglib2.0-dev gsettings-desktop-schemas-dev gobject-introspection libgirepository1.0-dev libsqlite3-dev libgom-1.0-dev libgstreamer1.0-dev libgtk-3-dev libcanberra-dev libpeas-dev libjson-glib-dev</li>
                 {{/if}}
             </ol>
-        </section>
-    {{/if}}
+        {{/if}}
 
-
-    <!-- First run note -->
-    {{if gte(gnome, "3.8") && lte(gnome, "3.12") }}
-        <section>
-            <header>
-                <h4>Running for first time</h4>
-            </header>
-
-            <p>If you’re updating, you’ll need to close running instance.</p>
+        {{if fedora }}
+            <p>Install dependencies</p>
             <ol class="bash">
-                <li>killall gnome-pomodoro</li>
-                <li>gnome-pomodoro</li>
+                {{if gte(gnome, "40")}}
+                    <li>sudo dnf install meson gcc gettext vala pkg-config desktop-file-utils glib2-devel gtk3-devel libappstream-glib-devel gdk-pixbuf2-devel libcanberra-devel libpeas-devel sqlite-devel gom-devel gobject-introspection-devel gstreamer1-devel json-glib-devel</li>
+                {{/if}}
             </ol>
+        {{/if}}
 
-            <p>This will enable GNOME Shell extension. A new indicator should show up in the top panel. If it doesn’t, restart GNOME Shell by hitting <code>Alt + F2</code> and typing <code>r</code>.</p>
-        </section>
-    {{/if}}
+        {{if gentoo }}
+            <p>Install dependencies</p>
+            <ol class="bash">
+                <li>sudo emerge gnome-common intltool vala-common vala gobject-introspection-common gobject-introspection dev-libs/glib dbus-glib dev-libs/gom</li>
+            </ol>
+        {{/if}}
 
-
-    <!-- Install from extensions.gnome.org -->
-
-    {{if gte(gnome, "3.2") && lte(gnome, "3.10") }}
-        <section>
-            <header>
-                <h4>Install from extensions.gnome.org</h4>
-            </header>
-
-            <p>You can grab an older version <a href="https://extensions.gnome.org/extension/53/pomodoro/">here</a>. Just note that it’s no longer maintained.</p>
-        </section>
-    {{/if}}
+        <p>Inside unpacked directory run</p>
+        <ol class="bash">
+            {{if gte(gnome, "45") }}
+                <li>meson setup --prefix=/usr build</li>
+                <li>meson compile -C build</li>
+                <li>sudo meson install -C build --no-rebuild</li>
+            {{else}}
+                <li>meson . build --prefix=/usr</li>
+                <li>meson compile -C build</li>
+                <li>sudo meson install -C build --no-rebuild</li>
+            {{/if}}
+        </ol>
+    </section>
 
 {{/if}}
