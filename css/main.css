@@ -1030,6 +1030,10 @@ h2 {
     padding-bottom: 3em;
 }
 
+#tracking{
+    padding-top: 4em;
+    border-bottom: 1px solid #eee;
+}
 
 /* Disable text highlighting */
 .button,
