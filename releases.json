@@ -3,7 +3,7 @@
     "linux": {
       "children": {
         "arch": {
-          "gnome": "45",
+          "gnome": "47",
           "label": "Arch"
         },
         "debian": {
@@ -18,12 +18,6 @@
         },
         "fedora": {
           "children": {
-            "34": {
-              "gnome": "40"
-            },
-            "35": {
-              "gnome": "41"
-            },
             "36": {
               "gnome": "42"
             },
@@ -38,6 +32,9 @@
             },
             "40": {
               "gnome": "46"
+            },
+            "41": {
+              "gnome": "47"
             }
           },
           "childrenLabel": "Release",
@@ -49,9 +46,9 @@
         },
         "opensuse": {
           "children": {
-            "leap-15.5": {
-              "gnome": "41",
-              "label": "Leap 15.5"
+            "leap-15.6": {
+              "gnome": "44",
+              "label": "Leap 15.6"
             },
             "tumbleweed": {
               "gnome": "45",
@@ -64,12 +61,6 @@
         },
         "other": {
           "children": {
-            "40": {
-              "gnome": "40"
-            },
-            "41": {
-              "gnome": "41"
-            },
             "42": {
               "gnome": "42"
             },
@@ -84,6 +75,9 @@
             },
             "46": {
               "gnome": "46"
+            },
+            "47": {
+              "gnome": "47"
             }
           },
           "childrenLabel": "GNOME",
@@ -113,7 +107,11 @@
             },
             "24.04": {
               "gnome": "46",
-              "label": "24.04 <em>(Noble Numbat)</em>"
+              "label": "24.04 LTS <em>(Noble Numbat)</em>"
+            },
+            "24.10": {
+              "gnome": "47",
+              "label": "24.10 <em>(24.10 Oracular Oriole)</em>"
             }
           },
           "childrenLabel": "Release",
