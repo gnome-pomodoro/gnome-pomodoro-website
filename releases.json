@@ -3,7 +3,7 @@
     "linux": {
       "children": {
         "arch": {
-          "gnome": "47",
+          "gnome": "48",
           "label": "Arch"
         },
         "debian": {
@@ -35,23 +35,26 @@
             },
             "41": {
               "gnome": "47"
+            },
+            "42": {
+              "gnome": "48"
             }
           },
           "childrenLabel": "Release",
           "label": "Fedora"
         },
         "gentoo": {
-          "gnome": "45",
+          "gnome": "48",
           "label": "Gentoo"
         },
         "opensuse": {
           "children": {
             "leap-15.6": {
-              "gnome": "44",
+              "gnome": "47",
               "label": "Leap 15.6"
             },
             "tumbleweed": {
-              "gnome": "45",
+              "gnome": "48",
               "label": "Tumbleweed"
             }
           },
@@ -78,6 +81,9 @@
             },
             "47": {
               "gnome": "47"
+            },
+            "48": {
+              "gnome": "48"
             }
           },
           "childrenLabel": "GNOME",
@@ -85,10 +91,6 @@
         },
         "ubuntu": {
           "children": {
-            "21.10": {
-              "gnome": "40",
-              "label": "21.10 <em>(Impish Indri)</em>"
-            },
             "22.04": {
               "gnome": "42",
               "label": "22.04 LTS <em>(Jammy Jellyfish)</em>"
@@ -111,7 +113,11 @@
             },
             "24.10": {
               "gnome": "47",
-              "label": "24.10 <em>(24.10 Oracular Oriole)</em>"
+              "label": "24.10 <em>(Oracular Oriole)</em>"
+            },
+            "25.04": {
+              "gnome": "48",
+              "label": "25.04 <em>(Plucky Puffin)</em>"
             }
           },
           "childrenLabel": "Release",
