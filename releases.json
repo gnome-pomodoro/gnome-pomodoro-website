@@ -3,7 +3,7 @@
     "linux": {
       "children": {
         "arch": {
-          "gnome": "48",
+          "gnome": "49",
           "label": "Arch"
         },
         "debian": {
@@ -11,6 +11,10 @@
             "12": {
               "gnome": "43",
               "label": "12 <em>(Bookworm)</em>"
+            },
+            "13": {
+              "gnome": "48",
+              "label": "13 <em>(Trixie)</em>"
             }
           },
           "childrenLabel": "Release",
@@ -18,9 +22,6 @@
         },
         "fedora": {
           "children": {
-            "36": {
-              "gnome": "42"
-            },
             "37": {
               "gnome": "43"
             },
@@ -38,13 +39,16 @@
             },
             "42": {
               "gnome": "48"
+            },
+            "43": {
+              "gnome": "49"
             }
           },
           "childrenLabel": "Release",
           "label": "Fedora"
         },
         "gentoo": {
-          "gnome": "48",
+          "gnome": "49",
           "label": "Gentoo"
         },
         "opensuse": {
@@ -54,7 +58,7 @@
               "label": "Leap 15.6"
             },
             "tumbleweed": {
-              "gnome": "48",
+              "gnome": "49",
               "label": "Tumbleweed"
             }
           },
@@ -64,9 +68,6 @@
         },
         "other": {
           "children": {
-            "42": {
-              "gnome": "42"
-            },
             "43": {
               "gnome": "43"
             },
@@ -84,6 +85,9 @@
             },
             "48": {
               "gnome": "48"
+            },
+            "49": {
+              "gnome": "49"
             }
           },
           "childrenLabel": "GNOME",
@@ -118,6 +122,10 @@
             "25.04": {
               "gnome": "48",
               "label": "25.04 <em>(Plucky Puffin)</em>"
+            },
+            "25.10": {
+              "gnome": "49",
+              "label": "25.04 <em>(Questing Quokka)</em>"
             }
           },
           "childrenLabel": "Release",
