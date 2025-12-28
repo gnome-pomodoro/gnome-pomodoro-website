@@ -1,0 +1,4 @@
+---
+permalink: /.well-known/org.flathub.VerifiedApps.txt
+---
+TEST
