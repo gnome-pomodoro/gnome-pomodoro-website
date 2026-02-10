@@ -1,5 +1,0 @@
----
-permalink: /.well-known/org.flathub.VerifiedApps.txt
----
-# org.gnomepomodoro.Pomodoro
-
