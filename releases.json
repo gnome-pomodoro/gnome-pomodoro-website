@@ -42,6 +42,9 @@
             },
             "43": {
               "gnome": "49"
+            },
+            "44": {
+              "gnome": "50"
             }
           },
           "childrenLabel": "Release",
@@ -68,9 +71,6 @@
         },
         "other": {
           "children": {
-            "43": {
-              "gnome": "43"
-            },
             "44": {
               "gnome": "44"
             },
@@ -88,6 +88,9 @@
             },
             "49": {
               "gnome": "49"
+            },
+            "50": {
+              "gnome": "50"
             }
           },
           "childrenLabel": "GNOME",
@@ -126,6 +129,10 @@
             "25.10": {
               "gnome": "49",
               "label": "25.10 <em>(Questing Quokka)</em>"
+            },
+            "26.04": {
+              "gnome": "50",
+              "label": "26.04 LTS <em>(Resolute Raccoon)</em>"
             }
           },
           "childrenLabel": "Release",
