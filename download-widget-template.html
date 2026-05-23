@@ -41,7 +41,7 @@
         </section>
     {{/if}}
 
-    {{if ubuntu }}
+    {{if ubuntu && lt(ubuntu, "26.04") }}
         <section>
             <header>
                 <h4>Install from repositories</h4>
